@@ -40,12 +40,7 @@ Thumbs.db
 .idea/
 
 # Scratch & temporary test files
-scratch/*.png
-scratch/*.pdf
-scratch/live_*.png
-scratch/live_*.pdf
-scratch/rendered_*.png
-scratch/shot_*.png
-scratch/exact_*.png
-scratch/redesigned_*.png
+scratch/
+*.png
+*.pdf
 scratch/redesigned_*.pdf

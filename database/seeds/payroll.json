@@ -1,0 +1,3002 @@
+[
+    {
+        "no": 1,
+        "ibm_id": "IBM-25-26-02190",
+        "full_name": "ROMY, JR. DIAGAN PAGALANGAN",
+        "lbp_account": "6767015478",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 2,
+        "ibm_id": "IBM-25-26-02085",
+        "full_name": "BRYANREY FALALIMPA HUPEDA",
+        "lbp_account": "6767015290",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 3,
+        "ibm_id": "IBM-23-24-01529",
+        "full_name": "KURT FADERON",
+        "lbp_account": "2807209534",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 4,
+        "ibm_id": "IBM-25-26-02173",
+        "full_name": "SHARA MAE GABAY CUTARAN",
+        "lbp_account": "6767015087",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 5,
+        "ibm_id": "IBM-23-24-01345",
+        "full_name": "RAQUEL OGAN MAGUNDAY",
+        "lbp_account": "2807206764",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 6,
+        "ibm_id": "IBM-25-26-02097",
+        "full_name": "ABIGAIL GULADA",
+        "lbp_account": "2807224835",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 7,
+        "ibm_id": "IBM-25-26-02121",
+        "full_name": "CHARMIE CASABUENA PERIN",
+        "lbp_account": "2807224649",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 8,
+        "ibm_id": "IBM-23-24-01586",
+        "full_name": "JEAN MAE HIPULAN BALDOVE",
+        "lbp_account": "6767012398",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 9,
+        "ibm_id": "IBM-23-24-01585",
+        "full_name": "RONELYN JANE ADVENTURADO DINGLASA",
+        "lbp_account": "6767013220",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 10,
+        "ibm_id": "IBM-23-24-01436",
+        "full_name": "ROTCHEN GIRL TAGOY ESPINOSA",
+        "lbp_account": "6767013106",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 11,
+        "ibm_id": "IBM-24-25-01688",
+        "full_name": "PATRIZHIA CHLYR RODRIGO PACQUIAO",
+        "lbp_account": "2807206314",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 12,
+        "ibm_id": "IBM-24-25-01793",
+        "full_name": "JELLY MAR DIANTAN YANAN",
+        "lbp_account": "2807210770",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 13,
+        "ibm_id": "IBM-24-25-01810",
+        "full_name": "JHEA ONO MANAMBAY",
+        "lbp_account": "2807206470",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 14,
+        "ibm_id": "IBM-24-25-01724",
+        "full_name": "MISKHA AMERIEH MONTECILLO",
+        "lbp_account": "6767012886",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 15,
+        "ibm_id": "IBM-23-24-01584",
+        "full_name": "CLARENCE JAY ALLESER GUANZON",
+        "lbp_account": "6767012835",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 16,
+        "ibm_id": "IBM-25-26-01968",
+        "full_name": "ROGEN MAE GONZALES UBAS",
+        "lbp_account": "2807224215",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 17,
+        "ibm_id": "IBM-23-24-01595",
+        "full_name": "ZEDRICK PADRONES PADERNAL",
+        "lbp_account": "6767012126",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 18,
+        "ibm_id": "IBM-25-26-01986",
+        "full_name": "RIZZA MAE DAYOT LINDO",
+        "lbp_account": "2807223634",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 19,
+        "ibm_id": "IBM-24-25-01791",
+        "full_name": "MARY JEAN SALUTAN MACUNDAN",
+        "lbp_account": "2807206888",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 20,
+        "ibm_id": "IBM-23-24-01652",
+        "full_name": "SHAINA MAE MOLANA UBA",
+        "lbp_account": "2807212756",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 21,
+        "ibm_id": "IBM-23-24-01665",
+        "full_name": "ALTHIA SAN",
+        "lbp_account": "2807207310",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 22,
+        "ibm_id": "IBM-24-25-01717",
+        "full_name": "MHARYIEN KAYE G. GICA",
+        "lbp_account": "2807206802",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 23,
+        "ibm_id": "IBM-25-26-02023",
+        "full_name": "MERYLL GRACE M. ADLAO",
+        "lbp_account": "2807224320",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 24,
+        "ibm_id": "IBM-25-26-02227",
+        "full_name": "NOMELYN JOICE J. ROXAS",
+        "lbp_account": "2807223650",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 25,
+        "ibm_id": "IBM-23-24-01538",
+        "full_name": "MYCO D. ALBIA",
+        "lbp_account": "6767012568",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 26,
+        "ibm_id": "IBM-25-26-02142",
+        "full_name": "ABSALON E. GUNDRAN",
+        "lbp_account": "2807225270",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 27,
+        "ibm_id": "IBM-23-24-01596",
+        "full_name": "SARAH JANE C. CAWAG",
+        "lbp_account": "2807212179",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 28,
+        "ibm_id": "IBM-25-26-02008",
+        "full_name": "ANGEL JOY M. CARREON",
+        "lbp_account": "2807225513",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 29,
+        "ibm_id": "IBM-25-26-01947",
+        "full_name": "JOWICH PAUL M. DE CASTRO",
+        "lbp_account": "2807223138",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 30,
+        "ibm_id": "IBM-24-25-01850",
+        "full_name": "JELLOYD D. MONTONG",
+        "lbp_account": "2807210028",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 31,
+        "ibm_id": "IBM-25-26-02003",
+        "full_name": "RONADITH P. HECHANOVA",
+        "lbp_account": "2807224053",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 32,
+        "ibm_id": "IBM-24-25-01727",
+        "full_name": "ART REU G. NAMION",
+        "lbp_account": "2807207051",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 33,
+        "ibm_id": "IBM-25-26-02114",
+        "full_name": "KENCH JUN C. SAN",
+        "lbp_account": "6767015214",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 34,
+        "ibm_id": "IBM-23-24-01532",
+        "full_name": "EMMANUEL Y. RULE",
+        "lbp_account": "2807208872",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 35,
+        "ibm_id": "IBM-25-26-01970",
+        "full_name": "LAIZA MAE D. QUINTAYO",
+        "lbp_account": "2807225483",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 36,
+        "ibm_id": "IBM-23-24-01499",
+        "full_name": "JOSHUA A. ENTERO",
+        "lbp_account": "6767013580",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 37,
+        "ibm_id": "IBM-23-24-01368",
+        "full_name": "GISHERY S. ALBUEN",
+        "lbp_account": "6766013161",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 38,
+        "ibm_id": "IBM-24-25-01704",
+        "full_name": "JENNY N. ANDOYO",
+        "lbp_account": "6767012487",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 39,
+        "ibm_id": "IBM-25-26-02010",
+        "full_name": "JASMINE C. ESPINOSA",
+        "lbp_account": "2807223936",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 40,
+        "ibm_id": "IBM-23-24-01428",
+        "full_name": "EARLJOY SHANE A. ANQUE",
+        "lbp_account": "2807209267",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 41,
+        "ibm_id": "IBM-23-24-01479",
+        "full_name": "SHANE I. GUINTULON",
+        "lbp_account": "2807208384",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 42,
+        "ibm_id": "IBM-24-25-01787",
+        "full_name": "MARK ANGELOU D. MAGANTOR",
+        "lbp_account": "2807209739",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 43,
+        "ibm_id": "IBM-25-26-02083",
+        "full_name": "HAZEL A. MANGUBAT",
+        "lbp_account": "2807225050",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 44,
+        "ibm_id": "IBM-25-26-02229",
+        "full_name": "NELLY JANE C. PULMONES",
+        "lbp_account": "2807223561",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 45,
+        "ibm_id": "IBM-25-26-02018",
+        "full_name": "REIGN DESIREE L. GREGORIO",
+        "lbp_account": "2807224509",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 46,
+        "ibm_id": "IBM-25-26-01962",
+        "full_name": "CRISTEL MAE M. SARMILLO",
+        "lbp_account": "2807223766",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 47,
+        "ibm_id": "IBM-24-25-01725",
+        "full_name": "LANILYN JADE S. CASTILLO",
+        "lbp_account": "2807206365",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 48,
+        "ibm_id": "IBM-24-25-01877",
+        "full_name": "BLAIZEL MARIE B. MENDOZA",
+        "lbp_account": "6767013246",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 49,
+        "ibm_id": "IBM-23-24-01477",
+        "full_name": "ANGELA P. TAGUSI",
+        "lbp_account": "6767013050",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 50,
+        "ibm_id": "IBM-24-25-01684",
+        "full_name": "ASHLEY NICOLE C. TIPAWAN",
+        "lbp_account": "6767012010",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 51,
+        "ibm_id": "IBM-25-26-02134",
+        "full_name": "ELLEN C. HEREBESE",
+        "lbp_account": "2807223243",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 52,
+        "ibm_id": "IBM-25-26-02156",
+        "full_name": "JOANNA NICOLE M. LANDULE",
+        "lbp_account": "2807224010",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 53,
+        "ibm_id": "IBM-23-24-01560",
+        "full_name": "RONA MAE S. DELA CRUZ",
+        "lbp_account": "6767013670",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 54,
+        "ibm_id": "IBM-24-25-01862",
+        "full_name": "NIZYLLE KEATHE M. MONTAÑO",
+        "lbp_account": "2807208368",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 55,
+        "ibm_id": "IBM-25-26-02194",
+        "full_name": "ARIANNA ANNEKA A. OLARTE",
+        "lbp_account": "2807221780",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 56,
+        "ibm_id": "IBM-25-26-02049",
+        "full_name": "MICHELLE JOY B. BARSALOTE",
+        "lbp_account": "2807224959",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 57,
+        "ibm_id": "IBM-25-26-01956",
+        "full_name": "CHARMEL G. BULAY-OG",
+        "lbp_account": "6767015176",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 58,
+        "ibm_id": "IBM-25-26-01980",
+        "full_name": "ARABELLA GRACE J. ANTARAN",
+        "lbp_account": "2807222964",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 59,
+        "ibm_id": "IBM-23-24-01419",
+        "full_name": "JOHN LLOYD G. PANESALES",
+        "lbp_account": "2807211628",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 60,
+        "ibm_id": "IBM-23-24-01567",
+        "full_name": "REXFORD T. LUMBAB",
+        "lbp_account": "2807211679",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 61,
+        "ibm_id": "IBM-25-26-02059",
+        "full_name": "CHESCA ALEXY C. GUANZON",
+        "lbp_account": "2807224827",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 62,
+        "ibm_id": "IBM-23-24-01424",
+        "full_name": "JAMES PAUL P. GALIMBA",
+        "lbp_account": "2807207272",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 63,
+        "ibm_id": "IBM-25-26-02245",
+        "full_name": "JERNA FAYE C. EDULLANTES",
+        "lbp_account": "2807226021",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 64,
+        "ibm_id": "IBM-23-24-01384",
+        "full_name": "FAITH JOY DELA PIEZA DUROG",
+        "lbp_account": "2807206624",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 65,
+        "ibm_id": "IBM-24-25-01708",
+        "full_name": "EDITA C. GOTONG",
+        "lbp_account": "2807210087",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 66,
+        "ibm_id": "IBM-23-24-01520",
+        "full_name": "JEZIEL L. JARANTILLA",
+        "lbp_account": "6767012614",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 67,
+        "ibm_id": "IBM-25-26-02078",
+        "full_name": "HANNIE MAE D. ARBELO",
+        "lbp_account": "2807224037",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 68,
+        "ibm_id": "IBM-25-26-02104",
+        "full_name": "DALIA O. MASALON",
+        "lbp_account": "2807222980",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 69,
+        "ibm_id": "IBM-25-26-02051",
+        "full_name": "RESHANE GRACE H. HORMIGAS",
+        "lbp_account": "2807225017",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 70,
+        "ibm_id": "IBM-25-26-02148",
+        "full_name": "ANGEL MAE T. QUISEO",
+        "lbp_account": "2807223472",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 71,
+        "ibm_id": "IBM-25-26-02006",
+        "full_name": "ESTELA MARIE L. SISTOSO",
+        "lbp_account": "6767015451",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 72,
+        "ibm_id": "IBM-23-24-01386",
+        "full_name": "JUSTINE S. DALEN",
+        "lbp_account": "6767012347",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 73,
+        "ibm_id": "IBM-25-26-02192",
+        "full_name": "KATHRISH T. ANTONIO",
+        "lbp_account": "2807223219",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 74,
+        "ibm_id": "IBM-23-24-01561",
+        "full_name": "JOHN LLOYD D. FERNANDO",
+        "lbp_account": "6767012274",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 75,
+        "ibm_id": "IBM-24-25-01778",
+        "full_name": "ROGENE L. MANAMBAY",
+        "lbp_account": "2807209283",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 76,
+        "ibm_id": "IBM-25-26-02030",
+        "full_name": "RESHELL M. SARENAS",
+        "lbp_account": "2807224380",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 77,
+        "ibm_id": "IBM-25-26-02252",
+        "full_name": "CRISTIAN BAGI",
+        "lbp_account": "2807223863",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 78,
+        "ibm_id": "IBM-25-26-02004",
+        "full_name": "JULIANA ROSE C. CORONADO",
+        "lbp_account": "6767015532",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 79,
+        "ibm_id": "IBM-24-25-01752",
+        "full_name": "RIEZEL MAE B. SOLATORIO",
+        "lbp_account": "6767014099",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 80,
+        "ibm_id": "IBM-25-26-01940",
+        "full_name": "ARVY GRACE M. EMMANUEL",
+        "lbp_account": "6767015397",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 81,
+        "ibm_id": "IBM-26-27-02258",
+        "full_name": "Raiza Misoles Lausa",
+        "lbp_account": "6766029670",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 82,
+        "ibm_id": "IBM-26-27-02259",
+        "full_name": "Myles Jade Laro Camayudo",
+        "lbp_account": "6766028207",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 83,
+        "ibm_id": "IBM-26-27-02260",
+        "full_name": "Cristelle Apostol Deluna",
+        "lbp_account": "6766028134",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 84,
+        "ibm_id": "IBM-26-27-02261",
+        "full_name": "Carlan Jay Tolentino Balawag",
+        "lbp_account": "6766028843",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 85,
+        "ibm_id": "IBM-26-27-02262",
+        "full_name": "Glyza Cajigas Galbines",
+        "lbp_account": "6766028819",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 86,
+        "ibm_id": "IBM-26-27-02263",
+        "full_name": "Merry Divine Clear Galabo Bacasmo",
+        "lbp_account": "6766028916",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 87,
+        "ibm_id": "IBM-26-27-02264",
+        "full_name": "RHEANNIE GRACE SABUCIDO DELICANO",
+        "lbp_account": "6766029688",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 88,
+        "ibm_id": "IBM-26-27-02265",
+        "full_name": "Pia Janine De Leon Caro",
+        "lbp_account": "6766028401",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 89,
+        "ibm_id": "IBM-26-27-02266",
+        "full_name": "Rosemarie De Leon Cagas",
+        "lbp_account": "6766028410",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 90,
+        "ibm_id": "IBM-26-27-02267",
+        "full_name": "Nicole Paran Tasi",
+        "lbp_account": "6766029343",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 91,
+        "ibm_id": "IBM-26-27-02268",
+        "full_name": "Kayecel Marie Denzon Gumapac",
+        "lbp_account": "6766028673",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 92,
+        "ibm_id": "IBM-26-27-02269",
+        "full_name": "Vivian Delator Fabroa",
+        "lbp_account": "6766028142",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 93,
+        "ibm_id": "IBM-26-27-02270",
+        "full_name": "Rhian Angela Patron Manambay",
+        "lbp_account": "6766028681",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 94,
+        "ibm_id": "IBM-26-27-02271",
+        "full_name": "Clarence Aguilar Abarquez",
+        "lbp_account": "6766028851",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 95,
+        "ibm_id": "IBM-26-27-02272",
+        "full_name": "Earl Dwight Liansing Reveche",
+        "lbp_account": "6766029076",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 96,
+        "ibm_id": "IBM-26-27-02273",
+        "full_name": "Rizza Mae Joy Velasco Escobia",
+        "lbp_account": "6766028347",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 97,
+        "ibm_id": "IBM-26-27-02274",
+        "full_name": "Sitti Noraiza Genobiagon",
+        "lbp_account": "6766028266",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 98,
+        "ibm_id": "IBM-26-27-02275",
+        "full_name": "Reymark Donasco Tabilla",
+        "lbp_account": "6766029300",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 99,
+        "ibm_id": "IBM-26-27-02276",
+        "full_name": "Diane Clier Dogoldogol Rios",
+        "lbp_account": "6766028800",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 100,
+        "ibm_id": "IBM-26-27-02277",
+        "full_name": "Honey Grace Delatado Coronado",
+        "lbp_account": "6766029505",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 101,
+        "ibm_id": "IBM-26-27-02278",
+        "full_name": "Kevin Ramirez Cameros",
+        "lbp_account": "6766028614",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 102,
+        "ibm_id": "IBM-26-27-02279",
+        "full_name": "HELEN MAE KILAM DELOS SANTOS",
+        "lbp_account": "6766028150",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 103,
+        "ibm_id": "IBM-26-27-02280",
+        "full_name": "Florenze Deane Seruno Sionosa",
+        "lbp_account": "6766029238",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 104,
+        "ibm_id": "IBM-26-27-02281",
+        "full_name": "Christine Joy Guisan Lumandan",
+        "lbp_account": "6766028177",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 105,
+        "ibm_id": "IBM-26-27-02282",
+        "full_name": "Freya Angela Agramon Razonable",
+        "lbp_account": "6766029211",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 106,
+        "ibm_id": "IBM-26-27-02283",
+        "full_name": "Mariza Vequilla Llena",
+        "lbp_account": "6766028223",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 107,
+        "ibm_id": "IBM-26-27-02284",
+        "full_name": "Anna Sophia Manon-og Vigafria",
+        "lbp_account": "6766022896",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 108,
+        "ibm_id": "IBM-26-27-02285",
+        "full_name": "Leah Gabay Ogan",
+        "lbp_account": "6766029696",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 109,
+        "ibm_id": "IBM-26-27-02286",
+        "full_name": "Gillian Jean Estroso Porras",
+        "lbp_account": "6766029009",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 110,
+        "ibm_id": "IBM-26-27-02287",
+        "full_name": "Cyrill Kieth Daproza",
+        "lbp_account": "6766029653",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 111,
+        "ibm_id": "IBM-26-27-02288",
+        "full_name": "Mich Ressy Dinoy",
+        "lbp_account": "6766029360",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 112,
+        "ibm_id": "IBM-26-27-02289",
+        "full_name": "Rochelyn Panay Manambay",
+        "lbp_account": "6766029629",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 113,
+        "ibm_id": "IBM-26-27-02290",
+        "full_name": "Kaye Anne Villaruel Quimado",
+        "lbp_account": "6766022667",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 114,
+        "ibm_id": "IBM-26-27-02291",
+        "full_name": "Febie Macoy Reponte",
+        "lbp_account": "6766028258",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 115,
+        "ibm_id": "IBM-26-27-02292",
+        "full_name": "APRIL ROSE GALACHE DEPOSO",
+        "lbp_account": "6766017060",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 116,
+        "ibm_id": "IBM-26-27-02293",
+        "full_name": "Nicolette Angie Ingay",
+        "lbp_account": "6766029408",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 117,
+        "ibm_id": "IBM-26-27-02294",
+        "full_name": "Danica Mamalias Tijana",
+        "lbp_account": "6766029742",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 118,
+        "ibm_id": "IBM-26-27-02295",
+        "full_name": "Gryzzyll Faith Manga Bognoson",
+        "lbp_account": "6766029270",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 119,
+        "ibm_id": "IBM-26-27-02296",
+        "full_name": "Crystle Angelique Parbo",
+        "lbp_account": "6766029173",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 120,
+        "ibm_id": "IBM-26-27-02297",
+        "full_name": "Lyca Fate S. Quillope",
+        "lbp_account": "6766029165",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 121,
+        "ibm_id": "IBM-23-24-01612",
+        "full_name": "DONALYN C. HINGCO",
+        "lbp_account": "2807210273",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 122,
+        "ibm_id": "IBM-25-26-02072",
+        "full_name": "RENROSE T. FAVILA",
+        "lbp_account": "2807224789",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 123,
+        "ibm_id": "IBM-25-26-02232",
+        "full_name": "AALIYAH KAELYN T. BORDIOS",
+        "lbp_account": "2807225505",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 124,
+        "ibm_id": "IBM-25-26-02140",
+        "full_name": "ERIC JAMES B. ANGOS",
+        "lbp_account": "2807225289",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 125,
+        "ibm_id": "IBM-23-24-01628",
+        "full_name": "ERLA MABEL C. DELA CRUZ",
+        "lbp_account": "6767016130",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 126,
+        "ibm_id": "IBM-23-24-01614",
+        "full_name": "KATHLEEN SHYLA MAY M. BACULNA",
+        "lbp_account": "2807210702",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 127,
+        "ibm_id": "IBM-23-24-01435",
+        "full_name": "LEN S. ARELLANO",
+        "lbp_account": "6767013122",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 128,
+        "ibm_id": "IBM-24-25-01815",
+        "full_name": "STEPHANIE M. LEOCARIO",
+        "lbp_account": "2807206551",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 129,
+        "ibm_id": "IBM-23-24-01463",
+        "full_name": "LEAH MAE D. MORENO",
+        "lbp_account": "2807210176",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 130,
+        "ibm_id": "IBM-25-26-02108",
+        "full_name": "LEXTER JADE C. SIMORA",
+        "lbp_account": "2807224410",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 131,
+        "ibm_id": "IBM-23-24-01359",
+        "full_name": "ABRAHAM V. AGUILAR Jr.",
+        "lbp_account": "2807211172",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 132,
+        "ibm_id": "IBM-23-24-01497",
+        "full_name": "ALICIA MAE A. RUBIANO",
+        "lbp_account": "2807211156",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 133,
+        "ibm_id": "IBM-25-26-02060",
+        "full_name": "CHLOE SHYNE B. SAGAYNO",
+        "lbp_account": "2807224770",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 134,
+        "ibm_id": "IBM-23-24-01322",
+        "full_name": "RHYNCHYL P. GRACIA",
+        "lbp_account": "2807210427",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 135,
+        "ibm_id": "IBM-25-26-01925",
+        "full_name": "JYRUS PAUL D. MALALAY",
+        "lbp_account": "2807224991",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 136,
+        "ibm_id": "IBM-25-26-02112",
+        "full_name": "JOVANNY D. TAMULON",
+        "lbp_account": "2807225564",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 137,
+        "ibm_id": "IBM-25-26-02155",
+        "full_name": "DENNIELLE ANNE G. MASDAY",
+        "lbp_account": "6767015079",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 138,
+        "ibm_id": "IBM-25-26-02063",
+        "full_name": "ARIANNE KYLE L. OMAS-AS",
+        "lbp_account": "6767016504",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 139,
+        "ibm_id": "IBM-25-26-01997",
+        "full_name": "JAYMARK B. BACLAY",
+        "lbp_account": "6767015826",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15 | Approved"
+    },
+    {
+        "no": 140,
+        "ibm_id": "IBM-24-25-01854",
+        "full_name": "HANNAH G. BUSAYONG",
+        "lbp_account": "2807210893",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 141,
+        "ibm_id": "IBM-23-24-01333",
+        "full_name": "AIRA D. CUZON",
+        "lbp_account": "2807207353",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 142,
+        "ibm_id": "IBM-23-24-01426",
+        "full_name": "ABEGAIL T. CODERA",
+        "lbp_account": "2807207361",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 143,
+        "ibm_id": "IBM-25-26-02181",
+        "full_name": "JET RIANN J. ACEDILLA",
+        "lbp_account": "2807225025",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 144,
+        "ibm_id": "IBM-25-26-02132",
+        "full_name": "GLAIZZA GENIE A. GENITE",
+        "lbp_account": "2807223529",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 145,
+        "ibm_id": "IBM-23-24-01387",
+        "full_name": "JORELYN S. VERANO",
+        "lbp_account": "2807210257",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 146,
+        "ibm_id": "IBM-25-26-02143",
+        "full_name": "MARY JANE MENDOZA",
+        "lbp_account": "2807225424",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 147,
+        "ibm_id": "IBM-24-25-01847",
+        "full_name": "EVANGELINE G. MOLAN",
+        "lbp_account": "2807207302",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 148,
+        "ibm_id": "IBM-23-24-01566",
+        "full_name": "ROSALYN S. PEREZ",
+        "lbp_account": "2807211300",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 149,
+        "ibm_id": "IBM-25-26-02255",
+        "full_name": "CONRAD FRITZ B. PARCUTILO",
+        "lbp_account": "6767016873",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 150,
+        "ibm_id": "IBM-24-25-01866",
+        "full_name": "JOY T. ANSING",
+        "lbp_account": "2807208988",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Release-2026-09-15"
+    },
+    {
+        "no": 151,
+        "ibm_id": "IBM-24-25-01687",
+        "full_name": "ZENDRICK AYNSTER J. ALAS",
+        "lbp_account": "6767012231",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 152,
+        "ibm_id": "IBM-25-26-02250",
+        "full_name": "PEBIE ROSE V. ENCALLADO",
+        "lbp_account": "2807223367",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 153,
+        "ibm_id": "IBM-25-26-02213",
+        "full_name": "KHERT CYRUS M. MASALON",
+        "lbp_account": "6767016156",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 154,
+        "ibm_id": "IBM-25-26-02040",
+        "full_name": "KYLA M. MACASERO",
+        "lbp_account": "2807223570",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 155,
+        "ibm_id": "IBM-25-26-02067",
+        "full_name": "TRISTAN JAY T. ALFANTA",
+        "lbp_account": "2807225572",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 156,
+        "ibm_id": "IBM-24-25-01910",
+        "full_name": "ALTHEA JANE D. ASAHID",
+        "lbp_account": "2807215887",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 157,
+        "ibm_id": "IBM-25-26-02228",
+        "full_name": "ELYKA JEAN A. AVILA",
+        "lbp_account": "2807224088",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 158,
+        "ibm_id": "IBM-24-25-01690",
+        "full_name": "KRISTINE JIA J. MANON-OG",
+        "lbp_account": "6767012495",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 159,
+        "ibm_id": "IBM-24-25-01751",
+        "full_name": "PRIAN GRACE A. LACHICA",
+        "lbp_account": "2807208597",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 160,
+        "ibm_id": "IBM-23-24-01466",
+        "full_name": "JHON MARK B. ROSA",
+        "lbp_account": "6767013130",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 161,
+        "ibm_id": "IBM-24-25-01773",
+        "full_name": "FRANCIS ELI A. GARCIA",
+        "lbp_account": "2807208856",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 162,
+        "ibm_id": "IBM-24-25-01743",
+        "full_name": "GERTRUDE JAY A. ZAGALES",
+        "lbp_account": "2807206500",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 163,
+        "ibm_id": "IBM-24-25-01735",
+        "full_name": "ANGELICA B. AMION",
+        "lbp_account": "2807206950",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 164,
+        "ibm_id": "IBM-25-26-02211",
+        "full_name": "ALRHEA CHARMEL B. COLANAG",
+        "lbp_account": "2807224258",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 165,
+        "ibm_id": "IBM-25-26-01960",
+        "full_name": "MARIEL L. MORALES",
+        "lbp_account": "6767015222",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 166,
+        "ibm_id": "IBM-24-25-01801",
+        "full_name": "ANTONNIETTE CHEALL P. PAUCHANO",
+        "lbp_account": "2807209178",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 167,
+        "ibm_id": "IBM-23-24-01351",
+        "full_name": "JAY MARK A. CAINGCOY",
+        "lbp_account": "6767012444",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 168,
+        "ibm_id": "IBM-25-26-02041",
+        "full_name": "DANICA ROSE M. TULENO",
+        "lbp_account": "6767010271",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 169,
+        "ibm_id": "IBM-24-25-01755",
+        "full_name": "CATHERINE JOY L. CELESTINO",
+        "lbp_account": "2807207965",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 170,
+        "ibm_id": "IBM-24-25-01803",
+        "full_name": "KYSHA MARIE Y. INSIPIDO",
+        "lbp_account": "2807208791",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 171,
+        "ibm_id": "IBM-25-26-01983",
+        "full_name": "JAYLA C. TAYAWAN",
+        "lbp_account": "2807223065",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 172,
+        "ibm_id": "IBM-25-26-02107",
+        "full_name": "RENIE D. CORRO",
+        "lbp_account": "2807223413",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 173,
+        "ibm_id": "IBM-25-26-02135",
+        "full_name": "HONEYLYN T. GABATO",
+        "lbp_account": "2807225114",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 174,
+        "ibm_id": "IBM-23-24-01462",
+        "full_name": "ALEXA JEAN B. AMOROSO",
+        "lbp_account": "6767014188",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 175,
+        "ibm_id": "IBM-23-24-01443",
+        "full_name": "JHANRIE M. TAMPOLE",
+        "lbp_account": "2807209984",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 176,
+        "ibm_id": "IBM-25-26-02128",
+        "full_name": "BERNARD JAMES T. PANDAYAN",
+        "lbp_account": "2807223855",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 177,
+        "ibm_id": "IBM-24-25-01766",
+        "full_name": "EDEN GREY J. MONTON",
+        "lbp_account": "6767013343",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 178,
+        "ibm_id": "IBM-24-25-01696",
+        "full_name": "VINZ JOSHUA ALAM REMONDE",
+        "lbp_account": "6766030244",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 179,
+        "ibm_id": "IBM-23-24-01660",
+        "full_name": "MARIE SHANEL A. DAQUIL",
+        "lbp_account": "2807207086",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 180,
+        "ibm_id": "IBM-24-25-01904",
+        "full_name": "MICHELLE O. MONTEJO",
+        "lbp_account": "6767014684",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 181,
+        "ibm_id": "IBM-25-26-02028",
+        "full_name": "DEUDIN C. KILAM",
+        "lbp_account": "2807223944",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 182,
+        "ibm_id": "IBM-23-24-01602",
+        "full_name": "MYCA ANGELA T. LOPE",
+        "lbp_account": "2807209410",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 183,
+        "ibm_id": "IBM-23-24-01363",
+        "full_name": "JOYCE E. VILLARUBEN",
+        "lbp_account": "2807208562",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 184,
+        "ibm_id": "IBM-25-26-01974",
+        "full_name": "HANNA LEE C. LANDELIS",
+        "lbp_account": "2807224452",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 185,
+        "ibm_id": "IBM-24-25-01905",
+        "full_name": "EARL C. TOGONON",
+        "lbp_account": "6767014668",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 186,
+        "ibm_id": "IBM-25-26-02153",
+        "full_name": "KHAILEN ATHASIA P. NOFIES",
+        "lbp_account": "2807225491",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 187,
+        "ibm_id": "IBM-24-25-01811",
+        "full_name": "LOVELY R. TABORADA",
+        "lbp_account": "2807207116",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 188,
+        "ibm_id": "IBM-24-25-01840",
+        "full_name": "JEN GWENYTH P. MAQUILING",
+        "lbp_account": "6767013696",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 189,
+        "ibm_id": "IBM-25-26-02016",
+        "full_name": "RUSSEL KENT C. TUERES",
+        "lbp_account": "6767015125",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 190,
+        "ibm_id": "IBM-24-25-01837",
+        "full_name": "RUSSEL JAY A. DELA TORRE",
+        "lbp_account": "2807209704",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 191,
+        "ibm_id": "IBM-25-26-02077",
+        "full_name": "PAULYNN MAE L. GABING",
+        "lbp_account": "2807225033",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 192,
+        "ibm_id": "IBM-25-26-02115",
+        "full_name": "ANGEL C. TABOLONG",
+        "lbp_account": "2807224592",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 193,
+        "ibm_id": "IBM-23-24-01362",
+        "full_name": "ROILEN JOY C. ESCANER",
+        "lbp_account": "2807207736",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 194,
+        "ibm_id": "IBM-25-26-02005",
+        "full_name": "ZOPHIA ANGELA B. SEMILLA",
+        "lbp_account": "6767015150",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 195,
+        "ibm_id": "IBM-24-25-01698",
+        "full_name": "RAFAEL DIRK D. DIONIO",
+        "lbp_account": "2807206870",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 196,
+        "ibm_id": "IBM-24-25-01865",
+        "full_name": "LOSHEILA GRACE V. LOPEZ",
+        "lbp_account": "2807210222",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 197,
+        "ibm_id": "IBM-23-24-01581",
+        "full_name": "ANGELICA P. DE GUZMAN",
+        "lbp_account": "6767012860",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 198,
+        "ibm_id": "IBM-23-24-01446",
+        "full_name": "KIMBERLY CLAIRE ROQUERO ARTIGO",
+        "lbp_account": "2807210400",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 199,
+        "ibm_id": "IBM-25-26-02058",
+        "full_name": "FRANCIS ADRIAN TANTING EYO",
+        "lbp_account": "2807224878",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 200,
+        "ibm_id": "IBM-23-24-01332",
+        "full_name": "RHEA CABALLERO SALDUA",
+        "lbp_account": "6767013076",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 201,
+        "ibm_id": "IBM-25-26-02102",
+        "full_name": "DRYDEN DEW R. OJAGAN",
+        "lbp_account": "2807224444",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 202,
+        "ibm_id": "IBM-25-26-02050",
+        "full_name": "CATHY P. MOSNE",
+        "lbp_account": "2807223120",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 203,
+        "ibm_id": "IBM-24-25-01768",
+        "full_name": "KYLE JORGE F. PELINGON",
+        "lbp_account": "1716125889",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 204,
+        "ibm_id": "IBM-23-24-01611",
+        "full_name": "NATHANIEL OLIVER L. DE GUZMAN",
+        "lbp_account": "6767012410",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 205,
+        "ibm_id": "IBM-23-24-01574",
+        "full_name": "LORD CYDRIK P. DEPITA",
+        "lbp_account": "6767012282",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 206,
+        "ibm_id": "IBM-25-26-02176",
+        "full_name": "SHEENA KITCH T. MIRANDA",
+        "lbp_account": "2986337922",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 207,
+        "ibm_id": "IBM-25-26-02032",
+        "full_name": "PRINCESS LOUJANE B. ABELLA",
+        "lbp_account": "2807225432",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 208,
+        "ibm_id": "IBM-24-25-01825",
+        "full_name": "HANZ KEVIN D. EUDELA",
+        "lbp_account": "6767012401",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 209,
+        "ibm_id": "IBM-23-24-01371",
+        "full_name": "MARY GRACE M. REDUTA",
+        "lbp_account": "2807206632",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 210,
+        "ibm_id": "IBM-23-24-01590",
+        "full_name": "CATRINA GRACE C. AROPO",
+        "lbp_account": "6767013432",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 211,
+        "ibm_id": "IBM-24-25-01701",
+        "full_name": "MECA ANGELA S. NUÑEZ",
+        "lbp_account": "2807207159",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 212,
+        "ibm_id": "IBM-24-25-01872",
+        "full_name": "ROMER JAMES M. ZORILLA",
+        "lbp_account": "2807209488",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 213,
+        "ibm_id": "IBM-25-26-01959",
+        "full_name": "CJ FRITZ B. PAGALANGAN",
+        "lbp_account": "2807223294",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 214,
+        "ibm_id": "IBM-25-26-02042",
+        "full_name": "JULIUS T. BANCAL",
+        "lbp_account": "2807223286",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 215,
+        "ibm_id": "IBM-23-24-01469",
+        "full_name": "LYKA MAE G. LAURA",
+        "lbp_account": "2807208279",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 216,
+        "ibm_id": "IBM-23-24-01472",
+        "full_name": "FRENZIE LICY JOY J. BARBERO",
+        "lbp_account": "2807208287",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 217,
+        "ibm_id": "IBM-23-24-01410",
+        "full_name": "JANNETE V. MONTILLANO",
+        "lbp_account": "2807210508",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 218,
+        "ibm_id": "IBM-23-24-01457",
+        "full_name": "SHENA H. RAMAS",
+        "lbp_account": "6767013297",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 219,
+        "ibm_id": "IBM-24-25-01919",
+        "full_name": "IZA NOELLE D. GABUTERO",
+        "lbp_account": "6767014714",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 220,
+        "ibm_id": "IBM-25-26-01935",
+        "full_name": "CHARLES ARON M. DELLA",
+        "lbp_account": "2807224819",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 221,
+        "ibm_id": "IBM-26-27-02298",
+        "full_name": "Xyan justine Zorilla Azucena",
+        "lbp_account": "6766028312",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 222,
+        "ibm_id": "IBM-26-27-02299",
+        "full_name": "Jia A. Batobalani",
+        "lbp_account": "6766030198",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 223,
+        "ibm_id": "IBM-26-27-02300",
+        "full_name": "Shunna May Dorde Garcia",
+        "lbp_account": "6766029882",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 224,
+        "ibm_id": "IBM-26-27-02301",
+        "full_name": "Michelle kate V. Covacha",
+        "lbp_account": "6766026379",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 225,
+        "ibm_id": "IBM-26-27-02302",
+        "full_name": "Kearl Ann D. Dagohoy",
+        "lbp_account": "2806479856",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 226,
+        "ibm_id": "IBM-26-27-02303",
+        "full_name": "Algem Shane Quirante Emejas",
+        "lbp_account": "6766028525",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 227,
+        "ibm_id": "IBM-26-27-02304",
+        "full_name": "Razel P. Capetan",
+        "lbp_account": "6766028274",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 228,
+        "ibm_id": "IBM-26-27-02305",
+        "full_name": "RIZA MAE M. PENDATUN",
+        "lbp_account": "6766030279",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 229,
+        "ibm_id": "IBM-26-27-02306",
+        "full_name": "Mhert Exequiel H. Garcia",
+        "lbp_account": "6766030120",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 230,
+        "ibm_id": "IBM-26-27-02307",
+        "full_name": "Allyzhyrr Gift M. Sevillo",
+        "lbp_account": "6766028320",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 231,
+        "ibm_id": "IBM-26-27-02308",
+        "full_name": "Ashlay Ann P. Busayong",
+        "lbp_account": "6766028649",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 232,
+        "ibm_id": "IBM-26-27-02309",
+        "full_name": "Jovenz Calinawan Sanchez",
+        "lbp_account": "6766028088",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 233,
+        "ibm_id": "IBM-26-27-02310",
+        "full_name": "Beatrize Lumbab Decir",
+        "lbp_account": "6766030180",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32 | Approved"
+    },
+    {
+        "no": 234,
+        "ibm_id": "IBM-26-27-02311",
+        "full_name": "JOHN MICHAEL C. PANGILAN",
+        "lbp_account": "6766030171",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 235,
+        "ibm_id": "IBM-26-27-02312",
+        "full_name": "Hillary Nicole R. Capuyan",
+        "lbp_account": "6766030287",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 236,
+        "ibm_id": "IBM-26-27-02313",
+        "full_name": "Jhon Carlo Jecupe Antaran",
+        "lbp_account": "6766029980",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 237,
+        "ibm_id": "IBM-26-27-02314",
+        "full_name": "Maoerin T. Patpat",
+        "lbp_account": "6766030678",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 238,
+        "ibm_id": "IBM-25-26-02057",
+        "full_name": "RIGENE MAE P. CAYAWAN",
+        "lbp_account": "6767015958",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 239,
+        "ibm_id": "IBM-26-27-02315",
+        "full_name": "Gleiza Shane C. Abelitado",
+        "lbp_account": "6766028100",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 240,
+        "ibm_id": "IBM-26-27-02316",
+        "full_name": "Aldrine Ed T. Alon",
+        "lbp_account": "6766028282",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/16\/2026 16:32"
+    },
+    {
+        "no": 241,
+        "ibm_id": "IBM-26-27-02317",
+        "full_name": "Ralph Vincent Cober Liray",
+        "lbp_account": "6766028452",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 242,
+        "ibm_id": "IBM-26-27-02318",
+        "full_name": "Ivy Pagalangan Tamalon",
+        "lbp_account": "6766029025",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 243,
+        "ibm_id": "IBM-26-27-02319",
+        "full_name": "ELLON JAKE BERDIN DALIGDIG",
+        "lbp_account": "6766028231",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 244,
+        "ibm_id": "IBM-26-27-02320",
+        "full_name": "Mark Moda Pagalangan",
+        "lbp_account": "6766029130",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 245,
+        "ibm_id": "IBM-26-27-02321",
+        "full_name": "John Rhyl P. Angos",
+        "lbp_account": "6766029033",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 246,
+        "ibm_id": "IBM-26-27-02322",
+        "full_name": "Cyril Obrene Refugio",
+        "lbp_account": "6766028975",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 247,
+        "ibm_id": "IBM-26-27-02323",
+        "full_name": "Crezel Joy Calay Pajulio",
+        "lbp_account": "6766029440",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 248,
+        "ibm_id": "IBM-26-27-02324",
+        "full_name": "Niel Rose Martinez Lumayag",
+        "lbp_account": "2806487077",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 249,
+        "ibm_id": "IBM-26-27-02325",
+        "full_name": "Princess Gofimon",
+        "lbp_account": "6766028690",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 250,
+        "ibm_id": "IBM-26-27-02326",
+        "full_name": "Justin Dave Gonato Saavedra",
+        "lbp_account": "6766028738",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 251,
+        "ibm_id": "IBM-26-27-02327",
+        "full_name": "JOHNMARK Caritativo ANQUE",
+        "lbp_account": "6766028584",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 252,
+        "ibm_id": "IBM-26-27-02328",
+        "full_name": "Reniel Dave Villarin Lagurin",
+        "lbp_account": "6766029297",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 253,
+        "ibm_id": "IBM-26-27-02329",
+        "full_name": "Dan Zyrus Audrey Macaranas Sionosa",
+        "lbp_account": "6766029246",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 254,
+        "ibm_id": "IBM-26-27-02330",
+        "full_name": "Blessy Fiona Sentillas Osing",
+        "lbp_account": "6766029084",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 255,
+        "ibm_id": "IBM-26-27-02331",
+        "full_name": "Arnel Tigao Barutan",
+        "lbp_account": "6766030627",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 256,
+        "ibm_id": "IBM-26-27-02332",
+        "full_name": "Gracezamie Sagao Alimama",
+        "lbp_account": "6766030341",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 257,
+        "ibm_id": "IBM-26-27-02333",
+        "full_name": "RACHELLE CESAR Dutosme",
+        "lbp_account": "6766028371",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 258,
+        "ibm_id": "IBM-26-27-02334",
+        "full_name": "Nico Rimando Alambra",
+        "lbp_account": "6766028169",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 259,
+        "ibm_id": "IBM-26-27-02335",
+        "full_name": "Rico Yuzon Angga",
+        "lbp_account": "6766029114",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 260,
+        "ibm_id": "IBM-26-27-02336",
+        "full_name": "Jemar Lawanan Carreon",
+        "lbp_account": "6766025364",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 261,
+        "ibm_id": "IBM-26-27-02337",
+        "full_name": "Althea Megz S. Omanan",
+        "lbp_account": "6766028720",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 262,
+        "ibm_id": "IBM-26-27-02338",
+        "full_name": "Lyka Mae D. Mercado",
+        "lbp_account": "6766028460",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 263,
+        "ibm_id": "IBM-26-27-02339",
+        "full_name": "Rhean G. Gabonales",
+        "lbp_account": "6766029513",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 264,
+        "ibm_id": "IBM-26-27-02340",
+        "full_name": "Fiona G. Reveche",
+        "lbp_account": "6766029823",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 265,
+        "ibm_id": "IBM-26-27-02341",
+        "full_name": "Elfe Marie E. Tagusi",
+        "lbp_account": "6766029793",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 266,
+        "ibm_id": "IBM-26-27-02342",
+        "full_name": "Jetrilyn S. Moda",
+        "lbp_account": "6766029327",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 267,
+        "ibm_id": "IBM-26-27-02343",
+        "full_name": "ARJEAN M. PAGUNAN",
+        "lbp_account": "6766028398",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 268,
+        "ibm_id": "IBM-26-27-02344",
+        "full_name": "Chryzzlle M. Lozada",
+        "lbp_account": "6766028991",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 269,
+        "ibm_id": "IBM-26-27-02345",
+        "full_name": "BERNSAR O. PADILLA",
+        "lbp_account": "6766029548",
+        "status": "ACTIVE",
+        "year_level": "3rd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 270,
+        "ibm_id": "IBM-26-27-02346",
+        "full_name": "SHAICA MAE O. PANDAMON",
+        "lbp_account": "6766028495",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 271,
+        "ibm_id": "IBM-26-27-02347",
+        "full_name": "Princess S. Angos",
+        "lbp_account": "6766028568",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 272,
+        "ibm_id": "IBM-26-27-02348",
+        "full_name": "Cristel Joy R. Encallado",
+        "lbp_account": "6766029874",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 273,
+        "ibm_id": "IBM-26-27-02349",
+        "full_name": "Sean Lean Marc I. Tampos",
+        "lbp_account": "6766028657",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 274,
+        "ibm_id": "IBM-26-27-02350",
+        "full_name": "Roxanne C. Pagonan",
+        "lbp_account": "6766029963",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 275,
+        "ibm_id": "IBM-26-27-02351",
+        "full_name": "Frank A. Flores",
+        "lbp_account": "6766029840",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 276,
+        "ibm_id": "IBM-26-27-02352",
+        "full_name": "Xyrile B. Apalis",
+        "lbp_account": "2076148921",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 277,
+        "ibm_id": "IBM-26-27-02353",
+        "full_name": "Jasmine Sunio",
+        "lbp_account": "6766029289",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 278,
+        "ibm_id": "IBM-26-27-02354",
+        "full_name": "CRISTY JOY MAE J. DOMINGO",
+        "lbp_account": "6766030228",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 279,
+        "ibm_id": "IBM-26-27-02355",
+        "full_name": "MELODY L. PAGALANGAN",
+        "lbp_account": "6766028339",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 280,
+        "ibm_id": "IBM-26-27-02356",
+        "full_name": "Ma. Ana Elizabeth M. Dunlao",
+        "lbp_account": "6766029220",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 281,
+        "ibm_id": "IBM-23-24-01460",
+        "full_name": "AIMLUZELL S. ANDALES",
+        "lbp_account": "6767013270",
+        "status": "ACTIVE",
+        "year_level": "4th Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 282,
+        "ibm_id": "IBM-26-27-02357",
+        "full_name": "Paul John Comendador Sugan",
+        "lbp_account": "6766028533",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 283,
+        "ibm_id": "IBM-26-27-02358",
+        "full_name": "Harold jay P. Bantilan",
+        "lbp_account": "176571136",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 284,
+        "ibm_id": "IBM-26-27-02359",
+        "full_name": "Rochellyn S. Fiel",
+        "lbp_account": "6766029971",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 285,
+        "ibm_id": "IBM-26-27-02360",
+        "full_name": "Fritz Angel A. Comendador",
+        "lbp_account": "6766029602",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 286,
+        "ibm_id": "IBM-26-27-02361",
+        "full_name": "Abegail Jane V. Berjes",
+        "lbp_account": "6766030040",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 287,
+        "ibm_id": "IBM-26-27-02362",
+        "full_name": "Jayloy J. Sardido",
+        "lbp_account": "6766029998",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 288,
+        "ibm_id": "IBM-26-27-02363",
+        "full_name": "CHRISHELL S. CAWAS",
+        "lbp_account": "6766030058",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 289,
+        "ibm_id": "IBM-26-27-02364",
+        "full_name": "Myrr Alliazar D. Maranga",
+        "lbp_account": "6766028622",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 290,
+        "ibm_id": "IBM-26-27-02365",
+        "full_name": "Shania Eunice M. Sobrepeña",
+        "lbp_account": "6766030686",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 291,
+        "ibm_id": "IBM-26-27-02366",
+        "full_name": "Faith Venice W. Caritativo",
+        "lbp_account": "6766028509",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 292,
+        "ibm_id": "IBM-26-27-02367",
+        "full_name": "Jaypee T. Gregorio",
+        "lbp_account": "6766030970",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 293,
+        "ibm_id": "IBM-26-27-02368",
+        "full_name": "Troy Vincent F. Doloricon",
+        "lbp_account": "6766029475",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 294,
+        "ibm_id": "IBM-26-27-02369",
+        "full_name": "Marres Joy B. Diamana",
+        "lbp_account": "6766030201",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 295,
+        "ibm_id": "IBM-26-27-02370",
+        "full_name": "Joshua jim E. Villanueva",
+        "lbp_account": "6766028541",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 296,
+        "ibm_id": "IBM-26-27-02371",
+        "full_name": "Princess Pearl M. Oso",
+        "lbp_account": "6766030961",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 297,
+        "ibm_id": "IBM-26-27-02372",
+        "full_name": "Aimie G. Amestoso",
+        "lbp_account": "6766030945",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52 | Approved"
+    },
+    {
+        "no": 298,
+        "ibm_id": "IBM-26-27-02373",
+        "full_name": "Richard C. Pandian",
+        "lbp_account": "3886121597",
+        "status": "ACTIVE",
+        "year_level": "2nd Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 299,
+        "ibm_id": "IBM-26-27-02374",
+        "full_name": "RHEANES A. MORENTE",
+        "lbp_account": "6766029815",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    },
+    {
+        "no": 300,
+        "ibm_id": "IBM-26-27-02375",
+        "full_name": "Nathan Fillipe Constantino Rule",
+        "lbp_account": "2806467220",
+        "status": "ACTIVE",
+        "year_level": "1st Year",
+        "grant_period": "2026-2027\/1st Sem",
+        "remarks": "Processing-09\/17\/2026 16:52"
+    }
+]

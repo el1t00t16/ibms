@@ -2909,8 +2909,9 @@ function applyAdvancedFilters() {
         const sControl = String(s.controlNo || s.no || '').toLowerCase();
 
         // Normalized strings so "on-hold" matches "on hold" and vice versa
-        const searchNormalized = searchVal.replace(/[-_\s]+/g, ' ');
-        const statusNormalized = sStatus.replace(/[-_\s]+/g, ' ');
+        const searchNormalized = searchVal.replace(/[-_\s\u2013\u2014]+/g, ' ');
+        const statusNormalized = sStatus.replace(/[-_\s\u2013\u2014]+/g, ' ');
+        const remarksNormalized = sRemarks.replace(/[-_\s\u2013\u2014]+/g, ' ');
 
         const matchesSearch = !searchVal || 
             sIbm.includes(searchVal) || 
@@ -2921,6 +2922,7 @@ function applyAdvancedFilters() {
             sStatus.includes(searchVal) ||
             sDbStatus.includes(searchVal) ||
             statusNormalized.includes(searchNormalized) ||
+            remarksNormalized.includes(searchNormalized) ||
             sYear.includes(searchVal) ||
             sRemarks.includes(searchVal) ||
             sControl.includes(searchVal);

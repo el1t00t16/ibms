@@ -1,0 +1,57 @@
+[
+    {
+        "semester_name": "2021-2022\/1st Sem",
+        "semester_order": 1,
+        "is_active": false
+    },
+    {
+        "semester_name": "2021-2022\/2nd Sem",
+        "semester_order": 2,
+        "is_active": false
+    },
+    {
+        "semester_name": "2022-2023\/1st Sem",
+        "semester_order": 3,
+        "is_active": false
+    },
+    {
+        "semester_name": "2022-2023\/2nd Sem",
+        "semester_order": 4,
+        "is_active": false
+    },
+    {
+        "semester_name": "2023-2024\/1st Sem",
+        "semester_order": 5,
+        "is_active": false
+    },
+    {
+        "semester_name": "2023-2024\/2nd Sem",
+        "semester_order": 6,
+        "is_active": false
+    },
+    {
+        "semester_name": "2024-2025\/1st Sem",
+        "semester_order": 7,
+        "is_active": false
+    },
+    {
+        "semester_name": "2024-2025\/2nd Sem",
+        "semester_order": 8,
+        "is_active": false
+    },
+    {
+        "semester_name": "2025-2026\/1st Sem",
+        "semester_order": 9,
+        "is_active": false
+    },
+    {
+        "semester_name": "2025-2026\/2nd Sem",
+        "semester_order": 10,
+        "is_active": false
+    },
+    {
+        "semester_name": "2026-2027\/1st Sem",
+        "semester_order": 11,
+        "is_active": true
+    }
+]
