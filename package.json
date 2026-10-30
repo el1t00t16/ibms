@@ -4,16 +4,21 @@
   "description": "Official web-based management portal for the **Iskolar Bayan ng Malungon (IBM) Program**, LGU Malungon, Sarangani Province.",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "node -e \"const fs = require('fs'); fs.cpSync('assets', 'dist/assets', { recursive: true, force: true }); console.log('✅ Assets copied to dist/assets');\"",
+    "preview": "vite preview",
     "build:ts": "tsc",
-    "watch": "tsc -w"
+    "seed:supabase": "node database/seed_supabase_api.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vite-plugin-pwa": "^2.0.0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

@@ -254,6 +254,41 @@ class SyncEngine {
           }
         }
 
+        if (delta.scholar_semesters && delta.scholar_semesters.length > 0) {
+          for (const ss of delta.scholar_semesters) {
+            await db.scholarSemesters.put({
+              ibmId: ss.ibm_id,
+              semesterName: ss.semester_name,
+              status: ss.status || '',
+              isDeleted: ss.is_deleted,
+              updatedAt: ss.updated_at
+            });
+          }
+        }
+
+        if (delta.graduates && delta.graduates.length > 0) {
+          for (const g of delta.graduates) {
+            await db.graduates.put({
+              ibmId: g.ibm_id,
+              fullName: g.full_name,
+              gender: g.gender || '',
+              tribe: g.tribe || '',
+              school: g.school || '',
+              course: g.course || '',
+              barangay: g.barangay || '',
+              gradYear: g.grad_year || '',
+              yearGraduated: g.year_graduated || g.grad_year || '',
+              honor: g.honor || '',
+              employmentStatus: g.employment_status || '',
+              company: g.company || '',
+              contact: g.contact || '',
+              email: g.email || '',
+              isDeleted: g.is_deleted,
+              updatedAt: g.updated_at
+            });
+          }
+        }
+
         // Update last synced metadata timestamp
         const serverTs = delta.server_timestamp || new Date().toISOString();
         await db.syncMetadata.put({ key: 'last_synced_at', value: serverTs });
