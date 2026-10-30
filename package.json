@@ -1,0 +1,22 @@
+{
+  "name": "ibms",
+  "version": "1.0.0",
+  "description": "Official web-based management portal for the **Iskolar Bayan ng Malungon (IBM) Program**, LGU Malungon, Sarangani Province.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:ts": "tsc",
+    "watch": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "dexie": "^4.4.7"
+  }
+}
