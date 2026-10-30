@@ -1,0 +1,338 @@
+
+    <style>
+        :root {
+            --lgu-navy: #0c2340;
+            --civic-gold: #d97706;
+            --emerald: #059669;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #cbd5e1;
+        }
+        @media print {
+            @page {
+                size: portrait;
+                margin: 8mm 10mm 6mm 10mm;
+            }
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #ffffff !important;
+                color: #0f172a !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body.printing-profile #printProfileArea {
+                position: static !important;
+                display: block !important;
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .profile-dossier {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                break-after: avoid !important;
+                break-inside: avoid !important;
+            }
+            .gov-header, .dossier-table, .remarks-panel, .ledger-table, .dossier-footer {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        }
+
+        .profile-dossier {
+            max-width: 8.2in;
+            margin: 0 auto;
+            padding: 8px 12px;
+            background: #ffffff;
+            color: #0f172a;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.25;
+            box-sizing: border-box;
+        }
+
+        /* ===== HEADER ===== */
+        .gov-header {
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 2.5px solid var(--lgu-navy);
+            position: relative;
+            margin-bottom: 8px;
+        }
+        .gov-header::after {
+            content: '';
+            position: absolute;
+            bottom: -4.5px;
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background: var(--civic-gold);
+        }
+        .main-doc-title {
+            font-size: 15pt;
+            font-weight: 900;
+            color: var(--lgu-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 4px 0 2px 0;
+            line-height: 1.2;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-bar {
+            background: var(--lgu-navy);
+            color: #ffffff;
+            padding: 4px 10px;
+            font-size: 8pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-top: 9px;
+            margin-bottom: 4px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .section-bar-gold {
+            color: #fde68a;
+            font-weight: 800;
+        }
+
+        /* ===== DATA TABLES ===== */
+        .dossier-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 8.2pt;
+            margin-bottom: 2px;
+        }
+        .dossier-table td {
+            padding: 4px 8px;
+            border: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+        .lbl-cell {
+            background: #f8fafc;
+            color: #475569;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 7.2pt;
+            letter-spacing: 0.03em;
+            width: 16%;
+        }
+        .val-cell {
+            color: #0f172a;
+            width: 34%;
+        }
+        .val-cell.bold {
+            font-weight: 700;
+        }
+        .val-cell.highlight {
+            font-size: 9.5pt;
+            font-weight: 800;
+            color: var(--lgu-navy);
+        }
+
+        /* ===== REMARKS CALLOUT ===== */
+        .remarks-panel {
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid var(--civic-gold);
+            background: #f8fafc;
+            padding: 5px 10px;
+            border-radius: 0 4px 4px 0;
+            font-size: 8.2pt;
+            color: #1e293b;
+            min-height: 22px;
+            line-height: 1.35;
+        }
+
+        /* ===== FINANCIAL LEDGER ===== */
+        .ledger-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--border-color);
+            font-size: 8.2pt;
+        }
+        .ledger-table th {
+            background: #f1f5f9;
+            color: var(--lgu-navy);
+            border: 1px solid var(--border-color);
+            padding: 5px 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 7.5pt;
+            letter-spacing: 0.04em;
+        }
+        .ledger-table td {
+            padding: 3.5px 8px;
+            border: 1px solid var(--border-color);
+        }
+        .ledger-table tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .badge-ok {
+            background: #dcfce7;
+            color: #15803d;
+            border: 1px solid #86efac;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 7.2pt;
+            font-weight: 800;
+        }
+        .ledger-total-row td {
+            background: #f1f5f9 !important;
+            border-top: 2px solid var(--lgu-navy);
+            border-bottom: 2px solid var(--lgu-navy);
+            padding: 5px 8px;
+        }
+
+        /* ===== SIGNATURES & AUDIT ===== */
+        .dossier-footer {
+            margin-top: 14px;
+            padding-top: 8px;
+            border-top: 1px solid #cbd5e1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7.2pt;
+        }
+        .audit-stamp {
+            color: #64748b;
+            line-height: 1.4;
+        }
+    </style>
+
+    <div class="profile-dossier">
+        <!-- HEADER -->
+        <header class="gov-header">
+            <h1 class="main-doc-title">IBM Grantee Information Sheet</h1>
+        </header>
+
+        <!-- SECTION I: IDENTIFICATION -->
+        <div class="section-bar">
+            <span>I. Grantee Identification &amp; Demographic Profile</span>
+            <span class="section-bar-gold">Control No: 1</span>
+        </div>
+        <table class="dossier-table">
+            <tr>
+                <td class="lbl-cell">IBM ID No.</td>
+                <td class="val-cell bold" style="font-family: monospace; font-size: 9.5pt; color: #1e40af;">IBM-21-22-00001</td>
+                <td class="lbl-cell">Official Status</td>
+                <td class="val-cell">
+                    <span style="background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; font-weight: 800; font-size: 7.5pt; padding: 2px 7px; border-radius: 3px;">
+                        GRADUATED
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Full Name</td>
+                <td class="val-cell highlight" colspan="3">DEMIE KHISSA VANESSA SAMULDE PACHECO</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Sex &bull; Tribe</td>
+                <td class="val-cell bold">Male &bull; Ilonggo</td>
+                <td class="lbl-cell">Contact No.</td>
+                <td class="val-cell" style="font-family: monospace;">9462528273</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Barangay Address</td>
+                <td class="val-cell">Poblacion, Malungon, Sarangani</td>
+                <td class="lbl-cell">Land Bank Account</td>
+                <td class="val-cell" style="font-family: monospace; font-weight: 600;">1234-5678-90</td>
+            </tr>
+        </table>
+
+        <!-- SECTION II: ACADEMIC PROFILE -->
+        <div class="section-bar">
+            <span>II. Academic &amp; Institutional Enrollment Record</span>
+            <span style="font-size: 7.2pt; opacity: 0.9;">Curricular Standing</span>
+        </div>
+        <table class="dossier-table">
+            <tr>
+                <td class="lbl-cell">School / University</td>
+                <td class="val-cell bold" colspan="3" style="font-size: 8.8pt;">RMMC</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Degree Program / Course</td>
+                <td class="val-cell bold" colspan="3">BSED</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Starting Academic Year</td>
+                <td class="val-cell">2021-2022</td>
+                <td class="lbl-cell">Current Year Level</td>
+                <td class="val-cell bold" style="color: #0c2340;">4th Year</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">School ID No.</td>
+                <td class="val-cell" style="font-family: monospace;">2011310003</td>
+                <td class="lbl-cell">Grant Type</td>
+                <td class="val-cell">Iskolar Bayan ng Malungon (Municipal Grant)</td>
+            </tr>
+        </table>
+
+        <!-- SECTION III: CASE HISTORY & REMARKS -->
+        <div class="section-bar">
+            <span>III. Administrative Case History &amp; Remarks</span>
+            <span style="font-size: 7.2pt; opacity: 0.9;">Program Standing</span>
+        </div>
+        <div class="remarks-panel">
+            Honors
+        </div>
+
+        <!-- SECTION IV: FINANCIAL DISBURSEMENT HISTORY -->
+        <div class="section-bar">
+            <span>IV. Financial Disbursement History &amp; Grant Ledger</span>
+            <span class="section-bar-gold">Cumulative Disbursed: ₱5,000.00</span>
+        </div>
+        <p style="font-size: 7.2pt; color: #64748b; margin: 3px 0 5px 0;">
+            Stipend rate coverage: ₱5,000.00/term prior to 2nd Semester AY 2023-2024; ₱7,000.00/term onwards upon verified 'OK' status and Land Bank LGU disbursement.
+        </p>
+        <table class="ledger-table">
+            <thead>
+                <tr>
+                    <th style="width: 6%; text-align: center;">No.</th>
+                    <th style="width: 38%; text-align: left;">Academic Period / Semester</th>
+                    <th style="width: 16%; text-align: center;">Record Status</th>
+                    <th style="width: 20%; text-align: center;">Date of Release</th>
+                    <th style="width: 20%; text-align: right;">Amount Disbursed</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td style="text-align: center; font-weight: 600; color: #475569;">1</td>
+                        <td style="font-weight: 700; color: #0f172a;">2021-2022/2nd Sem</td>
+                        <td style="text-align: center;"><span class="badge-ok">OK</span></td>
+                        <td style="text-align: center; font-family: monospace; font-size: 8.5pt; color: #334155;">—</td>
+                        <td style="text-align: right; font-weight: 800; font-family: monospace; color: #047857; font-size: 9pt;">₱ 5,000.00</td>
+                    </tr>
+                
+                <tr class="ledger-total-row">
+                    <td colspan="4" style="text-align: right; font-weight: 800; font-size: 8.5pt; text-transform: uppercase; color: var(--lgu-navy);">
+                        Cumulative Grant Stipend Received:
+                    </td>
+                    <td style="text-align: right; font-weight: 900; font-size: 10pt; font-family: monospace; color: #047857;">
+                        ₱ 5,000.00
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- FOOTER -->
+        <footer class="dossier-footer">
+            <div class="audit-stamp">
+                <div><strong>Iskolar Bayan ng Malungon Management System (e-IBM)</strong></div>
+                <div>Official System-Generated Document &bull; Generated from Central Database</div>
+            </div>
+            <div style="color: #64748b; font-size: 7.2pt; text-align: right; line-height: 1.4;">
+                <div>Printed: 9/23/2026, 9:16:09 PM</div>
+                <div>System Operator: Administrator</div>
+            </div>
+        </footer>
+    </div>

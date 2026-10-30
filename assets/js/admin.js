@@ -1,0 +1,5465 @@
+// --- STATIC DATASETS ---
+    const schoolsList = [
+        "Adventist College of Technology, Inc.", "AMYA Polytechnic College. Inc", "Arriesgado college Foundation Inc", "Assumption College of Davao", "Aviation Institute of General Santos City", "AVS Aeroviation School of Mindanao Inc.", "Brokenshire College - Davao City", "Brokenshire College SOCSKSARGEN, Inc.", "Carmelo C. Delos Cientos Sr. National trade school (CCNTS- TESDA)", "Central Mindanao University", "Cor Jesu College, Inc.", "Cronasia Foundation College Inc.", "Davao Central College", "Davao del Sur State College", "Davao Doctors College", "Davao Medical School Foundation", "Davao Merchant Marine Academy College of Southern Philippines", "Envirogreen School of Technology", "Filipino Canadian Community College", "General Santos Academy, INC.", "General Santos Doctors Medical School Foundation, INC.", "GENSAN COLLEGE OF TECHNOLOGY", "Gensantos Foundation College, Inc.", "GLAN INSTITUTE TECHNOLOGY", "Goldenstate College - GSC", "Goldenstate College - Malandag", "Green Valley College Foundation", "Holy Child College of Davao", "Holy Cross of Davao College, Inc.", "Holy Trinity College of General Santos City", "i-Link College of Science and Technology, INC", "INTERNATIONAL SCHOOL OF ARTS AND CULINARY OF DAVAO CITY", "Joji Ilagan International School", "Lyceum of the Philippines - Davao", "MATS College of Technology", "MINDANAO KOKUSAI DAIGKKU", "Mindanao Medical Foundation College", "Mindanao Polytechnic College", "Mindanao Regional Bible College", "Mindanao State University - GSC", "Mindanao State University - IIT", "MMG College", "Mountain View College of Bukidnon", "New Brighton School of the Philippines, INC", "Notre Dame of Dadiangas University", "Pacific Southbay College, INC", "Palawan State University", "Polytechnic College of Davao del Sur, Inc.", "Polytechnic College of General Santos City, Inc.", "Primasia Foundation College, Inc.", "Ramon Magsaysay Memorial Colleges", "Regency Polytechnic College INC.", "South East Asian Institute of Technology, Inc.", "South Philippine Adventist College", "Southeastern College of Padada", "Southpoint College of Arts and Technology, Inc.", "SPAMAST - Matti, Digos", "St. Alexius College, INC", "St. John Paul II College of Davao City", "St. Peter's College of Toril, INC", "STI College General Santos City", "Stratford International School", "Sultan Kudarat State University", "The Rizal Memorial Colleges, Inc.", "University of Immaculate Conception", "University of Mindanao - Davao", "University of Mindanao - Tagum Branch", "University of Mindanao Digos College", "University of Science and Technology of Southern Philippines", "University of Southeastern Philippines", "University of Southern Mindanao", "University of the Philippines Mindanao", "Villamor College of Business and Arts", "MSU-MAGUINDANAO", "Agro Industrial Foundation"
+    ];
+
+    const coursesList = [
+        "AB Community Development", "AB Economics", "AB English", "AB Filipino", "AB History", "AB Human Resource Managament", "AB Literary and Cultural Studies", "AB Political Science", "AB Psychology", "AB Sociology", "AB Theology", "Aircraft Maintenance Technology", "B Christian Ministry", "B Early Childhood Education", "B Elementary Education", "B English Education", "B English Language", "B Forensic Science", "B Human Services", "B Library and Information Science", "B Multimedia Arts", "B Physical Education", "B Public Administration", "B Secondary Education", "B Special Needs Education", "B Technical Vocational Education", "B Technology and Livelihood Education", "Bachelor of Science in Fine Arts Major in Painting", "BS Accountancy", "BS Accounting Information System", "BS Aeronautical Engineering", "BS Agribusiness Management", "BS Agricultural Technology", "BS Agriculture", "BS Agriculture Agronomy", "BS Agriculture and Biosystems Engineering", "BS Agriculture Economics", "BS Agroforestry", "BS Anthropology", "Bs Architecture", "BS Arts in Psychology", "BS Biology", "BS Business Administration", "BS Business Administration Human Resource Management", "BS Business Administration Operational Management", "BS Chemical Engineering", "BS Civil Engineering", "BS Community Development", "BS Computer Engineering", "BS Computer Science", "BS Criminology", "BS Culinary Management", "BS Customs Administration", "BS Economics", "BS Electrical Engineering", "BS Electronics and Communication Engineering", "BS Electronics Engineering", "BS Engineering Technology", "BS Entrepreneurship", "BS Environmental Science", "BS Exercise and Sports Science", "BS Fisheries", "BS Forestry", "BS Geodetic Engineering", "BS Hospitality Management", "BS Hotel and Restaurant Management", "BS Hotel Management", "BS Industrial Engineering", "BS Information System and Arts", "BS Information Technology", "BS International Culinary", "BS Legal Management", "BS Management Accounting", "BS Marine Biology", "BS Marine Engineering", "BS Marine Transportation", "BS Mathematics", "BS Mechanical Engineering", "BS Medical Technology", "BS Midwifery", "BS Nursing", "BS Occupation Therapy", "BS Office Administration", "BS Pertroleum Engineering", "BS Pharmacy", "BS Psychology", "BS Radiologic Technology", "BS Social Work", "BS Technology and Livelihood Education", "BS Tourism Management", "BS Veterinary Technology", "Certificate of Agricultural Science", "College of Arts and Sciences", "DIPLOMA IN FISH PROCESSING", "DIPLOMA IN FISH TECH - AQUACULTURE", "Diploma in Information Technology", "Diploma of Automotive", "Diploma of Midwifery","BA Communication"
+    ];
+
+    const barangaysList = [
+        "Alkikan", "Ampon", "Atlae", "Banahaw", "Banate", "Blaan", "Datal Batong", "Datal Bila", "Datal Tampal", "J.P. Laurel", "Kawayan", "Kibala", "Kiblat", "Kinabalan", "Lower Mainit", "Lutay", "Malabod", "Malalag Cogon", "Malandag", "Malungon Gamay", "Nagpan", "Panamin", "Poblacion", "San Juan", "San Miguel", "San Roque", "Talus", "Tamban", "Upper Biangan", "Upper Lumabat", "Upper Mainit"
+    ];
+
+    const tribesList = [
+        "Cebuano", "Ilonggo", "Blaan", "Tagakaulo", "Manobo", "Islam", "Tagalog", "Mandaya", "Ilocano"
+    ];
+
+    let dbData = [], pData = [], sems = [], gradData = [], otherGrantsData = [], activeRef = null;
+    let selectedIds = new Set();
+    let currentViewScholar = null;
+    let isEditMode = false;
+    window.isEditMode = isEditMode;
+    
+    // Reporting Variables
+    let currentReportList = [];
+    let currentReportFilter = "";
+    let currentReportCategory = "";
+    let reportCounts = {};
+    let reportChartInstance = null;
+    let currentTrackingList = [];
+    let fullTrackingData = [];
+    let currentTrackingCategory = 'ALL';
+
+    // Pagination Variables for Report Details
+    let rCurrentData = [];
+    let rCurrentPage = 1;
+    const rRowsPerPage = 10;
+
+    // Pagination Variables for Iskolar Registry
+    let vCurrentPage = 1;
+    const vRowsPerPage = 20; 
+    let vCurrentData = [];
+
+    // Pagination Variables for Payroll Registry
+    let pCurrentPage = 1;
+    const pRowsPerPage = 20; 
+    let pCurrentData = [];
+
+    window.onload = () => { 
+        populateDropdowns(); 
+        updateClock(); 
+        document.getElementById('d-date').valueAsDate = new Date();
+        document.getElementById('adaDate').valueAsDate = new Date();
+    };
+
+    window.promptAddGraduate = function(ibmId, name) {
+    Swal.fire({
+        title: '🎓 Add to Graduates DB',
+        html: `
+            <div class="text-start mb-3">
+                <label class="form-label text-sm text-gray-700" style="font-weight:bold;">Student Name</label>
+                <input type="text" class="form-control" value="${name}" disabled style="background:#f3f4f6;">
+            </div>
+            <div class="text-start mb-3">
+                <label class="form-label text-sm text-gray-700" style="font-weight:bold;">Graduation Year <span style="color:red;">*</span></label>
+                <input type="number" id="gradYear" class="form-control" value="${new Date().getFullYear()}" required>
+            </div>
+            <div class="text-start mb-3">
+                <label class="form-label text-sm text-gray-700" style="font-weight:bold;">Latin Honor / Award</label>
+                <input type="text" id="latinHonor" class="form-control" placeholder="Optional (e.g. Cum Laude)">
+            </div>
+        `,
+        showCancelButton: true,
+        confirmButtonText: 'Confirm & Add',
+        confirmButtonColor: '#059669',
+        preConfirm: () => {
+            const year = document.getElementById('gradYear').value;
+            const honor = document.getElementById('latinHonor').value;
+            if (!year) Swal.showValidationMessage('Year is required');
+            return { year, honor };
+        }
+    }).then(result => {
+        if (result.isConfirmed) {
+            Swal.fire({ title: 'Adding to Database...', didOpen: () => Swal.showLoading() });
+            google.script.run
+                .withSuccessHandler(res => {
+                    if (res.success) {
+                        Swal.fire('Success!', res.message, 'success');
+                        loadData(); // Reload table
+                        if (typeof google !== 'undefined' && google.script && google.script.run) {
+                            google.script.run.withSuccessHandler(r => {
+                                gradData = r || [];
+                                if (typeof renderAlumniTable === 'function') renderAlumniTable();
+                                if (typeof updateDashboardStats === 'function') updateDashboardStats();
+                            }).getGraduatesData();
+                        }
+                    } else Swal.fire('Error', res.message, 'error');
+                })
+                .addToGraduatesDb(ibmId, result.value.year, result.value.honor);
+        }
+    });
+}
+
+    // --- NEW: BATCH GRADUATE LOGIC ---
+    function openBatchGraduateModal() {
+        Swal.fire({
+            title: '🎓 Batch Add to Graduates',
+            html: `
+                <p style="margin-bottom: 12px; color: var(--text-secondary); font-weight: 500;">
+                    You are about to move <strong style="color: var(--primary);">${selectedIds.size}</strong> selected scholar(s) to the Alumni Database.
+                </p>
+                <div class="text-start mb-3" style="text-align: left;">
+                    <label class="form-label text-sm text-gray-700" style="font-weight:bold; font-size: 0.8rem;">Graduation Year <span style="color:red;">*</span></label>
+                    <input type="number" id="batchGradYear" class="form-control" value="${new Date().getFullYear()}" placeholder="e.g. 2026" required>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); text-align: left; margin-top: 8px;">
+                    * Latin honors should be added individually after batching if needed. Duplicate entries will be automatically skipped.
+                </p>
+            `,
+            showCancelButton: true,
+            confirmButtonText: 'Confirm Batch',
+            confirmButtonColor: '#059669',
+            preConfirm: () => {
+                const year = document.getElementById('batchGradYear').value;
+                if (!year) Swal.showValidationMessage('Graduation Year is required');
+                return { year };
+            }
+        }).then(result => {
+            if (result.isConfirmed) {
+                const payload = { ids: Array.from(selectedIds), gradYear: result.value.year };
+                toggleLoader(true);
+                google.script.run
+                    .withSuccessHandler(res => {
+                        toggleLoader(false);
+                        selectedIds.clear(); // Reset Selection
+                        updateBatchBtn();
+                        loadData(); // Refresh Tables
+                        Swal.fire('Batch Completed!', res.message, 'success');
+                    })
+                    .withFailureHandler(err => {
+                        toggleLoader(false);
+                        Swal.fire('Error', err.message, 'error');
+                    })
+                    .batchAddToGraduatesDb(payload);
+            }
+        });
+    }
+
+    
+
+function openBatchOtherGrantModal() {
+    Swal.fire({
+        title: '🏅 Batch Add to Other Grants',
+        html: `
+            <p style="margin-bottom: 12px; color: var(--text-secondary); font-weight: 500;">
+                You are about to move <strong style="color: var(--primary);">${selectedIds.size}</strong> selected scholar(s) to the Other Grants Database.
+            </p>
+            <div class="text-start mb-3" style="text-align: left;">
+                <label class="form-label text-sm text-gray-700" style="font-weight:bold; font-size: 0.8rem;">Year <span style="color:red;">*</span></label>
+                <input type="number" id="batchOgYear" class="form-control" value="${new Date().getFullYear()}" required>
+            </div>
+            <div class="text-start mb-3" style="text-align: left;">
+                <label class="form-label text-sm text-gray-700" style="font-weight:bold; font-size: 0.8rem;">Grant Name / Details <span style="color:red;">*</span></label>
+                <input type="text" id="batchOgName" class="form-control" placeholder="e.g. CHED TDP" required>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--danger); text-align: left; margin-top: 8px;">
+                ⚠️ Warning: All selected scholars will be automatically marked as <strong>DELISTED</strong>.
+            </p>
+        `,
+        showCancelButton: true,
+        confirmButtonText: 'Confirm Batch',
+        confirmButtonColor: '#e11d48',
+        preConfirm: () => {
+            const year = document.getElementById('batchOgYear').value;
+            const grantName = document.getElementById('batchOgName').value;
+            if (!year) Swal.showValidationMessage('Year is required');
+            if (!grantName) Swal.showValidationMessage('Grant Name is required');
+            return { year, grantName };
+        }
+    }).then(result => {
+        if (result.isConfirmed) {
+            const payload = { ids: Array.from(selectedIds), grantName: result.value.grantName, year: result.value.year };
+            toggleLoader(true);
+            google.script.run
+                .withSuccessHandler(res => {
+                    toggleLoader(false);
+                    selectedIds.clear(); 
+                    updateBatchBtn();
+                    loadData(); 
+                    Swal.fire('Batch Completed!', res.message, 'success');
+                })
+                .withFailureHandler(err => {
+                    toggleLoader(false);
+                    Swal.fire('Error', err.message, 'error');
+                })
+                .batchAddToOtherGrantsDb(payload);
+        }
+    });
+}
+
+
+    // --- UPDATED LOADER LOGIC ---
+    let loaderInterval;
+
+    function toggleLoader(show) {
+        const loader = document.getElementById('loader');
+        const bar = document.getElementById('loaderBar');
+        const txt = document.getElementById('loaderText');
+        
+        if (show) {
+            loader.style.display = 'flex';
+            let width = 0;
+            bar.style.width = '0%';
+            txt.innerText = 'Processing... 0%';
+            
+            clearInterval(loaderInterval);
+            loaderInterval = setInterval(() => {
+                // Increment logic: Fast at start, slow at end to fake progress
+                if (width >= 90) {
+                    if(width < 95) width += 0.1; // Crawl at the end
+                } else {
+                    width += Math.random() * 5; // Random jumps
+                }
+                bar.style.width = width + '%';
+                txt.innerText = `Processing... ${Math.floor(width)}%`;
+            }, 200);
+        } else {
+            clearInterval(loaderInterval);
+            bar.style.width = '100%';
+            txt.innerText = 'Complete! 100%';
+            
+            setTimeout(() => {
+                loader.style.display = 'none';
+                bar.style.width = '0%'; // Reset for next time
+            }, 600); // Short delay to see the 100% completion
+        }
+    }
+
+    // --- LOGIN HANDLER ---
+    document.getElementById('loginForm').onsubmit = (e) => {
+        e.preventDefault();
+        const user = document.getElementById('loginUser').value;
+        const pass = document.getElementById('loginPass').value;
+        const btn = e.target.querySelector('button');
+        
+        btn.innerText = "Authenticating...";
+        btn.disabled = true;
+
+        google.script.run.withSuccessHandler(res => {
+            if(res.success) {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('appLayout').style.display = 'block';
+                // Initialize App Data
+                loadData();
+                loadSems();
+            }
+        }).withFailureHandler(err => {
+            btn.innerText = "Secure Login";
+            btn.disabled = false;
+            Swal.fire('Login Failed', err.message, 'error');
+        }).loginUser(user, pass);
+    };
+
+    // --- LOGOUT HANDLER ---
+    function logout(){
+        if(confirm('Are you sure you want to log out?')) {
+            google.script.run.withSuccessHandler(function() {
+                // Clear state
+                dbData = []; pData = []; gradData = [];
+                document.getElementById('loginUser').value = '';
+                document.getElementById('loginPass').value = '';
+                const btn = document.querySelector('#loginForm button');
+                btn.innerText = "Secure Login";
+                btn.disabled = false;
+                
+                // Swap views
+                document.getElementById('appLayout').style.display = 'none';
+                document.getElementById('loginPage').style.display = 'flex';
+            }).logoutUser();
+        }
+    }
+    
+
+    function populateDropdowns() {
+        const schoolOpts = schoolsList.map(s => `<option value="${s}">`).join('');
+        document.getElementById('dl-schools').innerHTML = schoolOpts;
+        const courseOpts = coursesList.map(c => `<option value="${c}">`).join('');
+        document.getElementById('dl-courses').innerHTML = courseOpts;
+        const brgyOpts = '<option value="">Select Barangay</option>' + barangaysList.map(b => `<option value="${b}">${b}</option>`).join('');
+        document.getElementById('ns-barangay').innerHTML = brgyOpts;
+        const tribeOpts = '<option value="">Select Tribe</option>' + tribesList.map(t => `<option value="${t}">${t}</option>`).join('');
+        document.getElementById('ns-tribe').innerHTML = tribeOpts;
+    }
+
+    function updateClock() { document.getElementById('currentTime').innerText = new Date().toLocaleString(); setTimeout(updateClock, 1000); }
+    
+    // NEW: Function to prompt and add a new semester
+    function addNewSemesterDialog() {
+        Swal.fire({
+            title: 'Add New Semester',
+            input: 'text',
+            inputLabel: 'Semester Name',
+            inputPlaceholder: 'e.g. 2026-2027/1st Sem',
+            showCancelButton: true,
+            confirmButtonText: 'Add Semester',
+            preConfirm: (value) => {
+                if (!value) {
+                    Swal.showValidationMessage('Semester name is required');
+                } else if (sems.includes(value)) {
+                     Swal.showValidationMessage('This semester already exists');
+                }
+                return value;
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                toggleLoader(true);
+                google.script.run
+                    .withSuccessHandler((res) => {
+                        toggleLoader(false);
+                        Swal.fire('Success', res.message, 'success');
+                        loadSems(); // Reload semesters into dropdowns
+                        loadData(); // Reload data
+                    })
+                    .withFailureHandler((error) => {
+                        toggleLoader(false);
+                        Swal.fire('Error', error.message, 'error');
+                    })
+                    .addNewSemester(result.value);
+            }
+        });
+    }
+
+    function loadSems() { 
+        google.script.run.withSuccessHandler(res => { 
+            sems = res; 
+            const opts = '<option value="">Select Period</option>' + res.map(s => `<option value="${s}">${s}</option>`).join('');
+            document.getElementById('f-period').innerHTML = opts; 
+            document.getElementById('b-period').innerHTML = opts; 
+            document.getElementById('reportSem').innerHTML = opts; 
+            document.getElementById('reportPrevSem').innerHTML = opts; 
+            
+            // Also update the active semester dropdown in Requirements tab
+            const reqSel = document.getElementById('reqActiveSemester');
+            const currentReqVal = reqSel.value;
+            reqSel.innerHTML = res.map(s => `<option value="${s}">${s}</option>`).join('');
+            if(currentReqVal && res.includes(currentReqVal)) {
+                reqSel.value = currentReqVal;
+            }
+            
+            // Update the Period Dropdown for ADA
+            const adaPeriodSelects = document.querySelectorAll('.ada-period');
+            adaPeriodSelects.forEach(select => {
+                 const currentVal = select.value;
+                 select.innerHTML = '<option value="">Select Period</option>' + res.map(s => `<option value="${s}">${s}</option>`).join('');
+                 if(currentVal && res.includes(currentVal)) {
+                     select.value = currentVal;
+                 }
+            });
+
+            // --- NEW: Update dynamic text in Advanced Filter panel ---
+            updateFilterSemText();
+
+            // Update stats whenever semesters are updated
+            updateStats();
+
+        }).getAvailableSemesters(); 
+    }
+
+    // Function to dynamically update labels in the "Semester Status" filter
+    function updateFilterSemText() {
+        if (!sems || sems.length === 0) return;
+        const currentSem = sems[sems.length - 1];
+        const prevSem = sems.length > 1 ? sems[sems.length - 2] : currentSem;
+        
+        const baselineEl = document.getElementById('stat-total-active');
+        const bVal = baselineEl ? baselineEl.innerText : '925';
+        const optBase = document.getElementById('opt-active-baseline');
+        if (optBase) optBase.innerText = `🎓 Active Scholars (Baseline: ${bVal})`;
+
+        const optCurr = document.getElementById('opt-active-curr');
+        if (optCurr) optCurr.innerText = `✅ Active: ${currentSem}`;
+        const optPrev = document.getElementById('opt-active-prev');
+        if (optPrev) optPrev.innerText = `⏳ Active: ${prevSem}`;
+        const optPend = document.getElementById('opt-pending');
+        if (optPend) optPend.innerText = `⚠️ Pending (${prevSem} -> ${currentSem})`;
+    }
+    
+    function loadData() {
+    toggleLoader(true);
+    google.script.run.withSuccessHandler(res => { 
+        dbData = res; 
+        selectedIds.clear(); // Reset selections
+        updateBatchBtn();
+        
+        // Initial render with full data, reset page to 1
+        vCurrentPage = 1;
+        renderVTable(dbData); 
+        
+        updateStats(); 
+        toggleLoader(false); 
+    }).getData();
+    
+    google.script.run.withSuccessHandler(res => { 
+        pData = res; 
+        pCurrentPage = 1; // Reset
+        renderPTable(res); 
+    }).getPayrollData();
+
+    // LOAD ALUMNI DATA
+    google.script.run.withSuccessHandler(res => { 
+        gradData = res; 
+    }).getGraduatesData();
+
+    // LOAD OTHER GRANTS DATA
+    google.script.run.withSuccessHandler(res => { 
+        otherGrantsData = res; 
+    }).getOtherGrantsData();
+}
+
+    function switchTab(tab) {
+    // 1. Hide all tab contents
+    document.getElementById('verificationTab').style.display = 'none';
+    document.getElementById('payrollTab').style.display = 'none';
+    document.getElementById('reportsTab').style.display = 'none';
+    document.getElementById('requirementsTab').style.display = 'none';
+
+    // 2. Remove 'active' class from all tab buttons
+    const tabs = document.querySelectorAll('.nav-tab');
+    tabs.forEach(t => t.classList.remove('active'));
+
+    // 3. Smartly highlight the clicked tab (ignores HTML order)
+    tabs.forEach(t => {
+        if (t.getAttribute('onclick').includes(tab)) {
+            t.classList.add('active');
+        }
+    });
+
+    // 4. Show the correct content and trigger logic
+    if (tab === 'verification') {
+        document.getElementById('verificationTab').style.display = 'block';
+    } else if (tab === 'payroll') {
+        document.getElementById('payrollTab').style.display = 'block';
+    } else if (tab === 'requirements') {
+        document.getElementById('requirementsTab').style.display = 'block';
+        loadRequirementsData(); // Fetch requirements data
+    } else if (tab === 'reports') {
+        document.getElementById('reportsTab').style.display = 'block';
+        if (typeof switchReportSubTab === 'function') {
+            switchReportSubTab(currentActiveReportTab || 'analytics');
+        }
+    }
+}
+
+    // --- REPORTING & MATRIX EXECUTIVE ANALYTICS SUITE ---
+
+    let currentActiveReportTab = 'analytics';
+    let currentDrilldownList = [];
+
+    function switchReportSubTab(tabName) {
+        currentActiveReportTab = tabName;
+        
+        // 1. Update sub-tab buttons
+        const tabs = ['analytics', 'matrices', 'tracking', 'alumni'];
+        tabs.forEach(t => {
+            const btn = document.getElementById('btnReportTab-' + t);
+            if (btn) {
+                if (t === tabName) {
+                    btn.classList.add('btn-lgu-primary', 'active');
+                    btn.classList.remove('btn-lgu-ghost');
+                } else {
+                    btn.classList.remove('btn-lgu-primary', 'active');
+                    btn.classList.add('btn-lgu-ghost');
+                }
+            }
+        });
+
+        // 2. Hide all sub-views
+        const containers = {
+            'analytics': 'standardSummaryContainer',
+            'matrices': 'matrixSummaryContainer',
+            'tracking': 'trackingSummaryContainer',
+            'alumni': 'alumniMatrixContainer'
+        };
+
+        Object.values(containers).forEach(cId => {
+            const el = document.getElementById(cId);
+            if (el) el.style.display = 'none';
+        });
+
+        // 3. Show selected sub-view
+        const activeContainer = document.getElementById(containers[tabName]);
+        if (activeContainer) activeContainer.style.display = 'block';
+
+        // 4. Trigger data generator
+        if (tabName === 'analytics') {
+            generateReport();
+        } else if (tabName === 'matrices') {
+            generateMatrixReport();
+        } else if (tabName === 'tracking') {
+            generateTrackingMatrix();
+        } else if (tabName === 'alumni') {
+            generateGraduatesMatrix();
+        }
+    }
+    window.switchReportSubTab = switchReportSubTab;
+
+    function toggleReportInputs() {
+        const mode = document.getElementById('reportMode') ? document.getElementById('reportMode').value : 'utilized';
+        const prevGroup = document.getElementById('prevSemGroup');
+        const helpText = document.getElementById('targetSemHelp');
+        const countLabel = document.getElementById('reportTotalLabel');
+        const totalCount = document.getElementById('reportTotalCount');
+        
+        if (mode === 'pending') {
+            if (prevGroup) prevGroup.style.display = 'block';
+            if (helpText) helpText.innerText = "Finds scholars active in baseline but unrenewed in target.";
+            if (countLabel) countLabel.innerText = "Pending Renewals";
+            if (totalCount) totalCount.style.color = "var(--warning)";
+        } else if (mode === 'active_baseline') {
+            if (prevGroup) prevGroup.style.display = 'none';
+            if (helpText) helpText.innerText = "Enrolled Active baseline cohort (925 scholars).";
+            if (countLabel) countLabel.innerText = "Active Baseline Scholars";
+            if (totalCount) totalCount.style.color = "var(--primary)";
+        } else if (mode === 'all') {
+            if (prevGroup) prevGroup.style.display = 'none';
+            if (helpText) helpText.innerText = "All scholar records in the system masterlist.";
+            if (countLabel) countLabel.innerText = "Total Masterlist Count";
+            if (totalCount) totalCount.style.color = "var(--primary)";
+        } else if (mode === 'overstaying') {
+            if (prevGroup) prevGroup.style.display = 'none';
+            if (helpText) helpText.innerText = "Scholars enrolled for 8 or more semesters.";
+            if (countLabel) countLabel.innerText = "Overstaying (Sem 8+)";
+            if (totalCount) totalCount.style.color = "#8b5cf6";
+        } else if (mode === 'atrisk') {
+            if (prevGroup) prevGroup.style.display = 'none';
+            if (helpText) helpText.innerText = "Active status but with 2 consecutive blank semesters.";
+            if (countLabel) countLabel.innerText = "Pre-Delisted / At-Risk";
+            if (totalCount) totalCount.style.color = "var(--danger)";
+        } else {
+            if (prevGroup) prevGroup.style.display = 'none';
+            if (helpText) helpText.innerText = 'Counts scholars with "OK" in target semester.';
+            if (countLabel) countLabel.innerText = "Certified Scholars (Paid)";
+            if (totalCount) totalCount.style.color = "var(--primary)";
+        }
+        
+        generateReport();
+    }
+
+    function resetReportFilters() {
+        if (document.getElementById('reportFilterBrgy')) document.getElementById('reportFilterBrgy').value = '';
+        if (document.getElementById('reportFilterYear')) document.getElementById('reportFilterYear').value = '';
+        if (document.getElementById('reportFilterSex')) document.getElementById('reportFilterSex').value = '';
+        if (document.getElementById('reportFilterStatus')) document.getElementById('reportFilterStatus').value = '';
+        generateReport();
+    }
+    window.resetReportFilters = resetReportFilters;
+
+    function getFilteredScholars() {
+        const mode = document.getElementById('reportMode') ? document.getElementById('reportMode').value : 'utilized';
+        const sem = document.getElementById('reportSem') ? document.getElementById('reportSem').value : '';
+        const prevSem = document.getElementById('reportPrevSem') ? document.getElementById('reportPrevSem').value : '';
+
+        // Global Pre-Filters
+        const brgyFilter = document.getElementById('reportFilterBrgy') ? document.getElementById('reportFilterBrgy').value : '';
+        const yearFilter = document.getElementById('reportFilterYear') ? document.getElementById('reportFilterYear').value : '';
+        const sexFilter = document.getElementById('reportFilterSex') ? document.getElementById('reportFilterSex').value : '';
+        const statusFilter = document.getElementById('reportFilterStatus') ? document.getElementById('reportFilterStatus').value : '';
+
+        if (!dbData || dbData.length === 0) return [];
+
+        let currentSemVal = sem;
+        let prevSemVal = prevSem;
+        if (sems && sems.length > 0) {
+            if (!currentSemVal) currentSemVal = sems[sems.length - 1];
+            if (!prevSemVal) prevSemVal = sems.length > 1 ? sems[sems.length - 2] : currentSemVal;
+        }
+
+        const validSemStatuses = ['OK', 'NEW', 'ACTIVE', 'FIN', 'MED', 'PROBATION', 'WARNING'];
+        const activeDbStatuses = ['ACTIVE', 'NEW', 'EXTENDED', 'WARNING', 'PROBATION', 'ON-LEAVE (MEDICAL)', 'ON-LEAVE (FINANCIAL)', 'ON-HOLD'];
+
+        return dbData.filter(s => {
+            // 1. Mode Matching
+            let modeMatch = true;
+            const currRec = currentSemVal ? ((s.semesterRecords && s.semesterRecords[currentSemVal]) || '').trim().toUpperCase() : '';
+            const prevRec = prevSemVal ? ((s.semesterRecords && s.semesterRecords[prevSemVal]) || '').trim().toUpperCase() : '';
+            const dbStatus = (s.status || '').trim().toUpperCase();
+
+            if (mode === 'utilized') {
+                modeMatch = currRec === 'OK';
+            } else if (mode === 'active_baseline') {
+                modeMatch = validSemStatuses.includes(prevRec) || activeDbStatuses.includes(dbStatus);
+            } else if (mode === 'all') {
+                modeMatch = true;
+            } else if (mode === 'pending') {
+                const wasActive = validSemStatuses.includes(prevRec) || activeDbStatuses.includes(dbStatus);
+                const isProcessed = currRec === 'OK';
+                modeMatch = wasActive && !isProcessed;
+            } else if (mode === 'overstaying') {
+                modeMatch = parseInt(s.semesterCount || 0) >= 8;
+            } else if (mode === 'atrisk') {
+                const validRecords = ['OK', 'FIN', 'MED'];
+                modeMatch = activeDbStatuses.includes(dbStatus) && !validRecords.includes(currRec) && !validRecords.includes(prevRec);
+            }
+
+            if (!modeMatch) return false;
+
+            // 2. Global Pre-Filters Match
+            if (brgyFilter && s.barangay !== brgyFilter) return false;
+            if (yearFilter && !(s.yearLevel || '').includes(yearFilter.split(' ')[0])) return false;
+            if (sexFilter && s.sex !== sexFilter) return false;
+            if (statusFilter && s.status !== statusFilter) return false;
+
+            return true;
+        });
+    }
+
+    function generateReport() {
+        const group = document.getElementById('reportGroup') ? document.getElementById('reportGroup').value : 'barangay';
+        const validScholars = getFilteredScholars();
+
+        const totalCountEl = document.getElementById('reportTotalCount');
+        if (totalCountEl) totalCountEl.innerText = validScholars.length.toLocaleString();
+
+        // Grouping
+        reportCounts = {};
+        validScholars.forEach(s => {
+            let key = s[group] || 'Unassigned';
+            if(group === 'school') key = s.school || 'Unspecified School';
+            if(group === 'course') key = s.course || 'Unspecified Course';
+            if(group === 'status') key = s.status || 'ACTIVE';
+            key = key.trim() || 'Unassigned';
+            reportCounts[key] = (reportCounts[key] || 0) + 1;
+        });
+
+        const sortedKeys = Object.keys(reportCounts).sort((a, b) => reportCounts[b] - reportCounts[a]);
+        const summaryBody = document.getElementById('reportSummaryBody');
+        const total = validScholars.length;
+
+        if (sortedKeys.length === 0) {
+            if (summaryBody) summaryBody.innerHTML = '<tr><td colspan="3" style="text-align:center; padding: 30px; color: var(--text-muted);">No records found.</td></tr>';
+            if (document.getElementById('reportChart')) document.getElementById('reportChart').style.display = 'none';
+            if (document.getElementById('chartPlaceholder')) document.getElementById('chartPlaceholder').style.display = 'block';
+            if (document.getElementById('reportInsights')) document.getElementById('reportInsights').style.display = 'none';
+        } else {
+            if (summaryBody) {
+                summaryBody.innerHTML = sortedKeys.map(key => {
+                    const count = reportCounts[key];
+                    const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+                    return `
+                        <tr class="report-row" onclick="viewReportList('${key.replace(/'/g, "\\'")}')" style="cursor: pointer;">
+                            <td style="font-weight: 700; color: var(--text-primary);">${key}</td>
+                            <td style="text-align: right; font-weight: 800; color: var(--primary);">${count}</td>
+                            <td style="text-align: right; font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">${pct}%</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            if(typeof updateReportChart === 'function') updateReportChart(sortedKeys, sortedKeys.map(k => reportCounts[k]), group);
+            if(typeof generateReportInsights === 'function') generateReportInsights(validScholars, reportCounts);
+        }
+
+        // Reset Detail View
+        rCurrentData = [];
+        rCurrentPage = 1;
+        if(typeof renderReportDetailTable === 'function') renderReportDetailTable();
+        const titleEl = document.getElementById('detailListTitle');
+        const countEl = document.getElementById('detailListCount');
+        if (titleEl) titleEl.innerText = "Detailed List";
+        if (countEl) countEl.innerText = "0 Records";
+    }
+
+    // --- PAGINATED DETAILED LIST ---
+    function viewReportList(filterValue) {
+        const group = document.getElementById('reportGroup') ? document.getElementById('reportGroup').value : 'barangay';
+        const validScholars = getFilteredScholars();
+
+        // Highlight Active Row
+        document.querySelectorAll('.report-row').forEach(r => {
+            r.classList.remove('active');
+            if(r.innerText.includes(filterValue)) r.classList.add('active');
+        });
+
+        // Filter valid scholars specifically for this group item
+        rCurrentData = validScholars.filter(s => {
+            let key = s[group] || 'Unassigned';
+            if(group === 'school') key = s.school || 'Unspecified School';
+            if(group === 'course') key = s.course || 'Unspecified Course';
+            if(group === 'status') key = s.status || 'ACTIVE';
+            return key.trim() === filterValue;
+        });
+
+        currentReportList = rCurrentData; 
+        currentReportFilter = filterValue;
+        rCurrentPage = 1;
+
+        const titleEl = document.getElementById('detailListTitle');
+        const countEl = document.getElementById('detailListCount');
+        if (titleEl) titleEl.innerText = `${filterValue}`;
+        if (countEl) countEl.innerText = `${rCurrentData.length} Records`;
+
+        renderReportDetailTable();
+    }
+
+    function renderReportDetailTable() {
+        const tbody = document.getElementById('reportDetailBody');
+        const paginationBar = document.getElementById('reportPaginationBar');
+        if (!tbody) return;
+
+        if(rCurrentData.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; color: var(--text-muted); font-weight: 500; padding: 30px;">Select a category above to view detailed scholar roster</td></tr>';
+            if (paginationBar) paginationBar.style.display = 'none';
+            return;
+        }
+
+        const start = (rCurrentPage - 1) * rRowsPerPage;
+        const end = Math.min(start + rRowsPerPage, rCurrentData.length);
+        const pagedData = rCurrentData.slice(start, end);
+
+        tbody.innerHTML = pagedData.map((s, i) => {
+            const yr = s.yearLevel || '';
+            const crs = s.course || '';
+            const yrCrs = yr && crs ? `${yr} • ${crs}` : (yr || crs || '—');
+            const st = s.status || 'ACTIVE';
+            const stClass = st.toLowerCase().replace(/[\s()]/g, '-');
+
+            return `
+            <tr style="cursor: pointer;" onclick="if(typeof openScholarDrawer === 'function') openScholarDrawer('${s.ibmId}')" title="Click to view scholar profile">
+                <td style="font-weight: 600; color: var(--text-muted);">${start + i + 1}</td>
+                <td style="font-weight:800; color: var(--primary); font-family: monospace;">${s.ibmId}</td>
+                <td style="font-weight: 700;">${s.fullName}</td>
+                <td style="font-size: 0.8rem; color: var(--text-secondary);">${s.school || '—'}</td>
+                <td style="font-size: 0.8rem;">${yrCrs}</td>
+                <td><span class="badge badge-${stClass}">${st}</span></td>
+            </tr>
+            `;
+        }).join('');
+
+        if (paginationBar) {
+            paginationBar.style.display = 'flex';
+            const pageInfo = document.getElementById('reportPageInfo');
+            if (pageInfo) pageInfo.innerText = `Showing ${start + 1} to ${end} of ${rCurrentData.length}`;
+            const btnPrev = document.getElementById('btnPrevReport');
+            const btnNext = document.getElementById('btnNextReport');
+            if (btnPrev) btnPrev.disabled = rCurrentPage === 1;
+            if (btnNext) btnNext.disabled = end >= rCurrentData.length;
+        }
+    }
+
+    function changeReportPage(direction) {
+        rCurrentPage += direction;
+        renderReportDetailTable();
+    }
+
+    // --- VISUALIZATION (Chart.js) ---
+    function updateReportChart(labels, data, group) {
+        const placeholder = document.getElementById('chartPlaceholder');
+        if (placeholder) placeholder.style.display = 'none';
+        const canvas = document.getElementById('reportChart');
+        if (!canvas) return;
+        canvas.style.display = 'block';
+        const ctx = canvas.getContext('2d');
+        
+        if (reportChartInstance) reportChartInstance.destroy();
+
+        const isHorizontalBar = (group === 'barangay' || group === 'school' || group === 'course');
+        const chartType = isHorizontalBar ? 'bar' : (group === 'sex' || group === 'status' ? 'doughnut' : 'bar');
+
+        const palette = [
+            '#0c2340', '#059669', '#d97706', '#3b82f6', '#8b5cf6', 
+            '#ec4899', '#06b6d4', '#10b981', '#f97316', '#6366f1',
+            '#14b8a6', '#e11d48', '#84cc16', '#a855f7', '#64748b'
+        ];
+
+        let chartLabels = labels;
+        let chartData = data;
+        if (labels.length > 14 && isHorizontalBar) {
+            const paired = labels.map((l, i) => ({ label: l, val: data[i] })).sort((a, b) => b.val - a.val);
+            const top13 = paired.slice(0, 13);
+            const othersVal = paired.slice(13).reduce((sum, item) => sum + item.val, 0);
+            chartLabels = top13.map(p => p.label).concat(['Other ' + (group === 'barangay' ? 'Barangays' : 'Institutions')]);
+            chartData = top13.map(p => p.val).concat([othersVal]);
+        }
+
+        reportChartInstance = new Chart(ctx, {
+            type: chartType,
+            data: {
+                labels: chartLabels,
+                datasets: [{
+                    label: ' Scholars',
+                    data: chartData,
+                    backgroundColor: chartType === 'doughnut' ? palette : palette[0],
+                    borderRadius: chartType === 'bar' ? 4 : 0,
+                    borderWidth: chartType === 'doughnut' ? 2 : 0,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: isHorizontalBar ? 'y' : 'x', 
+                plugins: {
+                    legend: { display: chartType === 'doughnut', position: 'right' },
+                    tooltip: { backgroundColor: '#0c2340', padding: 12 }
+                },
+                scales: chartType === 'bar' ? {
+                    x: { grid: { display: isHorizontalBar, borderDash: [4, 4] } },
+                    y: { grid: { display: !isHorizontalBar, borderDash: [4, 4] }, ticks: { font: { size: 10 } } }
+                } : {}
+            }
+        });
+    }
+
+    // --- SMART INSIGHTS ---
+    function generateReportInsights(scholars, counts) {
+        const insightsDiv = document.getElementById('reportInsights');
+        if (!insightsDiv) return;
+        
+        let maxKey = ''; let maxVal = -1;
+        for(let k in counts) { if(counts[k] > maxVal) { maxVal = counts[k]; maxKey = k; } }
+        const pct = scholars.length > 0 ? Math.round((maxVal / scholars.length) * 100) : 0;
+
+        const onLeave = scholars.filter(s => s.status && s.status.includes('LEAVE')).length;
+        const overstaying = scholars.filter(s => parseInt(s.semesterCount || 0) >= 8).length;
+
+        let atRiskCount = 0;
+        if (typeof sems !== 'undefined' && sems.length >= 2) {
+            const currentSem = sems[sems.length - 1];
+            const prevSem = sems[sems.length - 2];
+            const activeDbStatuses = ['ACTIVE', 'EXTENDED', 'WARNING', 'PROBATION', 'ON-HOLD'];
+            
+            atRiskCount = scholars.filter(s => {
+                const dbStatus = (s.status || '').toUpperCase().trim();
+                const currRec = ((s.semesterRecords && s.semesterRecords[currentSem]) || '').trim().toUpperCase();
+                const prevRec = ((s.semesterRecords && s.semesterRecords[prevSem]) || '').trim().toUpperCase();
+                const validRecords = ['OK', 'FIN', 'MED'];
+                
+                return activeDbStatuses.includes(dbStatus) && 
+                       !validRecords.includes(currRec) && 
+                       !validRecords.includes(prevRec);
+            }).length;
+        }
+
+        insightsDiv.innerHTML = `
+            <div class="stat-card" style="padding: 16px; border-left: 4px solid var(--primary); cursor: pointer; transition: all 0.2s ease;" 
+                 onclick="viewReportList('${maxKey.replace(/'/g, "\\'")}')" 
+                 onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-md)';" 
+                 onmouseout="this.style.transform='none'; this.style.boxShadow='var(--shadow-sm)';">
+                <div class="label" style="color: var(--primary);">Largest Demographic</div>
+                <div style="font-weight: 800; font-size: 1.15rem; color: var(--text-main); margin-top: 4px;">${maxKey}</div>
+                <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;"><strong>${maxVal}</strong> scholars (${pct}% share)</div>
+            </div>
+            
+            <div class="stat-card" style="padding: 16px; border-left: 4px solid var(--warning); cursor: pointer; transition: all 0.2s ease;" 
+                 onclick="viewInsightList('onleave')" 
+                 onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-md)';" 
+                 onmouseout="this.style.transform='none'; this.style.boxShadow='var(--shadow-sm)';">
+                <div class="label" style="color: var(--warning);">On-Leave (Med/Fin)</div>
+                <div style="font-weight: 800; font-size: 1.8rem; color: var(--text-main); margin-top: 4px;">${onLeave}</div>
+                <div style="font-size: 0.8rem; color: var(--text-secondary);">Currently deferred grants</div>
+            </div>
+            
+            <div class="stat-card" style="padding: 16px; border-left: 4px solid #8b5cf6; cursor: pointer; transition: all 0.2s ease;" 
+                 onclick="viewInsightList('overstaying')" 
+                 onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-md)';" 
+                 onmouseout="this.style.transform='none'; this.style.boxShadow='var(--shadow-sm)';">
+                <div class="label" style="color: #8b5cf6;">Overstaying (Sem 8+)</div>
+                <div style="font-weight: 800; font-size: 1.8rem; color: var(--text-main); margin-top: 4px;">${overstaying}</div>
+                <div style="font-size: 0.8rem; color: var(--text-secondary);">Requires academic review</div>
+            </div>
+
+            <div class="stat-card" style="padding: 16px; border-left: 4px solid var(--danger); cursor: pointer; transition: all 0.2s ease; background: var(--danger-bg);" 
+                 onclick="viewInsightList('atrisk')" 
+                 onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-md)';" 
+                 onmouseout="this.style.transform='none'; this.style.boxShadow='var(--shadow-sm)';">
+                <div class="label" style="color: var(--danger);">Pre-Delisted (At-Risk)</div>
+                <div style="font-weight: 800; font-size: 1.8rem; color: var(--danger); margin-top: 4px;">${atRiskCount}</div>
+                <div style="font-size: 0.8rem; color: var(--danger); opacity: 0.8; font-weight: 600;">2 consecutive blank sems</div>
+            </div>
+        `;
+        insightsDiv.style.display = 'grid';
+    }
+
+    function viewInsightList(insightType) {
+        const validScholars = getFilteredScholars();
+
+        document.querySelectorAll('.report-row').forEach(r => r.classList.remove('active'));
+
+        if (insightType === 'onleave') {
+            rCurrentData = validScholars.filter(s => s.status && s.status.includes('LEAVE'));
+            currentReportFilter = "On-Leave (Medical/Financial)";
+        } else if (insightType === 'overstaying') {
+            rCurrentData = validScholars.filter(s => parseInt(s.semesterCount || 0) >= 8);
+            currentReportFilter = "Overstaying (Sem 8+)";
+        } else if (insightType === 'atrisk') {
+            const currentSem = sems[sems.length - 1];
+            const prevSem = sems[sems.length - 2];
+            const activeDbStatuses = ['ACTIVE', 'EXTENDED', 'WARNING', 'PROBATION', 'ON-HOLD'];
+            
+            rCurrentData = validScholars.filter(s => {
+                const dbStatus = (s.status || '').toUpperCase().trim();
+                const currRec = ((s.semesterRecords && s.semesterRecords[currentSem]) || '').trim().toUpperCase();
+                const prevRec = ((s.semesterRecords && s.semesterRecords[prevSem]) || '').trim().toUpperCase();
+                const validRecords = ['OK', 'FIN', 'MED'];
+                
+                return activeDbStatuses.includes(dbStatus) && 
+                       !validRecords.includes(currRec) && 
+                       !validRecords.includes(prevRec);
+            });
+            currentReportFilter = "Pre-Delisted (2 Consecutive Blank Sems)";
+        }
+
+        currentReportList = rCurrentData;
+        rCurrentPage = 1;
+
+        const titleEl = document.getElementById('detailListTitle');
+        const countEl = document.getElementById('detailListCount');
+        if (titleEl) titleEl.innerText = `Insight: ${currentReportFilter}`;
+        if (countEl) countEl.innerText = `${rCurrentData.length} Records`;
+
+        renderReportDetailTable();
+        const detailBody = document.getElementById('reportDetailBody');
+        if (detailBody) detailBody.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // --- CSV EXPORTS ---
+    function exportSummaryCSV() {
+        if(Object.keys(reportCounts).length === 0) return Swal.fire('Error', 'No data to export', 'error');
+        const groupEl = document.getElementById('reportGroup');
+        const groupLabel = groupEl ? groupEl.options[groupEl.selectedIndex].text : 'Group';
+        
+        let csv = `Category (${groupLabel}),Count,Percentage\n`;
+        const total = Object.values(reportCounts).reduce((a, b) => a + b, 0);
+        Object.keys(reportCounts).sort().forEach(k => {
+            const count = reportCounts[k];
+            const pct = total > 0 ? (count / total * 100).toFixed(1) : 0;
+            csv += `"${k}",${count},${pct}%\n`;
+        });
+        csv += `"TOTAL",${total},100%\n`;
+        downloadCSV(csv, `IBM_Summary_${groupLabel.replace(/\s+/g, '_')}.csv`);
+    }
+
+    function exportDetailCSV() {
+        if(currentReportList.length === 0) return Swal.fire('Error', 'No detailed data to export', 'error');
+        
+        let csv = "No,IBM ID,Full Name,School,Course,Year Level,Barangay,Status\n";
+        currentReportList.forEach((s, i) => {
+            csv += `${i+1},"${s.ibmId}","${s.fullName}","${s.school || ''}","${s.course || ''}","${s.yearLevel || ''}","${s.barangay || ''}","${s.status || ''}"\n`;
+        });
+        downloadCSV(csv, `IBM_DetailList_${(currentReportFilter || 'All').replace(/\s+/g, '_')}.csv`);
+    }
+
+    function downloadCSV(csv, filename) {
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", filename);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    // --- PIVOT MATRICES WITH INTERACTIVE DRILL-DOWN ---
+    function generateMatrixReport() {
+        const validScholars = getFilteredScholars();
+        
+        if(!validScholars || validScholars.length === 0) {
+            return Swal.fire('No Data', 'Please select a valid semester/report type with data.', 'warning');
+        }
+
+        const years = ['1st Year', '2nd Year', '3rd Year', '4th Year', '5th Year'];
+        const matrix = {}; 
+        
+        // Initialize Matrix for all 31 Barangays
+        barangaysList.forEach(b => {
+            matrix[b] = { total: 0 };
+            years.forEach(y => matrix[b][y] = 0);
+        });
+        
+        const colTotals = {};
+        years.forEach(y => colTotals[y] = 0);
+        let grandTotal = 0;
+
+        validScholars.forEach(s => {
+            const b = s.barangay || 'Unassigned';
+            const yRaw = (s.yearLevel || '').toUpperCase();
+            
+            let mappedYear = 'Other';
+            if(yRaw.includes('1') || yRaw.includes('IST')) mappedYear = '1st Year';
+            else if(yRaw.includes('2') || yRaw.includes('2ND')) mappedYear = '2nd Year';
+            else if(yRaw.includes('3') || yRaw.includes('3RD')) mappedYear = '3rd Year';
+            else if(yRaw.includes('4') || yRaw.includes('4TH')) mappedYear = '4th Year';
+            else if(yRaw.includes('5') || yRaw.includes('5TH')) mappedYear = '5th Year';
+
+            if(matrix[b]) {
+                if(mappedYear !== 'Other') {
+                    matrix[b][mappedYear]++;
+                    colTotals[mappedYear]++;
+                }
+                matrix[b].total++;
+                grandTotal++;
+            }
+        });
+
+        // Render Matrix 1: Barangay vs Year Level
+        const mTable = document.getElementById('matrixTable');
+        if (mTable) {
+            let mHtml = `
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Barangay</th>
+                        ${years.map(y => `<th style="text-align:center;">${y}</th>`).join('')}
+                        <th style="text-align:center;">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+
+            Object.keys(matrix).sort().forEach(b => {
+                mHtml += `<tr><td style="font-weight:700;">${b}</td>`;
+                years.forEach(y => {
+                    const count = matrix[b][y] || 0;
+                    if (count > 0) {
+                        mHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn" onclick="openMatrixCellDrilldown('brgy_year', '${b}', '${y}')" title="Click to view ${count} scholars">${count}</button></td>`;
+                    } else {
+                        mHtml += `<td style="text-align:center; color: var(--text-muted); opacity: 0.4;">0</td>`;
+                    }
+                });
+                mHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn matrix-btn-total" onclick="openMatrixCellDrilldown('brgy_total', '${b}', 'ALL')" title="Click to view all ${matrix[b].total} scholars in ${b}">${matrix[b].total}</button></td></tr>`;
+            });
+
+            mHtml += `
+                <tr style="background:var(--border-light); font-weight:800;">
+                    <td style="text-transform: uppercase; letter-spacing: 0.05em;">GRAND TOTAL</td>
+                    ${years.map(y => `<td style="text-align:center;"><button type="button" class="matrix-btn matrix-btn-grand" onclick="openMatrixCellDrilldown('grand_total', 'ALL', '${y}')" title="View all ${colTotals[y]} scholars in ${y}">${colTotals[y]}</button></td>`).join('')}
+                    <td style="font-size: 1.1rem; text-align:center; color: var(--primary);">${grandTotal}</td>
+                </tr>
+                </tbody>
+            `;
+            mTable.innerHTML = mHtml;
+        }
+
+        // MATRIX 2: STATUS vs YEAR LEVEL
+        const statusMatrix = {};
+        const yearsCols = ['1st Year', '2nd Year', '3rd Year', '4th Year', '5th Year'];
+
+        validScholars.forEach(s => {
+            let st = s.status ? s.status.trim().toUpperCase() : 'ACTIVE';
+            if(!statusMatrix[st]) {
+                 statusMatrix[st] = { total: 0 };
+                 yearsCols.forEach(y => statusMatrix[st][y] = 0);
+            }
+
+            const yRaw = (s.yearLevel || '').toUpperCase();
+            let mappedYear = 'Other';
+            if(yRaw.includes('1') || yRaw.includes('IST') || yRaw.includes('FRESH')) mappedYear = '1st Year';
+            else if(yRaw.includes('2') || yRaw.includes('2ND') || yRaw.includes('SOPH')) mappedYear = '2nd Year';
+            else if(yRaw.includes('3') || yRaw.includes('3RD') || yRaw.includes('JUN')) mappedYear = '3rd Year';
+            else if(yRaw.includes('4') || yRaw.includes('4TH') || yRaw.includes('SEN')) mappedYear = '4th Year';
+            else if(yRaw.includes('5')) mappedYear = '5th Year';
+
+            if(mappedYear !== 'Other') {
+                statusMatrix[st][mappedYear]++;
+            }
+            statusMatrix[st].total++;
+        });
+
+        const sortedStatuses = Object.keys(statusMatrix).sort((a, b) => {
+            const order = ['ACTIVE', 'NEW', 'EXTENDED', 'OK', 'WARNING', 'PROBATION', 'ON-LEAVE (MEDICAL)', 'ON-LEAVE (FINANCIAL)', 'STOPPED', 'DELISTED', 'GRADUATED'];
+            const idxA = order.indexOf(a);
+            const idxB = order.indexOf(b);
+            if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+            if (idxA !== -1) return -1;
+            if (idxB !== -1) return 1;
+            return a.localeCompare(b);
+        });
+
+        const sTable = document.getElementById('statusMatrixTable');
+        if (sTable) {
+            let sHtml = `
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Academic Status</th>
+                        ${yearsCols.map(y => `<th style="text-align:center;">${y}</th>`).join('')}
+                        <th style="text-align:center;">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+            
+            let totalActive = 0; 
+            sortedStatuses.forEach(st => {
+                let badgeClass = 'secondary';
+                if(st === 'ACTIVE' || st === 'NEW' || st === 'OK') badgeClass = 'success';
+                else if(st === 'EXTENDED' || st === 'WARNING') badgeClass = 'warning';
+                else if(st === 'PROBATION') badgeClass = 'probation';
+                else if(st.includes('MEDICAL')) badgeClass = 'payroll';
+                else if(st.includes('FINANCIAL') || st.includes('ON-LEAVE')) badgeClass = 'warning';
+                else if(st === 'STOPPED' || st === 'DELISTED' || st.includes('DECEASED')) badgeClass = 'danger';
+                else if(st === 'GRADUATED') badgeClass = 'graduated';
+
+                sHtml += `
+                <tr>
+                    <td style="font-weight: 600;">
+                        <span class="badge badge-${badgeClass}" style="font-size: 0.8rem;">${st}</span>
+                    </td>`;
+                yearsCols.forEach(y => {
+                    const count = statusMatrix[st][y] || 0;
+                    if (count > 0) {
+                        sHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn" onclick="openMatrixCellDrilldown('status_year', '${st}', '${y}')" title="View ${count} scholars">${count}</button></td>`;
+                    } else {
+                        sHtml += `<td style="text-align:center; color: var(--text-muted); opacity: 0.4;">0</td>`;
+                    }
+                });
+                sHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn matrix-btn-total" onclick="openMatrixCellDrilldown('status_total', '${st}', 'ALL')">${statusMatrix[st].total}</button></td></tr>`;
+                
+                totalActive += statusMatrix[st].total;
+            });
+
+            sHtml += `
+                <tr style="background-color: var(--border-light); font-weight: 800;">
+                    <td style="text-transform: uppercase; letter-spacing: 0.05em;">Grand Total</td>
+                    <td colspan="5"></td>
+                    <td style="text-align:center; font-size: 1.1rem; color: var(--primary);">${totalActive}</td>
+                </tr>
+            </tbody>`;
+            sTable.innerHTML = sHtml;
+        }
+
+        // Duration Analysis
+        if(typeof generateDurationMatrix === 'function') {
+            generateDurationMatrix(validScholars);
+        }
+    }
+
+    function renderSelectedMatrix() {
+        const selector = document.getElementById('matrixDimensionSelector');
+        const val = selector ? selector.value : 'brgy_year';
+        const mainTitle = document.getElementById('matrixMainTitle');
+        const validScholars = getFilteredScholars();
+        const years = ['1st Year', '2nd Year', '3rd Year', '4th Year', '5th Year'];
+
+        if (val === 'brgy_year') {
+            if (mainTitle) mainTitle.innerText = "Matrix Breakdown: Barangay vs. Year Level";
+            const secBox = document.getElementById('secondaryStatusMatrixBox');
+            if (secBox) secBox.style.display = 'block';
+            generateMatrixReport();
+        } else if (val === 'status_year') {
+            if (mainTitle) mainTitle.innerText = "Matrix Breakdown: Academic Status vs. Year Level";
+            const secBox = document.getElementById('secondaryStatusMatrixBox');
+            if (secBox) secBox.style.display = 'none';
+            const sTable = document.getElementById('statusMatrixTable');
+            const mTable = document.getElementById('matrixTable');
+            if (sTable && mTable) mTable.innerHTML = sTable.innerHTML;
+        } else if (val === 'school_year') {
+            if (mainTitle) mainTitle.innerText = "Matrix Breakdown: Top Institutions vs. Year Level";
+            const secBox = document.getElementById('secondaryStatusMatrixBox');
+            if (secBox) secBox.style.display = 'block';
+
+            const schoolCounts = {};
+            validScholars.forEach(s => {
+                const sc = (s.school || 'Unspecified School').trim();
+                schoolCounts[sc] = (schoolCounts[sc] || 0) + 1;
+            });
+
+            const topSchools = Object.keys(schoolCounts).sort((a, b) => schoolCounts[b] - schoolCounts[a]).slice(0, 12);
+            const schoolMatrix = {};
+            topSchools.forEach(sc => {
+                schoolMatrix[sc] = { total: 0 };
+                years.forEach(y => schoolMatrix[sc][y] = 0);
+            });
+            schoolMatrix['Other Institutions'] = { total: 0 };
+            years.forEach(y => schoolMatrix['Other Institutions'][y] = 0);
+
+            const colTotals = {};
+            years.forEach(y => colTotals[y] = 0);
+            let grandTotal = 0;
+
+            validScholars.forEach(s => {
+                const sc = (s.school || 'Unspecified School').trim();
+                const targetSchool = topSchools.includes(sc) ? sc : 'Other Institutions';
+                const yRaw = (s.yearLevel || '').toUpperCase();
+                let mappedYear = 'Other';
+                if(yRaw.includes('1') || yRaw.includes('IST')) mappedYear = '1st Year';
+                else if(yRaw.includes('2') || yRaw.includes('2ND')) mappedYear = '2nd Year';
+                else if(yRaw.includes('3') || yRaw.includes('3RD')) mappedYear = '3rd Year';
+                else if(yRaw.includes('4') || yRaw.includes('4TH')) mappedYear = '4th Year';
+                else if(yRaw.includes('5') || yRaw.includes('5TH')) mappedYear = '5th Year';
+
+                if(mappedYear !== 'Other') {
+                    schoolMatrix[targetSchool][mappedYear]++;
+                    colTotals[mappedYear]++;
+                }
+                schoolMatrix[targetSchool].total++;
+                grandTotal++;
+            });
+
+            const mTable = document.getElementById('matrixTable');
+            if (mTable) {
+                let mHtml = `
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">School / College</th>
+                            ${years.map(y => `<th style="text-align:center;">${y}</th>`).join('')}
+                            <th style="text-align:center;">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                `;
+                Object.keys(schoolMatrix).forEach(sc => {
+                    mHtml += `<tr><td style="font-weight:700;">${sc}</td>`;
+                    years.forEach(y => {
+                        const count = schoolMatrix[sc][y] || 0;
+                        if (count > 0) {
+                            mHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn" onclick="openMatrixCellDrilldown('school_year', '${sc.replace(/'/g, "\\'")}', '${y}')" title="Click to view scholars">${count}</button></td>`;
+                        } else {
+                            mHtml += `<td style="text-align:center; color: var(--text-muted); opacity: 0.4;">0</td>`;
+                        }
+                    });
+                    mHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn matrix-btn-total" onclick="openMatrixCellDrilldown('school_year', '${sc.replace(/'/g, "\\'")}', 'ALL')">${schoolMatrix[sc].total}</button></td></tr>`;
+                });
+
+                mHtml += `
+                    <tr style="background: var(--border-light); font-weight: 800;">
+                        <td style="text-transform: uppercase; letter-spacing: 0.05em;">GRAND TOTAL</td>
+                        ${years.map(y => `<td style="text-align:center;"><button type="button" class="matrix-btn matrix-btn-grand" onclick="openMatrixCellDrilldown('grand_total', 'ALL', '${y}')">${colTotals[y]}</button></td>`).join('')}
+                        <td style="font-size: 1.1rem; text-align:center; color: var(--primary);">${grandTotal}</td>
+                    </tr>
+                    </tbody>
+                `;
+                mTable.innerHTML = mHtml;
+            }
+        }
+    }
+    window.renderSelectedMatrix = renderSelectedMatrix;
+
+    // --- ALUMNI & GRADUATES MATRIX REPORT ---
+    function generateGraduatesMatrix() {
+        if (!gradData || gradData.length === 0) {
+            return Swal.fire('No Data', 'No graduates found in the database. Add some first!', 'warning');
+        }
+
+        const yearsSet = new Set();
+        gradData.forEach(g => { 
+            if(g.gradYear) yearsSet.add(String(g.gradYear).trim()); 
+        });
+        const yearsCols = Array.from(yearsSet).sort();
+        if (yearsCols.length === 0) yearsCols.push("Unknown");
+
+        const brgyMatrix = {};
+        const brgyKeys = {};
+        barangaysList.forEach(b => {
+            brgyMatrix[b] = { total: 0 };
+            brgyKeys[b.toLowerCase()] = b;
+            yearsCols.forEach(y => brgyMatrix[b][y] = 0);
+        });
+
+        const colTotals = {};
+        yearsCols.forEach(y => colTotals[y] = 0);
+        let grandTotal = 0;
+
+        gradData.forEach(g => {
+            let rawBrgy = (g.barangay || '').trim().toLowerCase();
+            let b = brgyKeys[rawBrgy]; 
+            let y = g.gradYear ? String(g.gradYear).trim() : 'Unknown';
+            
+            if (b && brgyMatrix[b] && yearsCols.includes(y)) {
+                brgyMatrix[b][y]++;
+                colTotals[y]++;
+                brgyMatrix[b].total++;
+                grandTotal++;
+            }
+        });
+
+        const aTable = document.getElementById('alumniBatchMatrixTable');
+        if (aTable) {
+            let mHtml = `
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Barangay</th>
+                        ${yearsCols.map(y => `<th style="text-align:center;">Batch ${y}</th>`).join('')}
+                        <th style="text-align:center;">Total Alumni</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+
+            Object.keys(brgyMatrix).sort().forEach(b => {
+                mHtml += `<tr><td style="font-weight:700;">${b}</td>`;
+                yearsCols.forEach(y => {
+                    const count = brgyMatrix[b][y] || 0;
+                    if (count > 0) {
+                        mHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn" onclick="openMatrixCellDrilldown('alumni_brgy_batch', '${b}', '${y}')" title="Click to view alumni">${count}</button></td>`;
+                    } else {
+                        mHtml += `<td style="text-align:center; color: var(--text-muted); opacity: 0.4;">0</td>`;
+                    }
+                });
+                mHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn matrix-btn-total" onclick="openMatrixCellDrilldown('alumni_brgy_batch', '${b}', 'ALL')">${brgyMatrix[b].total}</button></td></tr>`;
+            });
+
+            mHtml += `
+                <tr style="background:var(--border-light); font-weight:800;">
+                    <td style="text-transform: uppercase; letter-spacing: 0.05em;">GRAND TOTAL</td>
+                    ${yearsCols.map(y => `<td style="text-align:center;">${colTotals[y]}</td>`).join('')}
+                    <td style="font-size: 1.1rem; text-align:center; color: var(--primary);">${grandTotal}</td>
+                </tr>
+                </tbody>
+            `;
+            aTable.innerHTML = mHtml;
+        }
+
+        // Honors Matrix
+        const honorsMatrix = {};
+        const knownHonors = ["Summa Cum Laude", "Magna Cum Laude", "Cum Laude", "Academic Excellence", "None/Blank"];
+        
+        knownHonors.forEach(h => {
+             honorsMatrix[h] = { total: 0 };
+             yearsCols.forEach(y => honorsMatrix[h][y] = 0);
+        });
+
+        gradData.forEach(g => {
+             let hRaw = String(g.honor || '').toLowerCase().trim();
+             let mappedHonor = "None/Blank";
+             
+             if(hRaw && hRaw !== 'none' && hRaw !== 'n/a') {
+                 if(hRaw.includes('summa')) mappedHonor = "Summa Cum Laude";
+                 else if(hRaw.includes('magna')) mappedHonor = "Magna Cum Laude";
+                 else if(hRaw.includes('cum laude')) mappedHonor = "Cum Laude";
+                 else mappedHonor = "Academic Excellence";
+             }
+
+             const y = g.gradYear ? String(g.gradYear).trim() : 'Unknown';
+             if (honorsMatrix[mappedHonor] && yearsCols.includes(y)) {
+                 honorsMatrix[mappedHonor][y]++;
+                 honorsMatrix[mappedHonor].total++;
+             }
+        });
+
+        const hTable = document.getElementById('alumniHonorsMatrixTable');
+        if (hTable) {
+            let sHtml = `
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Latin Honor / Award</th>
+                        ${yearsCols.map(y => `<th style="text-align:center;">Batch ${y}</th>`).join('')}
+                        <th style="text-align:center;">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+            
+            let totalHonors = 0;
+            knownHonors.forEach(h => {
+                 let badgeClass = h === 'None/Blank' ? 'secondary' : 'success';
+                 if(h === 'Summa Cum Laude') badgeClass = 'primary';
+                 if(h === 'Magna Cum Laude') badgeClass = 'warning';
+                 
+                 sHtml += `
+                <tr>
+                    <td style="font-weight: 600;">
+                        <span class="badge badge-${badgeClass}" style="font-size: 0.8rem;">${h}</span>
+                    </td>`;
+                yearsCols.forEach(y => {
+                    const count = honorsMatrix[h][y] || 0;
+                    if (count > 0) {
+                        sHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn" onclick="openMatrixCellDrilldown('alumni_honor_batch', '${h}', '${y}')" title="Click to view alumni">${count}</button></td>`;
+                    } else {
+                        sHtml += `<td style="text-align:center; color: var(--text-muted); opacity: 0.4;">0</td>`;
+                    }
+                });
+                sHtml += `<td style="text-align:center;"><button type="button" class="matrix-btn matrix-btn-total" onclick="openMatrixCellDrilldown('alumni_honor_batch', '${h}', 'ALL')">${honorsMatrix[h].total}</button></td></tr>`;
+                totalHonors += honorsMatrix[h].total;
+            });
+
+            sHtml += `
+                <tr style="background-color: var(--border-light); font-weight: 800;">
+                    <td style="text-transform: uppercase; letter-spacing: 0.05em;">Grand Total</td>
+                    ${yearsCols.map(y => `<td></td>`).join('')}
+                    <td style="text-align:center; font-size: 1.1rem; color: var(--primary);">${totalHonors}</td>
+                </tr>
+            </tbody>`;
+            hTable.innerHTML = sHtml;
+        }
+    }
+
+    // --- INTERACTIVE MATRIX DRILL-DOWN MODAL LOGIC ---
+    function openMatrixCellDrilldown(type, rowKey, colKey) {
+        const validScholars = getFilteredScholars();
+        let matching = [];
+        let title = "";
+        let subtitle = "";
+
+        if (type === 'brgy_year') {
+            matching = validScholars.filter(s => {
+                const b = s.barangay || 'Unassigned';
+                const yRaw = (s.yearLevel || '').toUpperCase();
+                let mappedYear = 'Other';
+                if(yRaw.includes('1') || yRaw.includes('IST')) mappedYear = '1st Year';
+                else if(yRaw.includes('2') || yRaw.includes('2ND')) mappedYear = '2nd Year';
+                else if(yRaw.includes('3') || yRaw.includes('3RD')) mappedYear = '3rd Year';
+                else if(yRaw.includes('4') || yRaw.includes('4TH')) mappedYear = '4th Year';
+                else if(yRaw.includes('5') || yRaw.includes('5TH')) mappedYear = '5th Year';
+
+                return b === rowKey && mappedYear === colKey;
+            });
+            title = `📍 ${rowKey} • ${colKey}`;
+            subtitle = `Scholars from Barangay ${rowKey} enrolled in ${colKey}`;
+        } else if (type === 'brgy_total') {
+            matching = validScholars.filter(s => (s.barangay || 'Unassigned') === rowKey);
+            title = `📍 ${rowKey} • All Year Levels`;
+            subtitle = `All scholars registered under Barangay ${rowKey}`;
+        } else if (type === 'grand_total') {
+            matching = validScholars.filter(s => {
+                const yRaw = (s.yearLevel || '').toUpperCase();
+                let mappedYear = 'Other';
+                if(yRaw.includes('1') || yRaw.includes('IST')) mappedYear = '1st Year';
+                else if(yRaw.includes('2') || yRaw.includes('2ND')) mappedYear = '2nd Year';
+                else if(yRaw.includes('3') || yRaw.includes('3RD')) mappedYear = '3rd Year';
+                else if(yRaw.includes('4') || yRaw.includes('4TH')) mappedYear = '4th Year';
+                else if(yRaw.includes('5') || yRaw.includes('5TH')) mappedYear = '5th Year';
+
+                return mappedYear === colKey;
+            });
+            title = `🎓 All Barangays • ${colKey}`;
+            subtitle = `Scholars across all barangays enrolled in ${colKey}`;
+        } else if (type === 'status_year') {
+            matching = validScholars.filter(s => {
+                const st = s.status ? s.status.trim().toUpperCase() : 'ACTIVE';
+                const yRaw = (s.yearLevel || '').toUpperCase();
+                let mappedYear = 'Other';
+                if(yRaw.includes('1') || yRaw.includes('IST') || yRaw.includes('FRESH')) mappedYear = '1st Year';
+                else if(yRaw.includes('2') || yRaw.includes('2ND') || yRaw.includes('SOPH')) mappedYear = '2nd Year';
+                else if(yRaw.includes('3') || yRaw.includes('3RD') || yRaw.includes('JUN')) mappedYear = '3rd Year';
+                else if(yRaw.includes('4') || yRaw.includes('4TH') || yRaw.includes('SEN')) mappedYear = '4th Year';
+                else if(yRaw.includes('5')) mappedYear = '5th Year';
+
+                return st === rowKey && mappedYear === colKey;
+            });
+            title = `⚖️ Status: ${rowKey} • ${colKey}`;
+            subtitle = `Scholars with status "${rowKey}" in ${colKey}`;
+        } else if (type === 'status_total') {
+            matching = validScholars.filter(s => (s.status ? s.status.trim().toUpperCase() : 'ACTIVE') === rowKey);
+            title = `⚖️ Status: ${rowKey} • All Years`;
+            subtitle = `All scholars with status "${rowKey}"`;
+        } else if (type === 'school_year') {
+            matching = validScholars.filter(s => {
+                const sc = (s.school || 'Unspecified School').trim();
+                const yRaw = (s.yearLevel || '').toUpperCase();
+                let mappedYear = 'Other';
+                if(yRaw.includes('1') || yRaw.includes('IST')) mappedYear = '1st Year';
+                else if(yRaw.includes('2') || yRaw.includes('2ND')) mappedYear = '2nd Year';
+                else if(yRaw.includes('3') || yRaw.includes('3RD')) mappedYear = '3rd Year';
+                else if(yRaw.includes('4') || yRaw.includes('4TH')) mappedYear = '4th Year';
+                else if(yRaw.includes('5') || yRaw.includes('5TH')) mappedYear = '5th Year';
+
+                const matchSchool = rowKey === 'Other Institutions' ? true : sc === rowKey;
+                return matchSchool && mappedYear === colKey;
+            });
+            title = `🏛️ ${rowKey} • ${colKey}`;
+            subtitle = `Scholars enrolled at ${rowKey} in ${colKey}`;
+        } else if (type === 'alumni_brgy_batch') {
+            matching = (gradData || []).filter(g => {
+                const b = (g.barangay || '').trim().toLowerCase();
+                const y = g.gradYear ? String(g.gradYear).trim() : 'Unknown';
+                return b === rowKey.toLowerCase() && (colKey === 'ALL' || y === colKey);
+            });
+            title = `🎓 Alumni: ${rowKey} ${colKey !== 'ALL' ? '• Batch ' + colKey : '• All Batches'}`;
+            subtitle = `Graduated alumni from Barangay ${rowKey}`;
+        } else if (type === 'alumni_honor_batch') {
+            matching = (gradData || []).filter(g => {
+                let hRaw = String(g.honor || '').toLowerCase().trim();
+                let mappedHonor = "None/Blank";
+                if(hRaw && hRaw !== 'none' && hRaw !== 'n/a') {
+                    if(hRaw.includes('summa')) mappedHonor = "Summa Cum Laude";
+                    else if(hRaw.includes('magna')) mappedHonor = "Magna Cum Laude";
+                    else if(hRaw.includes('cum laude')) mappedHonor = "Cum Laude";
+                    else mappedHonor = "Academic Excellence";
+                }
+                const y = g.gradYear ? String(g.gradYear).trim() : 'Unknown';
+                return mappedHonor === rowKey && (colKey === 'ALL' || y === colKey);
+            });
+            title = `🏆 ${rowKey} ${colKey !== 'ALL' ? '• Batch ' + colKey : ''}`;
+            subtitle = `Alumni recognized with ${rowKey}`;
+        }
+
+        currentDrilldownList = matching;
+
+        const modal = document.getElementById('reportDrilldownModal');
+        const titleEl = document.getElementById('drilldownTitle');
+        const subEl = document.getElementById('drilldownSubtitle');
+        const badgeEl = document.getElementById('drilldownCountBadge');
+        const bodyEl = document.getElementById('drilldownTableBody');
+
+        if (titleEl) titleEl.innerText = title;
+        if (subEl) subEl.innerText = subtitle;
+        if (badgeEl) badgeEl.innerText = `${matching.length} Scholars`;
+
+        if (bodyEl) {
+            if (matching.length === 0) {
+                bodyEl.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 30px; color: var(--text-muted);">No scholars found for this selection.</td></tr>';
+            } else {
+                bodyEl.innerHTML = matching.map((s, idx) => {
+                    const yr = s.yearLevel || '';
+                    const crs = s.course || '';
+                    const yrCrs = yr && crs ? `${yr} • ${crs}` : (yr || crs || '—');
+                    const st = s.status || s.employmentStatus || 'ACTIVE';
+                    const stClass = st.toLowerCase().replace(/[\s()]/g, '-');
+                    return `
+                        <tr style="cursor: pointer;" onclick="if(typeof openScholarDrawer === 'function') openScholarDrawer('${s.ibmId}')" title="Click to view scholar profile">
+                            <td style="color: var(--text-muted); font-size: 0.8rem;">${idx + 1}</td>
+                            <td style="font-family: monospace; font-weight: 800; color: var(--primary);">${s.ibmId}</td>
+                            <td style="font-weight: 700;">${s.fullName}</td>
+                            <td style="font-size: 0.82rem; color: var(--text-secondary);">${s.school || '—'}</td>
+                            <td style="font-size: 0.8rem;">${yrCrs}</td>
+                            <td>${s.barangay || '—'}</td>
+                            <td><span class="badge badge-${stClass}">${st}</span></td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+        }
+
+        if (modal) modal.style.display = 'flex';
+    }
+    window.openMatrixCellDrilldown = openMatrixCellDrilldown;
+
+    function closeReportDrilldownModal() {
+        const modal = document.getElementById('reportDrilldownModal');
+        if (modal) modal.style.display = 'none';
+    }
+    window.closeReportDrilldownModal = closeReportDrilldownModal;
+
+    function exportDrilldownCSV() {
+        if (!currentDrilldownList || currentDrilldownList.length === 0) {
+            return Swal.fire('No Data', 'No scholars to export in this cohort.', 'warning');
+        }
+        const titleEl = document.getElementById('drilldownTitle');
+        const title = titleEl ? titleEl.innerText.replace(/[^a-zA-Z0-9_-]/g, '_') : 'Cohort_Drilldown';
+        let csv = "No,IBM ID,Full Name,School,Course,Year Level,Barangay,Status\n";
+        currentDrilldownList.forEach((s, i) => {
+            csv += `${i+1},"${s.ibmId}","${s.fullName}","${s.school || ''}","${s.course || ''}","${s.yearLevel || ''}","${s.barangay || ''}","${s.status || ''}"\n`;
+        });
+        downloadCSV(csv, `IBM_Drilldown_${title}.csv`);
+    }
+    window.exportDrilldownCSV = exportDrilldownCSV;
+
+    function exportMatrixCSV() {
+        const table = document.getElementById('matrixTable');
+        if (!table) return Swal.fire('No Data', 'No matrix table to export.', 'warning');
+        let csv = "";
+        const rows = table.querySelectorAll('tr');
+        rows.forEach(r => {
+            const cells = Array.from(r.querySelectorAll('th, td')).map(c => `"${c.innerText.replace(/"/g, '""').trim()}"`);
+            csv += cells.join(',') + "\n";
+        });
+        downloadCSV(csv, `IBM_Matrix_Report.csv`);
+    }
+    window.exportMatrixCSV = exportMatrixCSV;
+
+    function exportAlumniMatrixCSV() {
+        const table = document.getElementById('alumniBatchMatrixTable');
+        if (!table) return Swal.fire('No Data', 'No alumni matrix table to export.', 'warning');
+        let csv = "";
+        const rows = table.querySelectorAll('tr');
+        rows.forEach(r => {
+            const cells = Array.from(r.querySelectorAll('th, td')).map(c => `"${c.innerText.replace(/"/g, '""').trim()}"`);
+            csv += cells.join(',') + "\n";
+        });
+        downloadCSV(csv, `IBM_Alumni_Matrix_Report.csv`);
+    }
+    window.exportAlumniMatrixCSV = exportAlumniMatrixCSV;
+
+    function exportTrackingCSV() {
+        if (!fullTrackingData || fullTrackingData.length === 0) return Swal.fire('No Data', 'No tracking data to export.', 'warning');
+        const prevSem = document.getElementById('reportPrevSem') ? document.getElementById('reportPrevSem').value : 'Baseline';
+        const targetSem = document.getElementById('reportSem') ? document.getElementById('reportSem').value : 'Target';
+        let csv = `No,IBM ID,Scholar Name,Barangay,School,Year Level,${prevSem} Status,${targetSem} Status,Movement Category,Current Status\n`;
+        fullTrackingData.forEach((s, idx) => {
+            csv += `${idx + 1},"${s.ibmId}","${s.name}","${s.barangay || ''}","${s.school || ''}","${s.yearLevel || ''}","${s.prevStatus}","${s.targetStatus}","${s.category}","${s.currentStatus}"\n`;
+        });
+        downloadCSV(csv, `IBM_Tracking_${prevSem}_vs_${targetSem}.csv`);
+    }
+    window.exportTrackingCSV = exportTrackingCSV;
+
+    function exportActiveReportView() {
+        if (currentActiveReportTab === 'analytics') {
+            exportSummaryCSV();
+        } else if (currentActiveReportTab === 'matrices') {
+            exportMatrixCSV();
+        } else if (currentActiveReportTab === 'tracking') {
+            exportTrackingCSV();
+        } else if (currentActiveReportTab === 'alumni') {
+            exportAlumniMatrixCSV();
+        }
+    }
+    window.exportActiveReportView = exportActiveReportView;
+
+    // --- BULLETPROOF UNIFIED PRINT HELPER ---
+    function executePrint(printClass, containerToClear = null) {
+        const allPrintClasses = [
+            'printing-list', 'printing-form', 'printing-furs', 'printing-ada',
+            'printing-finance', 'printing-report', 'printing-matrix',
+            'printing-tracking', 'printing-profile', 'printing-financial-list'
+        ];
+        allPrintClasses.forEach(c => document.body.classList.remove(c));
+        document.body.classList.add(printClass);
+
+        if (window.Swal && typeof window.Swal.close === 'function') {
+            window.Swal.close();
+        }
+        document.body.classList.remove('swal2-shown', 'swal2-height-auto');
+
+        if (typeof closeModal === 'function') closeModal();
+
+        // Target container mapping
+        const printContainerMap = {
+            'printing-list': 'printArea',
+            'printing-form': 'printPayrollFormArea',
+            'printing-furs': 'printFursArea',
+            'printing-ada': 'printAdaArea',
+            'printing-finance': 'printFinanceArea',
+            'printing-report': 'printReportArea',
+            'printing-matrix': 'printMatrixArea',
+            'printing-tracking': 'printTrackingArea',
+            'printing-profile': 'printProfileArea',
+            'printing-financial-list': 'printFinancialListArea'
+        };
+
+        const targetId = containerToClear || printContainerMap[printClass];
+        const targetEl = targetId ? document.getElementById(targetId) : null;
+
+        let cleanedUp = false;
+        const cleanup = () => {
+            if (cleanedUp) return;
+            cleanedUp = true;
+            document.body.classList.remove(printClass);
+            const pFrame = document.getElementById('ibmsPrintHelperFrame');
+            if (pFrame) {
+                try { pFrame.remove(); } catch(e) {}
+            }
+            if (containerToClear) {
+                const el = typeof containerToClear === 'string' ? document.getElementById(containerToClear) : containerToClear;
+                if (el) el.innerHTML = '';
+            }
+            window.removeEventListener('afterprint', cleanup);
+        };
+
+        window.addEventListener('afterprint', cleanup, { once: true });
+        setTimeout(cleanup, 60000);
+
+        // Check if running inside Google Apps Script iframe or embedded frame
+        const isInIframe = window.self !== window.top;
+
+        if (isInIframe && targetEl && targetEl.innerHTML.trim().length > 0) {
+            // IFRAME PRINT ISOLATION:
+            // Google Apps Script runs inside an iframe (script.googleusercontent.com).
+            // Calling window.print() directly inside an iframe in Chromium often prints outer frame or clips to 0 height.
+            // Rendering an isolated print document guarantees 100% visible, non-blank output.
+            try {
+                let existingFrame = document.getElementById('ibmsPrintHelperFrame');
+                if (existingFrame) existingFrame.remove();
+
+                const pFrame = document.createElement('iframe');
+                pFrame.id = 'ibmsPrintHelperFrame';
+                pFrame.style.position = 'fixed';
+                pFrame.style.right = '0';
+                pFrame.style.bottom = '0';
+                pFrame.style.width = '0';
+                pFrame.style.height = '0';
+                pFrame.style.border = '0';
+                document.body.appendChild(pFrame);
+
+                let allCss = '';
+                for (let i = 0; i < document.styleSheets.length; i++) {
+                    try {
+                        const sheet = document.styleSheets[i];
+                        for (let j = 0; j < sheet.cssRules.length; j++) {
+                            allCss += sheet.cssRules[j].cssText + '\n';
+                        }
+                    } catch(e) {}
+                }
+
+                const frameDoc = pFrame.contentDocument || pFrame.contentWindow.document;
+                frameDoc.open();
+                frameDoc.write(`<!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="utf-8">
+                    <title>IBMS Print</title>
+                    <style>
+                        ${allCss}
+                        html, body {
+                            background: #ffffff !important;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            overflow: visible !important;
+                            height: auto !important;
+                        }
+                        #${targetEl.id} {
+                            display: block !important;
+                            visibility: visible !important;
+                            position: static !important;
+                            width: 100% !important;
+                        }
+                    </style>
+                </head>
+                <body class="${printClass}">
+                    <div id="${targetEl.id}">${targetEl.innerHTML}</div>
+                </body>
+                </html>`);
+                frameDoc.close();
+
+                setTimeout(() => {
+                    try {
+                        pFrame.contentWindow.focus();
+                        pFrame.contentWindow.print();
+                    } catch(e) {
+                        window.print();
+                    }
+                }, 350);
+                return;
+            } catch(iframeErr) {
+                console.warn('Iframe print fallback to window.print', iframeErr);
+            }
+        }
+
+        // Direct window print (Localhost / XAMPP / direct browser)
+        setTimeout(() => {
+            window.print();
+        }, 250);
+    }
+    window.executePrint = executePrint;
+
+    function printAlumniMatrixReport() {
+        const aTable = document.getElementById('alumniBatchMatrixTable');
+        const hTable = document.getElementById('alumniHonorsMatrixTable');
+        if (!aTable) return Swal.fire('No Data', 'No alumni matrix table to print.', 'warning');
+
+        const area = document.getElementById('printMatrixArea');
+
+        area.innerHTML = `
+            <div class="mx-header">
+                <h2>Iskolar Bayan Alumni Program Matrix Report</h2>
+                <p>Municipality of Malungon, Sarangani Province</p>
+                <p>Generated: ${new Date().toLocaleString()}</p>
+            </div>
+            
+            <div class="mx-section-title">I. Alumni Distribution by Barangay & Graduation Batch</div>
+            <table class="mx-table">
+                ${aTable.innerHTML}
+            </table>
+
+            ${hTable ? `
+            <div class="mx-section-title" style="margin-top: 40px;">II. Academic Honors & Latin Awards Breakdown</div>
+            <table class="mx-table">
+                ${hTable.innerHTML}
+            </table>
+            ` : ''}
+        `;
+
+        executePrint('printing-matrix');
+    }
+    window.printAlumniMatrixReport = printAlumniMatrixReport;
+
+    function closeMatrixView() {
+        switchReportSubTab('analytics');
+    }
+
+
+// ==========================================
+// PAYROLL TRACKING SUMMARY GENERATOR
+// ==========================================
+function renderTrackingSummary() {
+    const groupBy = document.getElementById('trackingSummaryGroup').value;
+    const summary = {};
+
+    // 1. Aggregate the data
+    fullTrackingData.forEach(s => {
+        let key = s[groupBy] || 'Unassigned / Blank';
+        if (!summary[key]) {
+            summary[key] = { baseline: 0, retained: 0, pending: 0, returning: 0, target: 0 };
+        }
+
+        if (s.inBaseline) summary[key].baseline++;
+        if (s.inTarget) summary[key].target++;
+
+        if (s.category === 'RETAINED') summary[key].retained++;
+        else if (s.category === 'PENDING/MISSING') summary[key].pending++;
+        else if (s.category === 'NEW/RETURNING') summary[key].returning++;
+    });
+
+    // 2. Build the HTML Table
+    const tbody = document.getElementById('trackingSummaryTable');
+    let html = `
+        <thead style="position: sticky; top: 0; z-index: 10;">
+            <tr>
+                <th style="text-align: left; width: 25%;">${groupBy.toUpperCase()}</th>
+                <th>Baseline (Prev Sem)</th>
+                <th style="color: var(--success);">Retained</th>
+                <th style="color: var(--warning);">Pending / Dropped</th>
+                <th style="color: var(--primary);">New / Returning</th>
+                <th>Processed (Target)</th>
+            </tr>
+        </thead>
+        <tbody>
+    `;
+
+    let totals = { baseline: 0, retained: 0, pending: 0, returning: 0, target: 0 };
+
+    Object.keys(summary).sort().forEach(key => {
+        const row = summary[key];
+        totals.baseline += row.baseline;
+        totals.retained += row.retained;
+        totals.pending += row.pending;
+        totals.returning += row.returning;
+        totals.target += row.target;
+
+        html += `
+            <tr style="background: var(--bg-surface);">
+                <td style="font-weight: 700; text-align: left;">${key}</td>
+                <td>${row.baseline}</td>
+                <td style="color: var(--success); font-weight: bold;">${row.retained}</td>
+                <td style="color: var(--warning); font-weight: bold;">${row.pending}</td>
+                <td style="color: var(--primary); font-weight: bold;">${row.returning}</td>
+                <td style="font-weight: 800; background: #f8fafc;">${row.target}</td>
+            </tr>
+        `;
+    });
+
+    // 3. Add Grand Total Row
+    html += `
+        <tr style="background: var(--border-light); font-weight: 800; text-transform: uppercase;">
+            <td style="text-align: left;">GRAND TOTAL</td>
+            <td>${totals.baseline}</td>
+            <td style="color: var(--success);">${totals.retained}</td>
+            <td style="color: var(--warning);">${totals.pending}</td>
+            <td style="color: var(--primary);">${totals.returning}</td>
+            <td style="font-size: 1.05rem;">${totals.target}</td>
+        </tr>
+        </tbody>
+    `;
+
+    tbody.innerHTML = html;
+}
+
+// ============================================================
+// NEW: PAYROLL TRACKING (SEM VS SEM)
+// ============================================================
+function generateTrackingMatrix() {
+    const prevSem = document.getElementById('reportPrevSem').value;
+    const targetSem = document.getElementById('reportSem').value;
+
+    if (!prevSem || !targetSem) return Swal.fire('Missing Selection', 'Please select both Target and Qualifying Semester.', 'warning');
+
+    let baselineCount = 0; let targetOkCount = 0; let pendingCount = 0; let returningCount = 0;
+    fullTrackingData = []; // Reset stored data
+
+    const validPrevStatuses = ['OK', 'FIN', 'MED', 'PROBATION', 'WARNING', 'NEW'];
+    // NEW: We define statuses of scholars who are still in the program roster
+    const activeDbStatuses = ['ACTIVE', 'NEW', 'EXTENDED', 'WARNING', 'PROBATION', 'ON-LEAVE (MEDICAL)', 'ON-LEAVE (FINANCIAL)', 'ON-HOLD'];
+
+    const trackedScholars = dbData.filter(s => {
+        const prevRecord = (s.semesterRecords[prevSem] || '').toUpperCase().trim();
+        const targetRecord = (s.semesterRecords[targetSem] || '').toUpperCase().trim();
+        const dbStatus = (s.status || '').toUpperCase().trim();
+        
+        // Include if they were OK last sem, OR they are currently active in the DB (Forwarded), OR got paid in Target
+        return validPrevStatuses.includes(prevRecord) || activeDbStatuses.includes(dbStatus) || targetRecord === 'OK';
+    });
+
+    if (trackedScholars.length === 0) return Swal.fire('No Data', `No relevant scholars found.`, 'warning');
+
+    document.getElementById('standardSummaryContainer').style.display = 'none';
+    document.getElementById('matrixSummaryContainer').style.display = 'none';
+    if (document.getElementById('trackingSummaryContainer')) document.getElementById('trackingSummaryContainer').style.display = 'block';
+
+    trackedScholars.forEach((s) => {
+        const prevRecord = (s.semesterRecords[prevSem] || '').toUpperCase().trim();
+        const targetRecord = (s.semesterRecords[targetSem] || '').toUpperCase().trim();
+        const dbStatus = (s.status || '').toUpperCase().trim();
+
+        // The total forwarded pool (e.g. 843) = Active in Prev Sem OR Active in overall DB Roster
+        const inBaseline = validPrevStatuses.includes(prevRecord) || activeDbStatuses.includes(dbStatus);
+        const inTarget = targetRecord === 'OK';
+
+        let movementCat = '';
+        if (inBaseline && inTarget) { movementCat = 'RETAINED'; baselineCount++; targetOkCount++; } 
+        else if (inBaseline && !inTarget) { movementCat = 'PENDING/MISSING'; baselineCount++; pendingCount++; } 
+        else if (!inBaseline && inTarget) { movementCat = 'NEW/RETURNING'; targetOkCount++; returningCount++; }
+
+       // Indicate if they are forwarded but had a blank previous record
+        let prevDisplay = prevRecord ? `<span class="badge badge-secondary">${prevRecord}</span>` : `<span style="color:var(--warning); font-size:0.75rem; font-weight:bold;">BLANK (Forwarded)</span>`;
+        if (prevRecord === 'OK') prevDisplay = `<span class="badge badge-ok">OK</span>`;
+        else if (prevRecord.includes('MED') || prevRecord.includes('FIN')) prevDisplay = `<span class="badge badge-warning">${prevRecord}</span>`;
+
+        let targetDisplay = targetRecord ? `<span class="badge badge-secondary">${targetRecord}</span>` : `<span style="color:var(--text-muted); font-size:0.8rem;">BLANK</span>`;
+        if (targetRecord === 'OK') targetDisplay = `<span class="badge badge-ok">OK</span>`;
+
+        // Save everything into our master list (ADDED BARANGAY & SCHOOL)
+        fullTrackingData.push({
+            ibmId: s.ibmId, name: s.fullName, currentStatus: s.status,
+            barangay: s.barangay, school: s.school, yearLevel: s.yearLevel, // <--- Added Year Level here
+            prevStatus: prevRecord || 'BLANK', targetStatus: targetRecord || 'BLANK',
+            category: movementCat, inBaseline, inTarget, prevDisplay, targetDisplay
+        });
+    });
+
+    document.getElementById('trackingTotalBaseline').innerText = baselineCount;
+    document.getElementById('trackingTotalTarget').innerText = targetOkCount;
+    document.getElementById('trackingTotalPending').innerText = pendingCount;
+    document.getElementById('trackingTotalReturning').innerText = returningCount;
+
+    // Populate Dynamic Filter Dropdowns if empty
+    const trackingBrgyFilter = document.getElementById('trackingBrgyFilter');
+    if (trackingBrgyFilter && trackingBrgyFilter.options.length <= 1) {
+        trackingBrgyFilter.innerHTML = '<option value="">All Barangays</option>' + barangaysList.map(b => `<option value="${b}">${b}</option>`).join('');
+    }
+    const trackingSchoolFilter = document.getElementById('trackingSchoolFilter');
+    if (trackingSchoolFilter && trackingSchoolFilter.options.length <= 1) {
+        trackingSchoolFilter.innerHTML = '<option value="">All Schools</option>' + schoolsList.map(s => `<option value="${s}">${s}</option>`).join('');
+    }
+
+    // Reset dropdowns on fresh load
+    if(document.getElementById('trackingDbStatusFilter')) document.getElementById('trackingDbStatusFilter').value = '';
+    if(trackingBrgyFilter) trackingBrgyFilter.value = '';
+    if(trackingSchoolFilter) trackingSchoolFilter.value = '';
+
+    // Render the table showing ALL data initially
+    renderTrackingTable('ALL');
+    // NEW: Render the tracking summary breakdown
+    renderTrackingSummary();
+}
+
+function renderTrackingTable(filter) {
+    // If filter is passed, update global state. Otherwise use global state.
+    if (filter !== undefined) currentTrackingCategory = filter;
+    else filter = currentTrackingCategory;
+
+    // Dim inactive cards for a cool visual effect
+    document.querySelectorAll('.trk-stat-card').forEach(c => c.style.opacity = '0.4');
+    if (filter === 'ALL') {
+        document.querySelectorAll('.trk-stat-card').forEach(c => c.style.opacity = '1');
+    } else {
+        const activeCard = document.getElementById('card-' + filter.replace('/', '-'));
+        if (activeCard) activeCard.style.opacity = '1';
+    }
+
+    // Get Filter Dropdown Values
+    const dbStatusFilterEl = document.getElementById('trackingDbStatusFilter');
+    const dbStatusFilter = dbStatusFilterEl ? dbStatusFilterEl.value : '';
+    
+    const brgyFilterEl = document.getElementById('trackingBrgyFilter');
+    const brgyFilter = brgyFilterEl ? brgyFilterEl.value : '';
+    
+    const schoolFilterEl = document.getElementById('trackingSchoolFilter');
+    const schoolFilter = schoolFilterEl ? schoolFilterEl.value : '';
+
+    // 1. Filter by Category (Card Clicked)
+    let filteredData = [];
+    if (filter === 'ALL') filteredData = fullTrackingData;
+    else if (filter === 'BASELINE') filteredData = fullTrackingData.filter(d => d.inBaseline);
+    else if (filter === 'PROCESSED') filteredData = fullTrackingData.filter(d => d.inTarget);
+    else filteredData = fullTrackingData.filter(d => d.category === filter);
+
+    // 2. Apply Custom Dropdown Filters
+    if (dbStatusFilter) filteredData = filteredData.filter(d => d.currentStatus === dbStatusFilter);
+    if (brgyFilter) filteredData = filteredData.filter(d => d.barangay === brgyFilter);
+    if (schoolFilter) filteredData = filteredData.filter(d => d.school === schoolFilter);
+
+    currentTrackingList = []; // Reset the print queue
+
+    const prevSem = document.getElementById('reportPrevSem').value;
+    const targetSem = document.getElementById('reportSem').value;
+
+    let tHtml = `
+        <thead style="position: sticky; top: 0; z-index: 10;">
+            <tr>
+                <th style="width: 5%;">No.</th>
+                <th style="width: 12%;">IBM ID</th>
+                <th style="width: 25%; text-align: left;">Scholar Name</th>
+                <th style="width: 14%;">${prevSem}<br><small style="color:var(--text-muted);">(Baseline)</small></th>
+                <th style="width: 14%;">${targetSem}<br><small style="color:var(--primary);">(Target)</small></th>
+                <th style="width: 15%;">Movement Category</th>
+                <th style="width: 15%;">Current DB Status</th>
+            </tr>
+        </thead>
+        <tbody>
+    `;
+
+    if (filteredData.length === 0) {
+        tHtml += `<tr><td colspan="7" style="text-align: center; padding: 20px; color: var(--text-muted);">No scholars match this filter.</td></tr>`;
+    }
+
+    filteredData.forEach((s, idx) => {
+        let badge = '';
+        if (s.category === 'RETAINED') badge = '<span class="badge badge-active">RETAINED</span>';
+        else if (s.category === 'PENDING/MISSING') badge = '<span class="badge badge-warning">PENDING/MISSING</span>';
+        else if (s.category === 'NEW/RETURNING') badge = '<span class="badge badge-ok" style="background:var(--success); color:white;">RETURNING</span>';
+
+        tHtml += `
+            <tr style="background: var(--bg-surface);">
+                <td style="text-align: center;">${idx + 1}</td>
+                <td style="font-family: monospace; font-weight: bold; text-align: center; color: var(--text-main);">${s.ibmId}</td>
+                <td style="font-weight: 800; text-align: left;">${s.name}</td>
+                <td style="text-align: center;">${s.prevDisplay}</td>
+                <td style="text-align: center; background: #f8fafc;">${s.targetDisplay}</td>
+                <td style="text-align: center; font-weight: bold;">${badge}</td>
+                <td style="text-align: center;"><span class="badge badge-${s.currentStatus.toLowerCase().replace(/ /g,'-').replace(/[()]/g,'')}">${s.currentStatus}</span></td>
+            </tr>
+        `;
+
+        // Save to Print Queue
+        currentTrackingList.push({ ...s, no: idx + 1 });
+    });
+
+    tHtml += `</tbody>`;
+    document.getElementById('trackingTable').innerHTML = tHtml;
+
+    // Update Title to show what we are filtering
+    let filterText = filter === 'ALL' ? '' : ` <span style="color:var(--primary); font-size: 0.85em;">(Filtered: ${filter})</span>`;
+    if (dbStatusFilter) filterText += ` <span style="color:var(--warning); font-size: 0.85em;">[Status: ${dbStatusFilter}]</span>`;
+    if (brgyFilter) filterText += ` <span style="color:var(--success); font-size: 0.85em;">[Brgy: ${brgyFilter}]</span>`;
+    if (schoolFilter) filterText += ` <span style="color:var(--success); font-size: 0.85em;">[School: ${schoolFilter}]</span>`;
+    
+    document.getElementById('trackingTitleSpan').innerHTML = `Payroll Tracking: ${prevSem} vs. ${targetSem}${filterText}`;
+}
+
+// PRINT FUNCTION (Now respects active filters)
+function printTrackingMatrix() {
+    if (!currentTrackingList || currentTrackingList.length === 0) return Swal.fire('No Data', 'No data to print.', 'warning');
+
+    const prevSem = document.getElementById('reportPrevSem').value;
+    const targetSem = document.getElementById('reportSem').value;
+    const titleStatus = document.getElementById('trackingTitleSpan').innerText;
+    
+    // Check if we are printing a filtered list
+    let printSubtitle = titleStatus.includes('Filtered') ? titleStatus.split('(')[1].replace(')', '') : 'Showing All Records';
+
+    const area = document.getElementById('printTrackingArea');
+
+    let rowsHtml = currentTrackingList.map(s => `
+        <tr>
+            <td>${s.no}</td>
+            <td style="font-family: monospace; white-space: nowrap;">${s.ibmId}</td>
+            <td style="text-align: left; font-weight: bold;">${s.name}</td>
+            <td>${s.prevStatus}</td>
+            <td>${s.targetStatus}</td>
+            <td>${s.category}</td>
+            <td>${s.currentStatus}</td>
+        </tr>
+    `).join('');
+
+    area.innerHTML = `
+        <div class="trk-header">
+            <h2>Payroll Tracking Report</h2>
+            <p><strong>Baseline:</strong> ${prevSem} &nbsp;|&nbsp; <strong>Target:</strong> ${targetSem}</p>
+            <p style="font-size: 10pt; font-weight: bold; color: #444; margin-top: 6px; text-transform: uppercase;">[ ${printSubtitle} ]</p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #000; font-size: 10pt; font-weight: bold;">
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #000; text-align: center; background: #f0f0f0;">Baseline (Prev): ${document.getElementById('trackingTotalBaseline').innerText}</td>
+                <td style="padding: 10px; border-right: 1px solid #000; text-align: center; background: #f0f0f0;">Processed (Target): ${document.getElementById('trackingTotalTarget').innerText}</td>
+                <td style="padding: 10px; border-right: 1px solid #000; text-align: center; background: #f0f0f0;">Pending/Dropped: ${document.getElementById('trackingTotalPending').innerText}</td>
+                <td style="padding: 10px; text-align: center; background: #f0f0f0;">New/Returning: ${document.getElementById('trackingTotalReturning').innerText}</td>
+            </tr>
+        </table>
+
+        <table class="trk-table">
+            <thead>
+                <tr>
+                    <th width="5%">No.</th><th width="12%">IBM ID</th><th width="30%">Name of Scholar</th>
+                    <th width="12%">Prev Status</th><th width="12%">Target Status</th>
+                    <th width="14%">Category</th><th width="15%">Current DB Status</th>
+                </tr>
+            </thead>
+            <tbody>${rowsHtml}</tbody>
+        </table>
+    `;
+
+    executePrint('printing-tracking', 'printTrackingArea');
+}
+
+function closeTrackingView() {
+    document.getElementById('trackingSummaryContainer').style.display = 'none';
+    document.getElementById('standardSummaryContainer').style.display = 'block';
+}
+
+// --- HELPER FUNCTION FOR DURATION MATRIX ---
+function generateDurationMatrix(scholars) {
+    // Buckets for Duration (1 to 8+)
+    const durationCounts = { '1':0, '2':0, '3':0, '4':0, '5':0, '6':0, '7':0, '8':0, 'Over':0 };
+    
+    scholars.forEach(s => {
+        let c = parseInt(s.semesterCount) || 0; // Uses the calculated count from Backend
+        if(c >= 1 && c <= 8) {
+            durationCounts[String(c)]++;
+        } else if (c > 8) {
+            durationCounts['Over']++;
+        }
+    });
+
+    // Check if table exists, if not create it, if yes update it
+    let container = document.getElementById('durationMatrixContainer');
+    if(!container) {
+        // Insert new container if it doesn't exist
+        const html = `
+        <div id="durationMatrixContainer" class="summary-box" style="margin-top: 24px;">
+            <div class="summary-header"><span>Program Duration Analysis (Semesters Utilized)</span></div>
+            <div class="matrix-table-container">
+                <table class="matrix-table" id="durationTable"></table>
+            </div>
+        </div>`;
+        document.getElementById('matrixSummaryContainer').insertAdjacentHTML('beforeend', html);
+    }
+
+    const dTable = document.getElementById('durationTable');
+    dTable.innerHTML = `
+        <thead>
+            <tr>
+                <th>Duration</th>
+                <th>1st Sem</th><th>2nd Sem</th><th>3rd Sem</th><th>4th Sem</th>
+                <th>5th Sem</th><th>6th Sem</th><th>7th Sem</th><th>8th Sem</th>
+                <th style="color:var(--danger);">Overstaying</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-weight:700;">Student Count</td>
+                <td>${durationCounts['1']}</td>
+                <td>${durationCounts['2']}</td>
+                <td>${durationCounts['3']}</td>
+                <td>${durationCounts['4']}</td>
+                <td>${durationCounts['5']}</td>
+                <td>${durationCounts['6']}</td>
+                <td>${durationCounts['7']}</td>
+                <td>${durationCounts['8']}</td>
+                <td style="font-weight:800; color:var(--danger);">${durationCounts['Over']}</td>
+            </tr>
+        </tbody>
+    `;
+}
+
+    function printMatrixReport() {
+        const area = document.getElementById('printMatrixArea');
+        const sem = document.getElementById('reportSem').value;
+        
+        // Clone tables for printing
+        const matrixTable = document.getElementById('matrixTable').outerHTML;
+        const statusTable = document.getElementById('statusMatrixTable').outerHTML;
+
+        area.innerHTML = `
+            <div class="mx-header">
+                <h2>Scholarship Program Matrix Report</h2>
+                <p>Period: <strong>${sem}</strong></p>
+                <p>Generated: ${new Date().toLocaleString()}</p>
+            </div>
+            
+            <div class="mx-section-title">I. Distribution by Barangay & Year Level</div>
+            <table class="mx-table">
+                ${document.getElementById('matrixTable').innerHTML}
+            </table>
+
+            <div class="mx-section-title" style="margin-top: 40px;">II. Status Summary Breakdown</div>
+            <table class="mx-table">
+                ${document.getElementById('statusMatrixTable').innerHTML}
+            </table>
+        `;
+
+        executePrint('printing-matrix');
+    }
+
+    function printReportList() {
+        if (!currentReportList || currentReportList.length === 0) {
+            return Swal.fire('No Data', 'Please select a category with data first.', 'warning');
+        }
+
+        const area = document.getElementById('printReportArea');
+        const sem = document.getElementById('reportSem').value;
+        const prevSem = document.getElementById('reportPrevSem').value;
+        const mode = document.getElementById('reportMode').value;
+        const groupLabel = document.getElementById('reportGroup').options[document.getElementById('reportGroup').selectedIndex].text;
+        
+        let headerTitle = "IBM SCHOLARSHIP MASTER LIST";
+        let subHeader = `<strong>Period:</strong> ${sem}`;
+        
+        if (mode === 'pending') {
+            headerTitle = "TARGET FOR RENEWAL / PENDING LIST";
+            subHeader = `<strong>Target:</strong> ${sem} <br> <strong>Baseline (Active):</strong> ${prevSem}`;
+        }
+
+        let tableRows = currentReportList.map((s, i) => `
+            <tr>
+                <td style="text-align: center; width: 40px;">${i + 1}</td>
+                <td style="text-align: center;">${s.ibmId}</td>
+                <td>${s.fullName}</td>
+                <td>${s.school}</td>
+                <td style="text-align: center;">${s.yearLevel}</td>
+                <td style="text-align: center;">${s.status}</td>
+            </tr>
+        `).join('');
+
+        area.innerHTML = `
+            <div class="rep-header">
+                <h2>${headerTitle}</h2>
+                <p>${subHeader}</p>
+                <p><strong>Category:</strong> ${groupLabel} - ${currentReportFilter}</p>
+                <p><strong>Total Count:</strong> ${currentReportList.length}</p>
+            </div>
+            <table class="rep-table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>IBM ID</th>
+                        <th>Name of Scholar</th>
+                        <th>School</th>
+                        <th>Year</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tableRows}
+                </tbody>
+            </table>
+        `;
+
+        executePrint('printing-report');
+    }
+    window.printReportList = printReportList;
+    window.promptPrintMasterList = printReportList;
+    function printCurrentReport() {
+        printReportList();
+    }
+    window.printCurrentReport = printCurrentReport;
+
+    // --- Iskolar Registry Table with Pagination ---
+    function renderVTable(data = null) {
+    // If new data is provided, reset pagination
+    if (data) {
+        vCurrentData = data;
+    }
+
+    const totalItems = vCurrentData.length;
+    const startIndex = (vCurrentPage - 1) * vRowsPerPage;
+    const endIndex = Math.min(startIndex + vRowsPerPage, totalItems);
+    const pagedData = vCurrentData.slice(startIndex, endIndex);
+
+    document.getElementById('vBody').innerHTML = pagedData.map(s => {
+        const chk = `
+            <div style="display:flex; flex-direction:column; align-items:center; gap:2px;">
+                <input type="checkbox" class="v-checkbox" value="${s.ibmId}" onchange="toggleId('${s.ibmId}')" ${selectedIds.has(s.ibmId) ? 'checked' : ''}>
+                ${s.isInPayroll ? `<span class="badge badge-payroll" style="font-size:0.55rem; padding: 2px 4px; line-height:1; letter-spacing:0;">ADDED</span>` : ''}
+            </div>
+        `;
+        
+        // --- NEW VISUAL ENHANCEMENT LOGIC ---
+        const initial = s.firstName ? s.firstName.charAt(0).toUpperCase() : '?';
+        // Fallback for missing data
+        const course = s.course || 'No Course'; 
+        const year = s.yearLevel || '';
+        const metaText = year ? `${course} • ${year}` : course;
+
+        return `
+        <tr>
+            <td class="chk-cell">${chk}</td>
+            <td style="color: var(--text-muted); font-size: 0.8rem; font-weight: 600;">${s.controlNo || s.no}</td>
+            <td style="font-family: monospace; font-size: 0.85rem; font-weight: 800; color: var(--text-main);">${s.ibmId}</td>
+            
+            <td>
+                <div class="scholar-profile">
+                    <div class="scholar-initial">${initial}</div>
+                    <div class="scholar-info">
+                        <div class="scholar-name">${s.fullName.toUpperCase()}</div>
+                        <div class="scholar-meta">${metaText}</div>
+                    </div>
+                </div>
+            </td>
+            
+            <td><span class="badge badge-${s.status.toLowerCase().replace(/\s+/g,'-').replace(/[()]/g,'')}">${s.status}</span></td>
+            <td>
+                <div class="action-group">
+                    <button class="btn btn-ghost btn-icon" title="View Record" onclick="viewScholar('${s.ibmId}')">👁️</button>
+                    <button class="btn btn-ghost btn-icon" title="Edit Scholar" onclick="openScholarModal(true, '${s.ibmId}')">✏️</button>
+                    <button class="btn btn-ghost btn-icon" style="color: #059669;" title="Move to Alumni / Graduates" onclick="promptAddGraduate('${s.ibmId}', '${s.fullName.replace(/'/g, "\\'")}')">🎓</button>
+                    <button class="btn btn-ghost btn-icon" style="color: var(--danger)" title="Disciplinary Action" onclick="openDismissalModal('${s.ibmId}')">⚖️</button>
+                    ${!s.isInPayroll ? `<button class="btn btn-primary btn-sm" onclick="prepAdd(${s.rowIndex})">Add</button>` : ''}
+                </div>
+            </td>
+        </tr>
+        `;
+    }).join('');
+    
+    // Handle Empty State
+    if (pagedData.length === 0) {
+         document.getElementById('vBody').innerHTML = '<tr><td colspan="6" style="text-align:center; padding: 40px; color: var(--text-muted); font-weight: 500;">No scholars found.</td></tr>';
+    }
+
+    document.getElementById('selectAll').checked = false;
+    
+    // Update Pagination Controls
+    updatePaginationControls(startIndex, endIndex, totalItems);
+}
+
+    function updatePaginationControls(start, end, total) {
+        document.getElementById('vPageInfo').innerText = `Showing ${total > 0 ? start + 1 : 0} to ${end} of ${total}`;
+        
+        const btnPrev = document.getElementById('btnPrev');
+        const btnNext = document.getElementById('btnNext');
+        
+        btnPrev.disabled = vCurrentPage === 1;
+        btnNext.disabled = end >= total;
+    }
+
+    function changePage(direction) {
+        vCurrentPage += direction;
+        renderVTable(); // Re-render with existing vCurrentData but new page
+    }
+
+    // --- Batch Selection Logic ---
+    function toggleId(id) {
+        if(selectedIds.has(id)) selectedIds.delete(id);
+        else selectedIds.add(id);
+        updateBatchBtn();
+    }
+
+    function toggleSelectAll() {
+        const checkboxes = document.querySelectorAll('.v-checkbox');
+        const allChecked = document.getElementById('selectAll').checked;
+        checkboxes.forEach(cb => {
+            cb.checked = allChecked;
+            if(allChecked) selectedIds.add(cb.value);
+            else selectedIds.delete(cb.value);
+        });
+        updateBatchBtn();
+    }
+
+    function updateBatchBtn() {
+    const count = selectedIds.size;
+    
+    // Batch Add Button
+    const btnBatch = document.getElementById('btnBatch');
+    if(btnBatch) {
+        document.getElementById('batchCount').innerText = count;
+        btnBatch.style.display = count > 0 ? 'inline-flex' : 'none';
+    }
+
+    // Batch Update Button
+    const btnBatchUpdate = document.getElementById('btnBatchUpdate');
+    if(btnBatchUpdate) {
+        document.getElementById('batchUpdateCount').innerText = count;
+        btnBatchUpdate.style.display = count > 0 ? 'inline-flex' : 'none';
+    }
+
+    // Batch Graduate Button
+    const btnBatchGrad = document.getElementById('btnBatchGrad');
+    if(btnBatchGrad) {
+        document.getElementById('batchGradCount').innerText = count;
+        btnBatchGrad.style.display = count > 0 ? 'inline-flex' : 'none';
+    }
+
+    // Batch Other Grants Button
+    const btnBatchOtherGrant = document.getElementById('btnBatchOtherGrant');
+    if(btnBatchOtherGrant) {
+        document.getElementById('batchOtherGrantCount').innerText = count;
+        btnBatchOtherGrant.style.display = count > 0 ? 'inline-flex' : 'none';
+    }
+}
+    
+
+    // --- BATCH UPDATE PROCESSING ---
+    function openBatchUpdateModal() {
+    document.getElementById('buDisplayCount').innerText = selectedIds.size;
+    document.getElementById('batchUpdateForm').reset();
+    
+    const tbody = document.getElementById('buReviewBody');
+    const selectedScholars = dbData.filter(s => selectedIds.has(s.ibmId));
+    
+    const yearOptions = ["1st Year", "2nd Year", "3rd Year", "4th Year", "5th Year"];
+
+    tbody.innerHTML = selectedScholars.map(s => {
+        const curYear = (s.yearLevel || '').trim();
+        const opts = yearOptions.map(y => 
+            `<option value="${y}" ${curYear === y ? 'selected' : ''}>${y}</option>`
+        ).join('');
+
+        return `
+            <tr data-ibmid="${s.ibmId}">
+                <td style="font-family: monospace; font-weight: 800;">${s.ibmId}</td>
+                <td style="font-weight: 600;">${s.fullName}</td>
+                <td>
+                    <select class="form-control bu-row-year" style="padding: 6px; font-size: 0.8rem;">
+                        <option value="">-- Unchanged --</option>
+                        ${opts}
+                    </select>
+                </td>
+            </tr>
+        `;
+    }).join('');
+
+    document.getElementById('batchUpdateModal').style.display = 'flex';
+}
+
+function setAllBatchYears(yearVal) {
+    document.querySelectorAll('.bu-row-year').forEach(sel => sel.value = yearVal);
+}
+
+document.getElementById('batchUpdateForm').onsubmit = (e) => {
+    e.preventDefault();
+
+    const sy = document.getElementById('bu-sy').value.trim();
+    const status = document.getElementById('bu-status').value;
+    const remarks = document.getElementById('bu-remarks').value.trim();
+    const course = document.getElementById('bu-course').value.trim();
+    const school = document.getElementById('bu-school').value.trim();
+
+    const commonUpdates = {};
+    if (sy) commonUpdates.schoolYear = sy;
+    if (status) commonUpdates.status = status;
+    if (remarks) commonUpdates.remarks = remarks;
+    if (course) commonUpdates.course = course;
+    if (school) commonUpdates.school = school;
+
+    // Collect individual year levels per scholar
+    const individualYears = {};
+    let yearChangesExist = false;
+    document.querySelectorAll('#buReviewBody tr').forEach(row => {
+        const id = row.getAttribute('data-ibmid');
+        const selYear = row.querySelector('.bu-row-year').value;
+        if (id && selYear) {
+            individualYears[id] = selYear;
+            yearChangesExist = true;
+        }
+    });
+
+    if (Object.keys(commonUpdates).length === 0 && !yearChangesExist) {
+        return Swal.fire('No Changes', 'No field values or year levels were changed.', 'warning');
+    }
+
+    Swal.fire({
+        title: 'Confirm Updates',
+        text: `Apply changes to ${selectedIds.size} selected scholar(s)?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, Save Updates',
+        confirmButtonColor: 'var(--primary)'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const payload = {
+                ids: Array.from(selectedIds),
+                updates: commonUpdates,
+                individualYears: individualYears
+            };
+
+            toggleLoader(true);
+            google.script.run
+                .withSuccessHandler(res => {
+                    closeModal();
+                    selectedIds.clear();
+                    updateBatchBtn();
+                    loadData();
+                    toggleLoader(false);
+                    Swal.fire('Updated', `Successfully updated ${res.count} scholars.`, 'success');
+                })
+                .withFailureHandler(err => {
+                    toggleLoader(false);
+                    Swal.fire('Error', err.message, 'error');
+                })
+                .batchUpdateScholars(payload);
+        }
+    });
+};
+
+    // --- Batch Processing (Updated with List) ---
+    function openBatchModal() {
+        document.getElementById('batchDisplayCount').innerText = selectedIds.size;
+        document.getElementById('b-period').value = '';
+        document.getElementById('b-remarks').value = '';
+
+        // Populate Review List
+        const listBody = document.getElementById('batchReviewBody');
+        listBody.innerHTML = '';
+        const selectedScholars = dbData.filter(s => selectedIds.has(s.ibmId));
+        
+        if (selectedScholars.length > 0) {
+            listBody.innerHTML = selectedScholars.map(s => `
+                <tr>
+                    <td style="font-family: monospace; font-weight: 800;">${s.ibmId}</td>
+                    <td style="font-weight: 600;">${s.fullName}</td>
+                    <td style="font-family: monospace;">${s.lbpAccount || '<span style="color:var(--danger); font-size: 0.7em; font-weight: 800;">MISSING</span>'}</td>
+                </tr>
+            `).join('');
+        } else {
+            listBody.innerHTML = '<tr><td colspan="3" style="text-align:center; color: var(--text-muted); font-weight: 500;">No scholars selected.</td></tr>';
+        }
+
+        document.getElementById('batchModal').style.display = 'flex';
+    }
+
+    document.getElementById('batchForm').onsubmit = (e) => {
+        e.preventDefault();
+        const autoPromoteEl = document.getElementById('b-auto-promote');
+        const payload = {
+            ids: Array.from(selectedIds),
+            grantPeriod: document.getElementById('b-period').value,
+            remarks: document.getElementById('b-remarks').value,
+            autoPromote: autoPromoteEl ? autoPromoteEl.checked : true
+        };
+
+        toggleLoader(true);
+        google.script.run.withSuccessHandler(res => {
+            closeModal();
+            updateLocalState(res.newEntries); // Instant update!
+            toggleLoader(false);
+            Swal.fire({title: 'Batch Complete', text: `Added ${res.addedCount} scholars.`, icon: 'success'});
+        }).batchAddToPayroll(payload);
+    };
+
+    function updateLocalState(newEntries) {
+        if (!newEntries || !newEntries.length) return;
+        newEntries.forEach(entry => {
+            const s = dbData.find(x => x.ibmId === entry.ibmId);
+            if(s) {
+                s.isInPayroll = true;
+                if(entry.grantPeriod) s.semesterRecords[entry.grantPeriod] = 'OK';
+            }
+        });
+        pData.push(...newEntries);
+        selectedIds.clear();
+        updateBatchBtn();
+        filterTable('v');
+        renderPTable(pData); // Refresh Payroll table with new full list
+        updateStats();
+    }
+
+    // --- Single Add Optimization ---
+    document.getElementById('payrollForm').onsubmit = (e) => {
+        e.preventDefault();
+        const row = document.getElementById('f-row').value;
+        const ref = activeRef || pData.find(x => x.rowIndex == row);
+        const payload = {
+            ibmId: ref.ibmId, fullName: ref.fullName, status: ref.status,
+            lbpAccount: document.getElementById('f-account').value,
+            yearLevel: document.getElementById('f-year').value,
+            grantPeriod: document.getElementById('f-period').value,
+            remarks: document.getElementById('f-remarks').value,
+            no: row ? pData.find(x => x.rowIndex == row).no : 0,
+            rowIndex: row
+        };
+        toggleLoader(true);
+        
+        if (row) {
+             google.script.run.withSuccessHandler(() => { closeModal(); loadData(); Swal.fire('Updated', 'Entry updated', 'success'); }).updatePayrollEntry(payload);
+        } else {
+            google.script.run.withSuccessHandler(res => { 
+                closeModal(); 
+                updateLocalState([res.newEntry]); // Instant update
+                toggleLoader(false); 
+                Swal.fire({title: 'Success', text: 'Added to Registry', icon: 'success', timer: 1500, showConfirmButton: false}); 
+            }).addToPayroll(payload);
+        }
+    };
+
+    // --- Payroll Registry Table with Pagination & Removed Copy ---
+    
+    function renderPTable(data = null) {
+        if (data) {
+            pCurrentData = data;
+        }
+
+        const totalItems = pCurrentData.length;
+        const startIndex = (pCurrentPage - 1) * pRowsPerPage;
+        const endIndex = Math.min(startIndex + pRowsPerPage, totalItems);
+        const pagedData = pCurrentData.slice(startIndex, endIndex);
+
+        document.getElementById('pBody').innerHTML = pagedData.map(r => `
+            <tr>
+                <td style="font-weight: 600; color: var(--text-muted);">${r.no}</td>
+                <td style="font-family: monospace; font-weight: 800; color: var(--text-main);">${r.ibmId}</td>
+                <td style="font-weight: 600;">${r.fullName}</td>
+                <td style="font-family: monospace;">${r.lbpAccount}</td>
+                <td style="color: var(--text-secondary);">${r.yearLevel}</td>
+                <td style="font-weight: 500;">${r.grantPeriod}</td>
+                <td>
+                    <div class="action-group">
+                        <button class="btn btn-ghost btn-sm" onclick="prepEdit(${r.rowIndex})">Edit</button> 
+                        <button class="btn btn-ghost btn-sm" style="color:var(--danger)" onclick="remove(${r.rowIndex})">X</button>
+                    </div>
+                </td>
+            </tr>
+        `).join('');
+        
+        document.getElementById('p-total').innerText = totalItems;
+        
+        updatePaginationControlsP(startIndex, endIndex, totalItems);
+    }
+
+    function updatePaginationControlsP(start, end, total) {
+        document.getElementById('pPageInfo').innerText = `Showing ${total > 0 ? start + 1 : 0} to ${end} of ${total}`;
+        
+        const btnPrev = document.getElementById('btnPrevP');
+        const btnNext = document.getElementById('btnNextP');
+        
+        btnPrev.disabled = pCurrentPage === 1;
+        btnNext.disabled = end >= total;
+    }
+
+    function changePageP(direction) {
+        pCurrentPage += direction;
+        renderPTable(); // Re-render with existing pCurrentData but new page
+    }
+
+    function updateStats() {
+        if (!sems || sems.length === 0 || !dbData || dbData.length === 0) return;
+
+        // 1. Identify Semesters (Current & Previous)
+        const currentSem = sems[sems.length - 1]; // e.g., "2025-2026/2nd Sem"
+        const prevSem = sems.length > 1 ? sems[sems.length - 2] : currentSem; // Fallback to current if only 1 exists
+
+        // 2. Calculations
+        // Target (Baseline) = Scholars active in the PREVIOUS semester
+        const validSemStatuses = ['OK', 'NEW', 'ACTIVE', 'FIN', 'MED', 'PROBATION', 'WARNING'];
+        const activeDbStatuses = ['ACTIVE', 'NEW', 'EXTENDED', 'WARNING', 'PROBATION', 'ON-LEAVE (MEDICAL)', 'ON-LEAVE (FINANCIAL)', 'ON-HOLD'];
+        
+        let baselineCount = 0;
+        let currentProgressCount = 0;
+
+        dbData.forEach(s => {
+            // Count Baseline from Previous Semester OR Active Roster
+            const prevRecord = s.semesterRecords[prevSem];
+            const prevStatus = (prevRecord || '').trim().toUpperCase();
+            const dbStatus = (s.status || '').toUpperCase().trim();
+            
+            // If they had an active record last sem OR are still active in the database
+            if (validSemStatuses.includes(prevStatus) || activeDbStatuses.includes(dbStatus)) {
+                baselineCount++;
+            }
+
+            // Count Progress from Current Semester
+            const currRecord = s.semesterRecords[currentSem];
+            const currStatus = (currRecord || '').trim().toUpperCase();
+            if (currStatus === 'OK') {
+                currentProgressCount++;
+            }
+        });
+
+        // 3. Safe DOM Updates
+        const safeSetText = (id, text) => {
+            const el = document.getElementById(id);
+            if (el) el.innerText = text;
+        };
+
+        // Update First Card (Baseline)
+        safeSetText('stat-total-active', baselineCount);
+        safeSetText('stat-active-label', `ACTIVE IN ${prevSem.toUpperCase()}`);
+        updateFilterSemText();
+        
+        // Update Second Card (Progress)
+        safeSetText('stat-progress-label', `PAYROLL PROGRESS (${currentSem.toUpperCase()})`);
+        safeSetText('stat-payroll-current', currentProgressCount);
+        safeSetText('stat-payroll-total', baselineCount);
+
+        // 4. Progress Bar Logic
+        let pct = 0;
+        if (baselineCount > 0) {
+            pct = Math.round((currentProgressCount / baselineCount) * 100);
+        } else if (currentProgressCount > 0) {
+            pct = 100; // If baseline is 0 but there is progress somehow
+        }
+        if(pct > 100) pct = 100;
+
+        const bar = document.getElementById('stat-progress-bar');
+        if(bar) bar.style.width = `${pct}%`;
+        
+        safeSetText('stat-pct-text', `${pct}% Complete`);
+
+        const elOtherGrants = document.getElementById('statOtherGrants');
+        if (elOtherGrants) {
+            elOtherGrants.innerText = otherGrantsData ? otherGrantsData.length : 0;
+        }
+    }
+
+    // --- Standard Functions (Unchanged Logic) ---
+    function viewScholar(id) {
+    const s = dbData.find(x => x.ibmId === id);
+    if(!s) return;
+    currentViewScholar = s;
+    let startIdx = sems.findIndex(sem => (s.semesterRecords[sem] || '').trim().toUpperCase() === 'OK');
+    if (startIdx === -1) startIdx = 0; 
+    const visibleSems = sems.slice(startIdx);
+    
+    let totalStipend = 0;
+    let semRows = visibleSems.map(sem => {
+        const payrollEntry = pData.find(p => p.ibmId === s.ibmId && p.grantPeriod === sem);
+        let releaseDate = '<span style="color:var(--text-muted); font-style:italic;">N/A</span>';
+        if (payrollEntry && payrollEntry.remarks) {
+            const dateMatch = payrollEntry.remarks.match(/(\d{1,2}[\/.-]\d{1,2}[\/.-]\d{2,4})|(\d{4}[\/.-]\d{1,2}[\/.-]\d{1,2})/);
+            releaseDate = dateMatch ? dateMatch[0] : payrollEntry.remarks;
+        }
+        const isOk = (s.semesterRecords[sem] === 'OK');
+        const stipend = isOk ? getSemesterStipendAmount(sem) : 0;
+        if (isOk) totalStipend += stipend;
+        const stipendDisplay = isOk ? `₱${stipend.toLocaleString('en-US', {minimumFractionDigits: 2})}` : '—';
+        return `<tr><td style="font-weight: 500;">${sem}</td><td>${(isOk ? '<span class="badge badge-ok">OK</span>' : s.semesterRecords[sem] || '-')}</td><td style="font-family: monospace; font-size: 0.85rem;">${releaseDate}</td><td style="text-align: right; font-weight: 700; font-family: monospace; color: #166534;">${stipendDisplay}</td></tr>`;
+    }).join('');
+
+    // --- NEW: PROGRESS BAR LOGIC ---
+    const semCount = parseInt(s.semesterCount) || 0;
+    const maxSem = 8;
+    const pct = Math.min(100, (semCount / maxSem) * 100);
+    let barColor = 'var(--primary)';
+    if(semCount >= 8) barColor = 'var(--danger)'; // Full
+    else if(semCount >= 7) barColor = 'var(--warning)'; // Near full
+
+    document.getElementById('viewContent').innerHTML = `
+        <div class="profile-header">
+            <div class="profile-item"><label>IBM ID</label><div style="font-family: monospace; font-size: 1.1rem; font-weight: 800;">${s.ibmId}</div></div>
+            <div class="profile-item"><label>Status</label><div><span class="badge badge-${s.status.toLowerCase().replace(/ /g,'-').replace(/[()]/g,'')}">${s.status}</span></div></div>
+            <div class="profile-item"><label>Full Name</label><div style="font-weight: 800;">${s.fullName}</div></div>
+            <div class="profile-item"><label>School Year</label><div>${s.schoolYear}</div></div>
+            <div class="profile-item"><label>Course</label><div>${s.course}</div></div>
+            <div class="profile-item"><label>School</label><div>${s.school}</div></div>
+            <div class="profile-item"><label>Contact</label><div>${s.contact}</div></div>
+            <div class="profile-item"><label>Barangay</label><div>${s.barangay}</div></div>
+            <div class="profile-item"><label>LBP Account</label><div style="font-family: monospace;">${s.lbpAccount}</div></div>
+            <div class="profile-item"><label>Year Level (Current)</label><div>${s.yearLevel || '-'}</div></div>
+            <div class="profile-item" style="border-left: 3px solid var(--primary); padding-left: 10px;"><label>Starting Year Level</label><div style="color: var(--primary); font-weight: 800;">${s.startingYear || '<span style="color:var(--text-muted); font-size:0.8rem;">Not Recorded</span>'}</div></div>
+        </div>
+
+        <div style="background: var(--bg-body); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 24px;">
+             <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em;">Program Duration (Max 8 Sems)</label>
+                <span style="font-weight: 800; font-size: 0.9rem; color: var(--text-main);">${semCount} / 8 Semesters</span>
+             </div>
+             <div style="width: 100%; background: var(--border); height: 10px; border-radius: 5px; overflow: hidden;">
+                <div style="width: ${pct}%; background: ${barColor}; height: 100%;"></div>
+             </div>
+             <div style="margin-top: 8px; font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">
+                Note: Medical leave freezes this counter. Financial leave increments it.
+             </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <h3 style="font-size: 1.1rem; font-weight: 800; margin: 0; color: var(--text-main);">Financial Record (IBM Grant)</h3>
+            <span style="font-size: 0.9rem; font-weight: 800; color: #166534; background: #dcfce7; border: 1px solid #86efac; padding: 4px 12px; border-radius: 6px;">Total Stipend: ₱${totalStipend.toLocaleString('en-US', {minimumFractionDigits: 2})}</span>
+        </div>
+        <table class="sem-history-table"><thead><tr><th>Semester</th><th>Status</th><th>Date of Release</th><th style="text-align:right;">Stipend</th></tr></thead><tbody>${semRows}</tbody></table>
+    `;
+    document.getElementById('viewModal').style.display = 'flex';
+}
+
+    function openScholarModal(edit = false, id = null) {
+        isEditMode = !!edit;
+        window.isEditMode = isEditMode;
+        const form = document.getElementById('scholarForm');
+        form.reset();
+        if (edit && id) {
+            const s = (typeof dbData !== 'undefined' && Array.isArray(dbData) ? dbData : []).find(x => x.ibmId === id) || (window.dbData || []).find(x => x.ibmId === id);
+            if (s) {
+                document.getElementById('scholarModalTitle').innerText = 'Edit Scholar';
+                document.getElementById('ns-row-index').value = s.rowIndex;
+                document.getElementById('ns-sy').value = s.schoolYear;
+                document.getElementById('ns-ibm').value = s.ibmId; 
+                document.getElementById('ns-first').value = s.firstName;
+                document.getElementById('ns-middle').value = s.middleName;
+                document.getElementById('ns-last').value = s.lastName;
+                document.getElementById('ns-sex').value = s.sex;
+                document.getElementById('ns-tribe').value = s.tribe;
+                document.getElementById('ns-course').value = s.course;
+                document.getElementById('ns-school').value = s.school;
+                document.getElementById('ns-school-id').value = s.schoolId;
+                document.getElementById('ns-contact').value = s.contact;
+                document.getElementById('ns-barangay').value = s.barangay;
+                document.getElementById('ns-lbp').value = s.lbpAccount;
+                document.getElementById('ns-starting-year').value = s.startingYear || ''; // Load Starting Year
+                document.getElementById('ns-year').value = s.yearLevel;
+                document.getElementById('ns-status').value = s.dbStatus; 
+                document.getElementById('ns-remarks').value = s.remarks;
+            }
+        } else {
+            document.getElementById('scholarModalTitle').innerText = 'Add New Scholar';
+            document.getElementById('ns-row-index').value = '';
+        }
+        document.getElementById('scholarModal').style.display = 'flex';
+    }
+    window.openScholarModal = openScholarModal;
+
+    document.getElementById('scholarForm').onsubmit = (e) => {
+        e.preventDefault();
+        const payload = {
+            rowIndex: document.getElementById('ns-row-index').value, 
+            ibmId: document.getElementById('ns-ibm').value,
+            schoolYear: document.getElementById('ns-sy').value,
+            firstName: document.getElementById('ns-first').value,
+            middleName: document.getElementById('ns-middle').value,
+            lastName: document.getElementById('ns-last').value,
+            sex: document.getElementById('ns-sex').value,
+            tribe: document.getElementById('ns-tribe').value,
+            course: document.getElementById('ns-course').value,
+            school: document.getElementById('ns-school').value,
+            schoolId: document.getElementById('ns-school-id').value,
+            contact: document.getElementById('ns-contact').value,
+            barangay: document.getElementById('ns-barangay').value,
+            lbpAccount: document.getElementById('ns-lbp').value,
+            startingYear: document.getElementById('ns-starting-year').value, // Add Starting Year to Payload
+            yearLevel: document.getElementById('ns-year').value,
+            status: document.getElementById('ns-status').value,
+            remarks: document.getElementById('ns-remarks').value
+        };
+        toggleLoader(true);
+        const action = isEditMode ? 'updateScholarInDatabase' : 'addScholarToDatabase';
+        google.script.run.withSuccessHandler(() => { 
+                closeModal(); loadData(); 
+                Swal.fire({title: isEditMode ? 'Updated' : 'Added', text: 'Database successfully updated.', icon: 'success', confirmButtonColor: '#059669'}); 
+            }).withFailureHandler(err => { toggleLoader(false); Swal.fire('Error', err.message, 'error'); })[action](payload);
+    };
+
+    function prepAdd(rowIdx) {
+        const s = dbData.find(x => x.rowIndex === rowIdx);
+        activeRef = s;
+        document.getElementById('modalTitle').innerText = 'New Payroll Entry';
+        document.getElementById('f-row').value = '';
+        document.getElementById('f-display').value = `${s.ibmId} - ${s.fullName}`;
+        document.getElementById('f-account').value = s.lbpAccount;
+        document.getElementById('f-year').value = s.yearLevel; 
+        document.getElementById('f-period').value = ''; 
+        document.getElementById('f-remarks').value = '';
+        document.getElementById('payrollModal').style.display = 'flex';
+    }
+
+    function prepEdit(rowIdx) {
+        const r = pData.find(x => x.rowIndex === rowIdx);
+        activeRef = null;
+        document.getElementById('modalTitle').innerText = 'Edit Entry';
+        document.getElementById('f-row').value = rowIdx;
+        document.getElementById('f-display').value = `${r.ibmId} - ${r.fullName}`;
+        document.getElementById('f-account').value = r.lbpAccount;
+        document.getElementById('f-year').value = r.yearLevel;
+        document.getElementById('f-period').value = r.grantPeriod;
+        document.getElementById('f-remarks').value = r.remarks;
+        document.getElementById('payrollModal').style.display = 'flex';
+    }
+
+    function remove(idx) { Swal.fire({title:'Delete?', icon:'warning', showCancelButton:true, confirmButtonColor: '#e11d48'}).then(res => { if(res.isConfirmed) { toggleLoader(true); google.script.run.withSuccessHandler(() => loadData()).removeFromPayroll(idx); } }); }
+    function exportData() { window.location.href = 'api.php?action=exportPayrollCSV&download=1'; }
+    window.exportData = exportData;
+    window.exportPayrollCSV = exportData;
+    function closeModal() { document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none'); }
+
+    function toggleFilterPanel() {
+    const panel = document.getElementById('advFilterPanel');
+    const isHidden = panel.style.display === 'none';
+    panel.style.display = isHidden ? 'block' : 'none';
+    
+    const brgySelect = document.getElementById('af-barangay');
+    if(brgySelect.options.length <= 1) {
+        brgySelect.innerHTML = '<option value="">All Barangays</option>' + 
+            barangaysList.map(b => `<option value="${b}">${b}</option>`).join('');
+    }
+}
+
+function resetFilters() {
+    document.getElementById('searchV').value = '';
+    document.getElementById('af-barangay').value = '';
+    document.getElementById('af-year').value = '';
+    document.getElementById('af-payroll').value = '';
+    document.getElementById('af-sem-status').value = '';
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    const allChip = Array.from(document.querySelectorAll('.filter-chip')).find(btn => btn.innerText.includes('All'));
+    if (allChip) allChip.classList.add('active');
+    applyAdvancedFilters();
+}
+
+function applyAdvancedFilters() {
+    const searchVal = document.getElementById('searchV').value.toLowerCase().trim();
+    const brgyVal = document.getElementById('af-barangay').value;
+    const yearVal = document.getElementById('af-year').value;
+    const payrollVal = document.getElementById('af-payroll').value;
+    const semStatusVal = document.getElementById('af-sem-status').value;
+
+    // Grab current & previous semesters dynamically
+    let currentSem = null;
+    let prevSem = null;
+    if (sems && sems.length > 0) {
+        currentSem = sems[sems.length - 1];
+        prevSem = sems.length > 1 ? sems[sems.length - 2] : currentSem;
+    } else if (dbData && dbData.length > 0 && dbData[0].semesterRecords) {
+        const availableSems = Object.keys(dbData[0].semesterRecords);
+        if (availableSems.length > 0) {
+            currentSem = availableSems[availableSems.length - 1];
+            prevSem = availableSems.length > 1 ? availableSems[availableSems.length - 2] : currentSem;
+        }
+    }
+
+    const validSemStatuses = ['OK', 'NEW', 'ACTIVE', 'FIN', 'MED', 'PROBATION', 'WARNING'];
+    const activeDbStatuses = ['ACTIVE', 'NEW', 'EXTENDED', 'WARNING', 'PROBATION', 'ON-LEAVE (MEDICAL)', 'ON-LEAVE (FINANCIAL)', 'ON-HOLD'];
+
+    const filtered = dbData.filter(s => {
+        const sIbm = String(s.ibmId || '').toLowerCase();
+        const sName = String(s.fullName || '').toLowerCase();
+        const sSchool = String(s.school || '').toLowerCase();
+        const sCourse = String(s.course || '').toLowerCase();
+        const sBrgy = String(s.barangay || '').toLowerCase();
+        const sStatus = String(s.status || '').toLowerCase();
+        const sDbStatus = String(s.dbStatus || '').toLowerCase();
+        const sYear = String(s.yearLevel || '').toLowerCase();
+        const sRemarks = String(s.remarks || '').toLowerCase();
+        const sControl = String(s.controlNo || s.no || '').toLowerCase();
+
+        // Normalized strings so "on-hold" matches "on hold" and vice versa
+        const searchNormalized = searchVal.replace(/[-_\s]+/g, ' ');
+        const statusNormalized = sStatus.replace(/[-_\s]+/g, ' ');
+
+        const matchesSearch = !searchVal || 
+            sIbm.includes(searchVal) || 
+            sName.includes(searchVal) || 
+            sSchool.includes(searchVal) ||
+            sCourse.includes(searchVal) ||
+            sBrgy.includes(searchVal) ||
+            sStatus.includes(searchVal) ||
+            sDbStatus.includes(searchVal) ||
+            statusNormalized.includes(searchNormalized) ||
+            sYear.includes(searchVal) ||
+            sRemarks.includes(searchVal) ||
+            sControl.includes(searchVal);
+
+        const matchesBrgy = !brgyVal || s.barangay === brgyVal;
+
+        const matchesYear = !yearVal || (s.yearLevel && s.yearLevel.includes(yearVal.split(' ')[0])); 
+
+        let matchesPayroll = true;
+        if (payrollVal === 'yes') matchesPayroll = s.isInPayroll === true;
+        if (payrollVal === 'no') matchesPayroll = !s.isInPayroll;
+
+        // Semester Status Matching Logic
+        let matchesSemStatus = true;
+        if (semStatusVal && currentSem) {
+            const currRec = (s.semesterRecords[currentSem] || '').trim().toUpperCase();
+            const prevRec = (s.semesterRecords[prevSem] || '').trim().toUpperCase();
+            const dbStatus = (s.status || '').toUpperCase().trim();
+            
+            if (semStatusVal === 'active_baseline') {
+                matchesSemStatus = validSemStatuses.includes(prevRec) || activeDbStatuses.includes(dbStatus);
+            } else if (semStatusVal === 'active_current') {
+                matchesSemStatus = currRec === 'OK' || validSemStatuses.includes(currRec);
+            } else if (semStatusVal === 'active_prev') {
+                matchesSemStatus = validSemStatuses.includes(prevRec);
+            } else if (semStatusVal === 'pending') {
+                // Was active in baseline, but is NOT processed in current target
+                matchesSemStatus = validSemStatuses.includes(prevRec) && currRec !== 'OK';
+            }
+        }
+
+        return matchesSearch && matchesBrgy && matchesYear && matchesPayroll && matchesSemStatus;
+    });
+
+    vCurrentPage = 1; 
+    renderVTable(filtered);
+}
+
+function showActiveScholarsFromDashboard() {
+    if (typeof switchNavTab === 'function') {
+        switchNavTab('verification');
+    } else if (typeof switchTab === 'function') {
+        switchTab('verification');
+    }
+
+    const searchInput = document.getElementById('searchV');
+    if (searchInput) searchInput.value = '';
+    const brgySelect = document.getElementById('af-barangay');
+    if (brgySelect) brgySelect.value = '';
+    const yearSelect = document.getElementById('af-year');
+    if (yearSelect) yearSelect.value = '';
+    const payrollSelect = document.getElementById('af-payroll');
+    if (payrollSelect) payrollSelect.value = '';
+
+    const semStatusSelect = document.getElementById('af-sem-status');
+    if (semStatusSelect) semStatusSelect.value = 'active_baseline';
+
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    const chips = document.querySelectorAll('.filter-chip');
+    chips.forEach(chip => {
+        if (chip.textContent && chip.textContent.includes('Active')) {
+            chip.classList.add('active');
+        }
+    });
+
+    if (typeof applyAdvancedFilters === 'function') {
+        applyAdvancedFilters();
+    }
+}
+window.showActiveScholarsFromDashboard = showActiveScholarsFromDashboard;
+    
+    function filterTable(type) {
+    if (type === 'v') {
+        applyAdvancedFilters();
+    } else {
+        const val = document.getElementById('searchP').value.toLowerCase().trim();
+        pCurrentPage = 1;
+        renderPTable(pData.filter(r => r.ibmId.toLowerCase().includes(val) || r.fullName.toLowerCase().includes(val)));
+    }
+}
+
+    // --- DISMISSAL / DISCIPLINARY LOGIC ---
+    function openDismissalModal(id) {
+        const s = dbData.find(x => x.ibmId === id);
+        if(!s) return;
+        document.getElementById('d-ibm-id').value = id;
+        document.getElementById('d-scholar-name').value = s.fullName;
+        document.getElementById('d-type').value = '';
+        document.getElementById('d-fail-count').value = 0;
+        document.getElementById('d-remarks').value = '';
+        document.getElementById('d-grade-section').style.display = 'none';
+        const dDateInput = document.getElementById('d-date');
+        if (dDateInput) {
+            dDateInput.value = (s.removalDate && /^\d{4}-\d{2}-\d{2}$/.test(s.removalDate)) 
+                ? s.removalDate 
+                : new Date().toISOString().split('T')[0];
+        }
+        updateDismissalPreview();
+        document.getElementById('dismissalModal').style.display = 'flex';
+    }
+
+    function updateDismissalPreview() {
+    const type = document.getElementById('d-type').value;
+    const failCount = parseInt(document.getElementById('d-fail-count').value) || 0;
+    const remarks = document.getElementById('d-remarks').value || '...';
+    
+    const section = document.getElementById('d-grade-section');
+    const previewBox = document.getElementById('d-preview');
+    const previewText = document.getElementById('d-preview-text');
+    
+    // Toggle Grade Section Visibility
+    section.style.display = (type === 'ACADEMIC') ? 'block' : 'none';
+    
+    // Reset Classes
+    previewBox.className = 'dismissal-preview';
+    
+    if (!type) {
+        previewText.innerText = 'Waiting for input...';
+        return;
+    }
+
+    if (type === 'OTHER_SCHOLARSHIP') {
+        previewText.innerHTML = `STATUS: <span style="color:var(--danger)">DELISTED</span><br><span style="font-size:0.8rem; font-weight:normal;">Reason: Double Grant (${remarks})</span>`;
+        previewBox.classList.add('danger');
+    }
+    // ADD THIS NEW BLOCK FOR GRADUATED
+    else if (type === 'Graduated') {
+        previewText.innerHTML = `STATUS: <span style="color:var(--success)">GRADUATED 🎓</span><br><span style="font-size:0.8rem; font-weight:normal;">Action: Removed from Active Payroll & Moved to Alumni</span>`;
+        previewBox.classList.add('success'); // or whichever class turns your box green/blue
+    } 
+    else if (type === 'MAJOR' || type === 'VOLUNTARY' || type === 'DEATH') {
+        previewText.innerText = 'IMMEDIATE TERMINATION & REMOVAL FROM PAYROLL';
+        previewText.style.color = 'var(--danger)'; 
+        previewBox.classList.add('danger');
+    } 
+    else if (type === 'COMPLIANCE') {
+        previewText.innerText = 'FIRST WARNING';
+        previewText.style.color = 'var(--warning)'; 
+        previewBox.classList.add('warning');
+    } 
+    else if (type === 'MEDICAL') {
+        previewText.innerText = 'STATUS: ON-LEAVE (Frozen - Sem does not count)';
+        previewText.style.color = 'var(--primary)'; 
+    } 
+    else if (type === 'FINANCIAL') {
+        previewText.innerText = 'STATUS: ON-LEAVE (Consumes 1 Sem count)';
+        previewText.style.color = 'var(--warning)'; 
+        previewBox.classList.add('warning');
+    } 
+    else if (type === 'ACADEMIC') {
+        if (failCount > 1) {
+            previewText.innerText = 'TERMINATION / DELISTED (Failed > 1 Subject)';
+            previewText.style.color = 'var(--danger)';
+            previewBox.classList.add('danger');
+        } else {
+            previewText.innerText = 'PROBATION (Failed 1 Subject)';
+            previewText.style.color = 'var(--warning)';
+            previewBox.classList.add('warning');
+        }
+    }
+}
+
+    document.getElementById('dismissalForm').onsubmit = (e) => {
+        e.preventDefault();
+        
+        Swal.fire({
+            title: 'Confirm Action',
+            text: 'This will update the scholar\'s status and may remove them from payroll.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#e11d48',
+            confirmButtonText: 'Yes, Proceed'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const payload = {
+                    ibmId: document.getElementById('d-ibm-id').value,
+                    type: document.getElementById('d-type').value,
+                    failCount: document.getElementById('d-fail-count').value,
+                    remarks: document.getElementById('d-remarks').value,
+                    date: document.getElementById('d-date').value
+                };
+
+                toggleLoader(true);
+                google.script.run.withSuccessHandler(res => {
+                    closeModal();
+
+                    // Immediately cache the date on local scholar objects
+                    const sItem = dbData.find(x => x.ibmId === payload.ibmId);
+                    if (sItem) {
+                        sItem.removalDate = payload.date;
+                        sItem.incidentDate = payload.date;
+                        sItem.status = res.newStatus;
+                    }
+                    if (typeof currentViewScholar !== 'undefined' && currentViewScholar && currentViewScholar.ibmId === payload.ibmId) {
+                        currentViewScholar.removalDate = payload.date;
+                        currentViewScholar.incidentDate = payload.date;
+                        currentViewScholar.status = res.newStatus;
+                    }
+
+                    loadData(); // Refresh all data
+                    toggleLoader(false);
+
+                    Swal.fire({
+                        title: 'Action Processed!',
+                        html: `
+                            <p style="margin-bottom: 8px;">Status updated to <strong style="color: var(--danger);">${res.newStatus}</strong>. ${res.payrollRemoved ? 'Removed from Payroll.' : ''}</p>
+                            <p style="font-size: 0.85rem; color: #475569; margin-top: 8px; background: #f1f5f9; padding: 8px 12px; border-radius: 6px;">
+                                📅 Date of Effectivity <strong>${payload.date}</strong> has been linked for Certificate generation.
+                            </p>
+                        `,
+                        icon: 'success',
+                        showCancelButton: true,
+                        confirmButtonText: '📜 Generate Certificate Now',
+                        cancelButtonText: 'Done',
+                        confirmButtonColor: '#b45309'
+                    }).then((actionResult) => {
+                        if (actionResult.isConfirmed) {
+                            const targetScholar = sItem || (typeof currentViewScholar !== 'undefined' && currentViewScholar && currentViewScholar.ibmId === payload.ibmId ? currentViewScholar : { ibmId: payload.ibmId, removalDate: payload.date });
+                            initiateCertificate(targetScholar);
+                        }
+                    });
+                }).processDismissal(payload);
+            }
+        });
+    };
+    
+    // Print Logic (Same as V3.1)
+    function openPrintModal() { 
+        document.getElementById('printModal').style.display = 'flex'; 
+        togglePrintInputs(); 
+        initAdaModal(); // Reset ADA rows
+    }
+
+    function togglePrintInputs() {
+    const type = document.getElementById('printType').value;
+    
+    // Get Containers by ID
+    const rangeContainer = document.getElementById('rangeInputContainer');
+    const adaContainer = document.getElementById('adaInputContainer');
+    const finContainer = document.getElementById('financeInputContainer');
+    const flContainer = document.getElementById('financialListInputContainer'); // NEW CONTAINER
+
+    // 1. Hide EVERYTHING first
+    if(rangeContainer) rangeContainer.style.display = 'none';
+    if(adaContainer) adaContainer.style.display = 'none';
+    if(finContainer) finContainer.style.display = 'none';
+    if(flContainer) flContainer.style.display = 'none'; // HIDE NEW
+
+    // 2. Show ONLY what is selected
+    if (type === 'ada') {
+        if(adaContainer) {
+            adaContainer.style.display = 'block';
+            if(document.getElementById('adaEntriesWrapper').children.length === 0) addAdaEntryRow();
+        }
+    } 
+    else if (type === 'finance') {
+        if(finContainer) {
+            finContainer.style.display = 'block';
+            initFinanceModal();
+        }
+    } 
+    else if (type === 'financialList') {
+        // SHOW NEW FILTERS
+        if(flContainer) {
+            flContainer.style.display = 'block';
+            
+            // Auto-populate From and To Semesters
+            const semFrom = document.getElementById('flSemFrom');
+            const semTo = document.getElementById('flSemTo');
+            if (semFrom && semFrom.options.length <= 1 && typeof sems !== 'undefined') {
+                semFrom.innerHTML = '<option value="">Start (Earliest)</option>' + sems.map(s => `<option value="${s}">${s}</option>`).join('');
+            }
+            if (semTo && semTo.options.length <= 1 && typeof sems !== 'undefined') {
+                semTo.innerHTML = '<option value="">End (Latest)</option>' + sems.map(s => `<option value="${s}">${s}</option>`).join('');
+            }
+
+            // Auto-populate Barangay
+            const brgySel = document.getElementById('flBrgy');
+            if (brgySel && brgySel.options.length <= 1) {
+                brgySel.innerHTML = '<option value="">All Barangays</option>' + barangaysList.map(b => `<option value="${b}">${b}</option>`).join('');
+            }
+            // Auto-populate School
+            const schoolSel = document.getElementById('flSchool');
+            if (schoolSel && schoolSel.options.length <= 1) {
+                schoolSel.innerHTML = '<option value="">All Schools</option>' + schoolsList.map(s => `<option value="${s}">${s}</option>`).join('');
+            }
+        }
+    }
+    else {
+        // Default (List, Form, Furs)
+        if(rangeContainer) rangeContainer.style.display = 'block';
+    }
+}
+
+    // --- ADA DYNAMIC ROW LOGIC ---
+    function initAdaModal() {
+        const wrapper = document.getElementById('adaEntriesWrapper');
+        wrapper.innerHTML = '';
+        addAdaEntryRow(); // Add first row by default
+    }
+
+    function addAdaEntryRow() {
+        const wrapper = document.getElementById('adaEntriesWrapper');
+        const rowId = 'ada-row-' + Date.now();
+        
+        // Generate ADA Specific Periods (Calendar Year based)
+        let adaPeriodOpts = '';
+        const startYear = 2023;
+        const endYear = 2030;
+        for (let y = startYear; y <= endYear; y++) {
+            adaPeriodOpts += `<option value="IBM 1ST SEMESTER, ${y}">IBM 1ST SEMESTER, ${y}</option>`;
+            adaPeriodOpts += `<option value="IBM 2ND SEMESTER, ${y}">IBM 2ND SEMESTER, ${y}</option>`;
+        }
+
+        const rowHtml = `
+            <div class="ada-entry-row" id="${rowId}">
+                <button type="button" class="ada-remove-btn" onclick="document.getElementById('${rowId}').remove()">×</button>
+                <div style="display: grid; grid-template-columns: 1fr 1.5fr 0.8fr; gap: 8px; margin-bottom: 8px;">
+                    <div>
+                        <label style="font-size: 10px; font-weight:700; color: var(--text-secondary); display:block; margin-bottom:2px; text-transform: uppercase;">5-Digit ID (Last 5)</label>
+                        <input type="text" class="form-control ada-id" placeholder="00001">
+                    </div>
+                    <div>
+                        <label style="font-size: 10px; font-weight:700; color: var(--text-secondary); display:block; margin-bottom:2px; text-transform: uppercase;">Period</label>
+                        <select class="form-control ada-period">
+                            <option value="">Select</option>
+                            ${adaPeriodOpts}
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size: 10px; font-weight:700; color: var(--text-secondary); display:block; margin-bottom:2px; text-transform: uppercase;">Count</label>
+                        <input type="number" class="form-control ada-count" placeholder="Qty" min="1">
+                    </div>
+                </div>
+                <div>
+                    <label style="font-size: 10px; font-weight:700; color: var(--text-secondary); display:block; margin-bottom:2px; text-transform: uppercase;">Remarks (Optional)</label>
+                    <input type="text" class="form-control ada-remarks" placeholder="Add remarks here">
+                </div>
+            </div>
+        `;
+        wrapper.insertAdjacentHTML('beforeend', rowHtml);
+    }
+
+    function generatePrint() {
+    const type = document.getElementById('printType').value;
+
+    // --- NEW: TOTAL CLAIMED FINANCIAL LIST ---
+    if (type === 'financialList') {
+        generateFinancialListReport();
+        return;
+    }
+    
+    // --- 1. FINANCIAL EXPENDITURE REPORT (New) ---
+    if (type === 'finance') {
+        generateFinancialReport();
+        return;
+    }
+    
+    // --- 2. AUTHORITY TO DEBIT ACCOUNT (ADA) ---
+    if (type === 'ada') {
+        const adaNo = document.getElementById('adaNo').value;
+        const adaDate = document.getElementById('adaDate').value;
+        const rows = document.querySelectorAll('.ada-entry-row');
+        const entries = [];
+
+        if(rows.length === 0) return Swal.fire('Error', 'Please add at least one entry.', 'error');
+
+        // Loop through ADA rows to build data
+        for(let row of rows) {
+            const idRef = row.querySelector('.ada-id').value.trim();
+            const period = row.querySelector('.ada-period').value;
+            const count = parseInt(row.querySelector('.ada-count').value) || 0;
+            const remarks = row.querySelector('.ada-remarks').value;
+
+            if(!idRef || !period || !count) {
+                return Swal.fire('Missing Data', 'Please fill in ID, Period and Count for all entries.', 'error');
+            }
+
+            // Find scholar in database (Partial Match on ID)
+            const scholar = dbData.find(s => s.ibmId.trim().endsWith(idRef));
+            
+            if(!scholar) {
+                return Swal.fire('Not Found', `Scholar with ID ending in ${idRef} not found.`, 'error');
+            }
+
+            entries.push({
+                scholar: scholar,
+                period: period,
+                count: count,
+                idRef: idRef,
+                remarks: remarks
+            });
+        }
+        
+        generateADA(entries, adaNo, adaDate);
+        return;
+    } 
+    
+    // --- 3. STANDARD REPORTS (List, Form, FURS) ---
+    // These require the "Print Range" input
+    if (!pData || pData.length === 0) {
+        return Swal.fire('Data Not Ready', 'Payroll data is still loading or empty. Please wait a moment and try again.', 'warning');
+    }
+
+    const range = document.getElementById('printRange').value;
+    const target = parseRange(range, pData); // Helper to filter pData based on range string
+    
+    if(!target || !target.length) {
+        return Swal.fire('Selection Error','No valid rows selected for printing. Check your range.','error');
+    }
+
+    if(type === 'form') {
+        generateOfficialPayroll(target);
+    } else if(type === 'furs') {
+        generateFurs(target);
+    } else {
+        // Default to List (Portrait)
+        generateListPrint(target);
+    }
+}
+window.generatePrint = generatePrint;
+
+    // --- ADA GENERATOR (Multi-Row) ---
+    function generateADA(entries, adaNo, adaDate) {
+        const area = document.getElementById('printAdaArea');
+        area.innerHTML = '';
+
+        let totalAmount = 0;
+        let tableRows = '';
+
+        // Loop through entries to build table
+        entries.forEach((entry, index) => {
+            const subTotal = entry.count * 7000;
+            totalAmount += subTotal;
+
+            // Format Name
+            const s = entry.scholar;
+            const mInitial = s.middleName ? `${s.middleName.charAt(0)}.` : '';
+            const displayName = `${s.lastName}, ${s.firstName} ${mInitial}`.toUpperCase();
+            
+            // Remarks Logic
+            const remarksHtml = entry.remarks ? `<br><span style="font-weight:normal; font-size:11px; font-style:italic;">(${entry.remarks})</span>` : '';
+
+            tableRows += `
+            <tr>
+                <td class="ada-bold">${displayName} (${entry.period})${remarksHtml}</td>
+                <td class="ada-text-center ada-font-mono">${String(index + 1).padStart(5, '0')}</td>
+                <td class="ada-text-right ada-bold ada-font-mono">${subTotal.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+            </tr>
+            `;
+        });
+
+        const formattedTotal = totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2});
+        const formattedDate = new Date(adaDate).toLocaleDateString();
+        const totalInWords = numberToWords(totalAmount).toUpperCase() + " PESOS ONLY";
+
+        const html = `
+        <div class="ada-container">
+            <div class="ada-appendix-label">
+                Appendix 36
+            </div>
+
+            <div class="ada-form-box">
+                <div class="ada-header">
+                    <div class="ada-header-lgu">LGU MALUNGON, SARANGANI PROVINCE</div>
+                    <div class="ada-header-title">AUTHORITY TO DEBIT ACCOUNT (ADA)</div>
+                </div>
+
+                <div class="ada-upper-info">
+                    <!-- Left Side -->
+                    <div class="ada-info-group">
+                        <div class="ada-info-row">
+                            <span class="ada-underline-field ada-underline-field-left"><b>DM JOEL A. ARGONZA-</b> BRANCH MANAGER</span>
+                        </div>
+                        <div class="ada-info-row">
+                            <span class="ada-underline-field ada-underline-field-left"><b>LBP GENSAN HIGHWAY BRANCH</b></span>
+                        </div>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="ada-info-group">
+                        <div class="ada-info-row ada-info-row-right">
+                            <span class="ada-info-label">ADA No.</span>
+                            <span class="ada-underline-field ada-underline-field-right">${adaNo || ''}</span>
+                        </div>
+                        <div class="ada-info-row ada-info-row-right">
+                            <span class="ada-info-label">Date:</span>
+                            <span class="ada-underline-field ada-underline-field-right">${formattedDate}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ada-content-body">
+                    <div class="ada-letter-content">
+                        <p>Sir/Madam:</p>
+                        <p>
+                            Please debit the agency account No. <span class="ada-bold ada-border-b" style="padding: 0 4px;">002802-1086-40</span> 
+                            the amount of <span class="ada-bold ada-uppercase ada-underline">${totalInWords}</span> 
+                            (<span class="ada-bold">${formattedTotal}</span>).
+                        </p>
+                        <p>Please credit the accounts of the listed creditors to cover payment of payables.</p>
+                    </div>
+
+                    <table class="ada-table ada-font-xs">
+                        <thead>
+                            <tr>
+                                <th style="width: 55%; text-align: center; font-size: 11px;">Office/Department/Payee</th>
+                                <th class="ada-text-center">Reference</th>
+                                <th class="ada-text-right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableRows}
+                        </tbody>
+                        <tfoot>
+                            <tr class="ada-total-row">
+                                <td colspan="2" class="ada-text-right">TOTAL</td>
+                                <td class="ada-text-right ada-font-mono" style="font-size: 14px;">${formattedTotal}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="ada-signatories-container">
+                        <div class="ada-signatories-title">Agency Authorized Signatories</div>
+                        
+                        <div class="ada-signatories-grid">
+                            <div>
+                                <div class="ada-sig-name">LEO S. OPERARIO</div>
+                                <div class="ada-sig-title">Acting Municipal Treasurer</div>
+                            </div>
+                            <div>
+                                <div class="ada-sig-name">REYNALDO F. CONSTANTINO</div>
+                                <div class="ada-sig-title">Municipal Mayor</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        area.innerHTML = html;
+        executePrint('printing-ada');
+    }
+
+    function numberToWords(n) {
+        if (n === 0) return "Zero";
+        const units = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+        const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+        
+        function convert(num) {
+            if (num < 20) return units[num];
+            if (num < 100) return tens[Math.floor(num / 10)] + (num % 10 ? " " + units[num % 10] : "");
+            if (num < 1000) return units[Math.floor(num / 100)] + " Hundred" + (num % 100 ? " " + convert(num % 100) : "");
+            if (num < 1000000) return convert(Math.floor(num / 1000)) + " Thousand" + (num % 1000 ? " " + convert(num % 1000) : "");
+            if (num < 1000000000) return convert(Math.floor(num / 1000000)) + " Million" + (num % 1000000 ? " " + convert(num % 1000000) : "");
+            return "";
+        }
+        return convert(n);
+    }
+
+    // --- FURS GENERATOR (Appendix 29) ---
+    function generateFurs(data) {
+        const area = document.getElementById('printFursArea');
+        area.innerHTML = '';
+
+        // Chunk data by 20s
+        const chunkSize = 20;
+        const chunks = chunk(data, chunkSize);
+        
+        let allHtml = '';
+
+        chunks.forEach((chunkData, index) => {
+            // Dynamic Data Calculation for this specific chunk
+            const totalAmount = chunkData.length * 7000;
+            const formattedTotal = 'P ' + totalAmount.toLocaleString('en-US', {minimumFractionDigits: 2});
+            const period = chunkData[0].grantPeriod || "CURRENT SEMESTER"; 
+            
+            // Payee Logic: Format strictly as (LASTNAME, FIRSTNAME M.I.)
+            let payeeName = "";
+            if (chunkData.length > 0) {
+                const firstRow = chunkData[0];
+                const dbEntry = dbData.find(d => d.ibmId === firstRow.ibmId);
+                
+                if (dbEntry) {
+                    const mInitial = dbEntry.middleName ? `${dbEntry.middleName.charAt(0)}.` : '';
+                    payeeName = `${dbEntry.lastName}, ${dbEntry.firstName} ${mInitial}`;
+                } else {
+                    // Fallback if dbEntry not found
+                    payeeName = firstRow.fullName; 
+                }
+            }
+
+            if (chunkData.length > 1) {
+                payeeName += " ET. AL.";
+            }
+            payeeName = payeeName.toUpperCase();
+
+            // Add a page break after every FURS container except the very last one
+            const pageBreakStyle = index < chunks.length - 1 ? 'page-break-after: always; break-after: page;' : '';
+
+            allHtml += `
+            <div class="furs-container" style="${pageBreakStyle}">
+                <div class="furs-appendix">Appendix 29</div>
+                
+                <table class="furs-table" style="border-bottom: none;">
+                    <tr>
+                        <td width="70%" class="furs-header-title">
+                            <div class="furs-entity-title">FUND UTILIZATION REQUEST AND STATUS</div>
+                            <div class="furs-entity-name">MALUNGON</div>
+                            <div>LGU</div>
+                        </td>
+                        <td width="30%" class="furs-header-info">
+                            <div>FURS No. : ___________________</div>
+                            <div style="margin-top: 5px;">Date : <u>${new Date().toLocaleDateString()}</u></div>
+                            <div style="margin-top: 5px;">Fund: <span style="text-decoration: underline; font-weight: bold;">IBM</span>________</div>
+                        </td>
+                    </tr>
+                </table>
+                
+                <table class="furs-table" style="border-top: none; margin-top: -1px;">
+                    <tr>
+                        <td class="furs-label-col">Payee</td>
+                        <td class="furs-content-col">${payeeName}</td>
+                    </tr>
+                    <tr>
+                        <td class="furs-label-col">Office</td>
+                        <td>MO-Administrative Section</td>
+                    </tr>
+                    <tr>
+                        <td class="furs-label-col">Address</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+
+                <table class="furs-table" style="margin-top: -1px; border-bottom: none; margin-bottom: 0;">
+                    <thead class="furs-data-header">
+                        <tr>
+                            <th width="15%">Project/Purpose</th>
+                            <th width="50%">Particulars</th>
+                            <th width="15%">Account Code</th>
+                            <th width="20%">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align: top; text-align: center;">
+                                EDUCATIONAL<br>ASSISTANCE
+                            </td>
+                            <td style="vertical-align: top; padding: 0;">
+                                <div class="furs-flex-cell">
+                                    <div style="text-align: center; width: 100%; padding-top: 20px;">
+                                        Payment for Educational Assistance for ${period} (IBM)
+                                    </div>
+                                    <div class="furs-total-line">Total</div>
+                                </div>
+                            </td>
+                            <td style="vertical-align: middle; text-align: center;">
+                                502-99-990
+                            </td>
+                            <td style="vertical-align: top; padding: 0;">
+                                <div class="furs-flex-cell">
+                                    <div style="text-align: center; font-weight: bold; width: 100%; padding-top: 20px;">
+                                        ${formattedTotal}
+                                    </div>
+                                    <div class="furs-total-amount">
+                                        ${formattedTotal}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="furs-cert-container">
+                    <div class="furs-cert-box furs-cert-box-left">
+                        <div class="furs-cert-header">
+                            <div class="furs-cert-letter">A.</div>
+                            <div><strong>Certified:</strong> Charges to special trust account necessary, lawful and under my direct supervision; and supporting documents valid, proper and legal</div>
+                        </div>
+                        
+                        <table class="furs-sig-grid">
+                            <tr>
+                                <td class="furs-sig-label">Signature</td>
+                                <td><div class="furs-sig-line"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="furs-sig-label">Printed Name:</td>
+                                <td style="text-align: center;">
+                                    <span class="furs-sig-name">PRINCESS C. DOGUILES</span>
+                                    <span class="furs-sig-subtext">Administrative Officer II</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="furs-sig-label" style="vertical-align: top; padding-top: 10px;">Position</td>
+                                <td style="padding-top: 10px;">
+                                    <div class="furs-sig-pos">
+                                        Head, Requesting Office/Authorized<br>Representative
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="furs-sig-label" style="padding-top: 15px;">Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+                                <td style="padding-top: 15px;"><div class="furs-sig-line"></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="furs-cert-box">
+                        <div class="furs-cert-header">
+                            <div class="furs-cert-letter">B.</div>
+                            <div><strong>Certified:</strong> Funds available and utilized for the purpose/adjustment necessary as indicated above</div>
+                        </div>
+
+                        <table class="furs-sig-grid">
+                            <tr>
+                                <td class="furs-sig-label">Signature</td>
+                                <td><div class="furs-sig-line" style="text-align:left;">&nbsp;&nbsp;:</div></td>
+                            </tr>
+                            <tr>
+                                <td class="furs-sig-label">Printed Name</td>
+                                <td style="text-align: center;">
+                                    <span class="furs-sig-name">IMMANUEL L. FIGUEROA, CPA</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="furs-sig-label">Position</td>
+                                <td>: Municipal Accountant</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="furs-sig-pos">
+                                        Head, Accounting Division/Unit/ Authorized<br>Representative
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="furs-sig-label" style="padding-top: 10px;">Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+                                <td style="padding-top: 10px;"><div class="furs-sig-line"></div></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <table class="furs-table furs-section-c" style="margin-top: -1px; border-bottom: none;">
+                    <tr>
+                        <td width="30px" style="font-weight: bold; border-right: 1px solid black;">C.</td>
+                        <td style="font-weight: bold; text-align: center; border-left: none;">STATUS OF UTILIZATION</td>
+                    </tr>
+                </table>
+
+                <table class="furs-table furs-util-table" style="margin-top: -1px;">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Reference</th>
+                            <th colspan="3">Amount</th>
+                            <th colspan="2">Balance</th>
+                        </tr>
+                        <tr>
+                            <th width="10%">Date</th>
+                            <th width="25%">Particulars</th>
+                            <th width="15%">FURS/JEV/RCI/<br>RADAI No.</th>
+                            <th width="10%">Utilization<br><br>(a)</th>
+                            <th width="10%">Payable<br><br>(b)</th>
+                            <th width="10%">Payment</th>
+                            <th width="10%">Not Yet Due<br>(a-b)</th>
+                            <th width="10%">Due and<br>Demandable<br>(b-c)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="height: 100px;">
+                            <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            `;
+        });
+        
+        area.innerHTML = allHtml;
+        executePrint('printing-furs');
+    }
+    
+    // --- OFFICIAL PAYROLL FORM GENERATOR ---
+    function generateOfficialPayroll(data) {
+        const area = document.getElementById('printPayrollFormArea');
+        area.innerHTML = '';
+        const chunkSize = 20; // 20 rows per page
+        
+        const chunks = chunk(data, chunkSize);
+        
+        chunks.forEach((pageData, idx) => {
+            const pageNum = idx + 1;
+            const totalPages = chunks.length;
+            const rowsHtml = generateFormRows(pageData, chunkSize);
+            const pageTotal = pageData.length * 7000;
+            
+            // Period logic - grab from first row or default
+            const period = pageData[0].grantPeriod || "2025-2026/1st Sem";
+
+            const pageHtml = `
+            <div class="pf-container">
+                <!-- TOP HEADER -->
+                <div class="pf-top-header">
+                  <div class="pf-top-left">
+                    <div><strong>LGU :</strong> <span class="pf-u">MALUNGON</span></div>
+                    <div><strong>Fund :</strong> Municipal Planning and Development Office - IBM</div>
+                    <div class="pf-top-ack">
+                      We acknowledge receipt of cash shown opposite our name as full compensation for services rendered for the period covered.
+                    </div>
+                  </div>
+
+                  <div class="pf-top-center">
+                    <div class="pf-top-title">IBM PAYROLL</div>
+                    <div class="pf-top-subtitle">For the SY: ${period}</div>
+                  </div>
+
+                  <div class="pf-top-right">
+                    <div class="pf-right-row">
+                      <span><strong>Payroll No. :</strong></span>
+                      <span class="pf-line"></span>
+                    </div>
+                    <div class="pf-right-row">
+                      <span><strong>Sheet</strong></span>
+                      <span class="pf-line small" style="text-align:center">${pageNum}</span>
+                      <span><strong>of</strong></span>
+                      <span class="pf-line small" style="text-align:center">${totalPages}</span>
+                      <span><strong>Sheets</strong></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Payroll Table -->
+                <table class="pf-payroll-table">
+                  <thead>
+                    <tr>
+                      <th>Serial</th>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>IBM ID No.</th>
+                      <th>COMPENSATIONS</th>
+                      <th>Net Amount Due</th>
+                      <th>Serial</th>
+                      <th style="min-width:80px;">Signature of Recipient</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${rowsHtml}
+                    <tr class="total">
+                      <td>***</td>
+                      <td class="name">TOTAL</td>
+                      <td>***</td>
+                      <td></td>
+                      <td class="amount">${pageTotal.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+                      <td class="amount">${pageTotal.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+                      <td>***</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Bottom Strip -->
+                <div class="pf-bottom-strip">
+
+                  <!-- A + D -->
+                  <div class="pf-strip-box">
+                    <div class="pf-ad-grid">
+                      <div class="pf-letter">A</div>
+                      <div class="pf-text">CERTIFIED: Services duly rendered as stated.</div>
+
+                      <div class="pf-sigwrap sig1">
+                        <div class="pf-sigblank"></div>
+                        <div class="pf-sigline">PRINCESS C. DOGUILES</div>
+                        <div class="pf-sigtitle">Administrative Officer II</div>
+                      </div>
+
+                      <div class="pf-letter">D</div>
+                      <div class="pf-text">APPROVED FOR PAYMENT</div>
+
+                      <div class="pf-sigwrap sig2">
+                        <div class="pf-sigblank"></div>
+                        <div class="pf-sigline">REYNALDO F. CONSTANTINO</div>
+                        <div class="pf-sigtitle">Local Chief Executive</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- B + E -->
+                  <div class="pf-strip-box">
+                    <div class="pf-be-grid">
+                      <div class="pf-letter">B</div>
+                      <div class="pf-text">CERTIFIED: Services duly rendered as stated.</div>
+
+                      <div class="pf-sigwrap sig1">
+                        <div class="pf-sigblank"></div>
+                        <div class="pf-sigline">IMMANUEL L. FIGUEROA, CPA</div>
+                        <div class="pf-sigtitle">Head of Accounting Division/Unit</div>
+                      </div>
+
+                      <div class="pf-letter">E</div>
+                      <div class="pf-text">
+                        CERTIFIED: Each person whose name appears on the payroll has been paid the amount as indicated opposite his/her name.
+                      </div>
+
+                      <div class="pf-sigwrap sig2">
+                        <div class="pf-sigblank"></div>
+                        <div class="pf-sigline">LEO S. OPERARIO</div>
+                        <div class="pf-sigtitle">Disbursing Officer</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- C -->
+                  <div class="pf-strip-box">
+                    <div class="pf-c-grid">
+                      <div class="pf-letter">C</div>
+                      <div class="pf-text">CERTIFIED: Cash available for the purpose.</div>
+
+                      <div class="pf-sigwrap">
+                        <div class="pf-sigblank"></div>
+                        <div class="pf-sigline">LEO S. OPERARIO</div>
+                        <div class="pf-sigtitle">Acting Municipal Treasurer</div>
+                      </div>
+
+                      <div class="pf-date-right">DATE</div>
+                      <div class="pf-date-line"></div>
+
+                      <div class="pf-caf-right">CAFOA No.:</div>
+                      <div class="pf-caf-line"></div>
+
+                      <div class="pf-date2-right">DATE</div>
+                      <div class="pf-date2-line"></div>
+                    </div>
+                  </div>
+
+                  <!-- Accounting -->
+                  <div class="pf-strip-box">
+                    <table class="pf-acct-table">
+                      <thead>
+                        <tr>
+                          <th>Particulars</th>
+                          <th>Amount Code</th>
+                          <th>Debit</th>
+                          <th>Credit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Other MOOE</td>
+                          <td class="pf-center">5-02-99-990</td>
+                          <td class="pf-right">${pageTotal.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+                          <td class="pf-right"></td>
+                        </tr>
+                        <tr>
+                          <td>Cash in Bank - LCCA</td>
+                          <td class="pf-center">1-01-02-010</td>
+                          <td class="pf-right"></td>
+                          <td class="pf-right">${pageTotal.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+                        </tr>
+                        <tr class="total">
+                          <td colspan="2" class="pf-right">TOTAL</td>
+                          <td class="pf-right">${pageTotal.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+                          <td class="pf-right">${pageTotal.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div class="pf-acct-bottom">
+                      <div class="pf-prep-label">Prepared By:</div>
+                      <div class="pf-cert-label">Certified Correct:</div>
+
+                      <div class="pf-prep-sig">
+                        <div class="pf-sigwrap">
+                          <div class="pf-sigblank"></div>
+                          <div class="pf-sigline">ROY A. DELA CRUZ</div>
+                          <div class="pf-sigtitle">AA-II</div>
+                        </div>
+                      </div>
+
+                      <div class="pf-cert-sig">
+                        <div class="pf-sigwrap">
+                          <div class="pf-sigblank"></div>
+                          <div class="pf-sigline">IMMANUEL L. FIGUEROA, CPA</div>
+                          <div class="pf-sigtitle">Municipal Accountant</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>`;
+            area.insertAdjacentHTML('beforeend', pageHtml);
+        });
+        
+        executePrint('printing-form');
+    }
+    
+    function generateFormRows(data, limit) {
+        let html = '';
+        // Changed loop condition from 'limit' to 'data.length'
+        for(let i = 0; i < data.length; i++) {
+            const row = data[i];
+            if(row) {
+                // Formatting Name: LAST, FIRST M.
+                const dbEntry = dbData.find(d => d.ibmId === row.ibmId);
+                let displayName = row.fullName.toUpperCase();
+                
+                if (dbEntry) {
+                   const mInitial = dbEntry.middleName ? `${dbEntry.middleName.charAt(0)}.` : '';
+                   displayName = `${dbEntry.lastName}, ${dbEntry.firstName} ${mInitial}`.toUpperCase();
+                }
+
+                html += `<tr>
+                    <td>${row.no}</td>
+                    <td class="name">${displayName}</td>
+                    <td>IBM</td>
+                    <td>${row.ibmId}</td>
+                    <td class="amount">7,000.00</td>
+                    <td class="amount">7,000.00</td>
+                    <td>${row.no}</td>
+                    <td></td>
+                </tr>`;
+            }
+        }
+        return html;
+    }
+
+    // --- STANDARD LIST PRINT ---
+    function generateListPrint(target) {
+        const area = document.getElementById('printArea'); area.innerHTML = '';
+        
+        const period = target.length > 0 && target[0].grantPeriod ? target[0].grantPeriod : "CURRENT SEMESTER";
+        
+        chunk(target, 20).forEach((data, i) => {
+            const page = document.createElement('div'); page.className = 'print-page';
+            page.innerHTML = createCopy(data, 'MO - ADMIN COPY', period) + createCopy(data, 'ACCOUNTING COPY', period);
+            area.appendChild(page);
+        });
+        executePrint('printing-list');
+    }
+
+    function createCopy(data, label, period) {
+      const currentDate = new Date().toLocaleDateString();
+      
+      // Generate table rows from data using actual payroll number (row.no)
+      const rows = data.map((row) => generateTableRow(row, row.no)).join('');
+      
+      // Generate empty rows if needed
+      const emptyRows = generateEmptyRows(Math.max(0, 20 - data.length));
+
+      return `
+        <section class="copy-section">
+          <div class="copy-top">
+            <div class="p-header">
+              <h2>IBM PAYROLL</h2>
+              <p>For the Payroll ${period}</p>
+            </div>
+            <div class="copy-tag">${label}</div>
+          </div>
+
+          <table class="p-table">
+            <thead>
+              <tr>
+                <th class="col-no">NO</th>
+                <th class="col-ibm">IBM ID</th>
+                <th class="col-name">NAME OF SCHOLAR</th>
+                <th class="col-acc">ACCOUNT NO</th>
+                <th class="col-year">YEAR</th>
+              </tr>
+            </thead>
+            <tbody>${rows}${emptyRows}</tbody>
+          </table>
+
+          <div class="footer-line">
+            <div>
+              PREPARED BY:<br>
+              <span class="prepared-name">Junniell C. Mahinay</span>
+            </div>
+            <div class="date-box">DATE: ${currentDate}</div>
+          </div>
+        </section>`;
+    }
+
+    // Helper function to generate a table row
+    function generateTableRow(rowData, rowNumber) {
+      return `
+        <tr>
+          <td class="col-no">${rowNumber}</td>
+          <td class="col-ibm">${rowData.ibmId ?? ""}</td>
+          <td class="col-name">${(rowData.fullName ?? "").toUpperCase()}</td>
+          <td class="col-acc">${rowData.lbpAccount ?? ""}</td>
+          <td class="col-year">${rowData.yearLevel ?? ""}</td>
+        </tr>`;
+    }
+
+    // Helper function to generate empty rows
+    function generateEmptyRows(count) {
+      if (count <= 0) return '';
+      const emptyRow = `<tr class="is-empty"><td class="col-no">&nbsp;</td><td></td><td></td><td></td><td></td></tr>`;
+      return emptyRow.repeat(count);
+    }
+
+    function parseRange(str, data) {
+        if (!Array.isArray(data)) return [];
+        if (!str || !String(str).trim()) return data;
+        const idx = [];
+        String(str).split(',').forEach(p => {
+            p = p.trim();
+            if (p.includes('-')) {
+                const parts = p.split('-').map(Number);
+                const s = Math.min(parts[0], parts[1]);
+                const e = Math.max(parts[0], parts[1]);
+                if (!isNaN(s) && !isNaN(e)) {
+                    for (let i = s; i <= e; i++) idx.push(i - 1);
+                }
+            } else {
+                const num = Number(p);
+                if (!isNaN(num)) idx.push(num - 1);
+            }
+        });
+        return idx.map(i => data[i]).filter(Boolean);
+    }
+    window.parseRange = parseRange;
+    function chunk(arr, s) { return Array.from({length: Math.ceil(arr.length/s)}, (v,i) => arr.slice(i*s, i*s+s)); }
+    
+    function getSemesterStipendAmount(sem) {
+        if (!sem) return 5000;
+        const str = String(sem).trim();
+        const match = str.match(/(\d{4})-(\d{4})/);
+        if (match) {
+            const startYear = parseInt(match[1], 10);
+            if (startYear < 2023) return 5000;
+            if (startYear === 2023) {
+                if (str.toLowerCase().includes('2nd')) return 7000;
+                return 5000;
+            }
+            return 7000;
+        }
+        if (typeof sems !== 'undefined' && Array.isArray(sems)) {
+            const idx = sems.indexOf(str);
+            const thresholdIdx = sems.indexOf("2023-2024/2nd Sem");
+            if (idx !== -1 && thresholdIdx !== -1) {
+                return idx >= thresholdIdx ? 7000 : 5000;
+            }
+        }
+        return 7000;
+    }
+    window.getSemesterStipendAmount = getSemesterStipendAmount;
+
+    function printScholarProfile(targetScholar = null) {
+        const s = targetScholar || (typeof currentViewScholar !== 'undefined' ? currentViewScholar : null) || window.currentViewScholar;
+        if (!s) return;
+
+        const activeSems = (typeof sems !== 'undefined' && Array.isArray(sems) && sems.length > 0) ? sems : (window.sems || []);
+        const activePData = (typeof pData !== 'undefined' && Array.isArray(pData) && pData.length > 0) ? pData : (window.pData || []);
+
+        // Filter Sems to ONLY include those with 'OK' status
+        const visibleSems = activeSems.filter(sem => (s.semesterRecords && (s.semesterRecords[sem] || '').trim().toUpperCase() === 'OK'));
+        
+        // Map the filtered records & sum total stipend
+        let totalStipendReceived = 0;
+        let semRows = "";
+        if (visibleSems.length === 0) {
+            semRows = `<tr><td colspan="5" style="text-align: center; color: #64748b; font-style: italic; padding: 12px;">No approved ('OK') semesters on record.</td></tr>`;
+        } else {
+            semRows = visibleSems.map((sem, idx) => {
+                const record = (s.semesterRecords[sem] || '').trim().toUpperCase();
+                
+                const payrollEntry = activePData.find(p => p.ibmId === s.ibmId && p.grantPeriod === sem);
+                let releaseDate = "—";
+                if (payrollEntry && payrollEntry.remarks) {
+                    const dateMatch = payrollEntry.remarks.match(/(\d{1,2}[\/.-]\d{1,2}[\/.-]\d{2,4})|(\d{4}[\/.-]\d{1,2}[\/.-]\d{1,2})/);
+                    releaseDate = dateMatch ? dateMatch[0] : payrollEntry.remarks;
+                } else if (payrollEntry && payrollEntry.createdAt) {
+                    releaseDate = new Date(payrollEntry.createdAt).toLocaleDateString('en-US');
+                }
+
+                const stipend = getSemesterStipendAmount(sem);
+                totalStipendReceived += stipend;
+                const formattedStipend = '₱ ' + stipend.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                    
+                return `
+                    <tr>
+                        <td style="text-align: center; font-weight: 600; color: #475569;">${idx + 1}</td>
+                        <td style="font-weight: 700; color: #0f172a;">${sem}</td>
+                        <td style="text-align: center;"><span class="badge-ok">${record || 'OK'}</span></td>
+                        <td style="text-align: center; font-family: monospace; font-size: 8.5pt; color: #334155;">${releaseDate}</td>
+                        <td style="text-align: right; font-weight: 800; font-family: monospace; color: #047857; font-size: 9pt;">${formattedStipend}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        const sexFormatted = s.sex === 'M' ? 'Male' : (s.sex === 'F' ? 'Female' : (s.sex || '—'));
+        const tribeFormatted = s.tribe || '—';
+        const addressFormatted = s.barangay ? `${s.barangay}, Malungon, Sarangani` : 'Malungon, Sarangani';
+        const remarksContent = s.remarks ? s.remarks : 'No adverse disciplinary records on file. Scholar maintained good academic standing throughout term.';
+
+        const html = `
+    <style>
+        :root {
+            --lgu-navy: #0c2340;
+            --civic-gold: #d97706;
+            --emerald: #059669;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #cbd5e1;
+        }
+        @media print {
+            @page {
+                size: portrait;
+                margin: 8mm 10mm 6mm 10mm;
+            }
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #ffffff !important;
+                color: #0f172a !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body.printing-profile #printProfileArea {
+                position: static !important;
+                display: block !important;
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .profile-dossier {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                break-after: avoid !important;
+                break-inside: avoid !important;
+            }
+            .gov-header, .dossier-table, .remarks-panel, .ledger-table, .dossier-footer {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        }
+
+        .profile-dossier {
+            max-width: 8.2in;
+            margin: 0 auto;
+            padding: 8px 12px;
+            background: #ffffff;
+            color: #0f172a;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.25;
+            box-sizing: border-box;
+        }
+
+        /* ===== HEADER ===== */
+        .gov-header {
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 2.5px solid var(--lgu-navy);
+            position: relative;
+            margin-bottom: 8px;
+        }
+        .gov-header::after {
+            content: '';
+            position: absolute;
+            bottom: -4.5px;
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background: var(--civic-gold);
+        }
+        .main-doc-title {
+            font-size: 15pt;
+            font-weight: 900;
+            color: var(--lgu-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 4px 0 2px 0;
+            line-height: 1.2;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-bar {
+            background: var(--lgu-navy);
+            color: #ffffff;
+            padding: 4px 10px;
+            font-size: 8pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-top: 9px;
+            margin-bottom: 4px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .section-bar-gold {
+            color: #fde68a;
+            font-weight: 800;
+        }
+
+        /* ===== DATA TABLES ===== */
+        .dossier-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 8.2pt;
+            margin-bottom: 2px;
+        }
+        .dossier-table td {
+            padding: 4px 8px;
+            border: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+        .lbl-cell {
+            background: #f8fafc;
+            color: #475569;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 7.2pt;
+            letter-spacing: 0.03em;
+            width: 16%;
+        }
+        .val-cell {
+            color: #0f172a;
+            width: 34%;
+        }
+        .val-cell.bold {
+            font-weight: 700;
+        }
+        .val-cell.highlight {
+            font-size: 9.5pt;
+            font-weight: 800;
+            color: var(--lgu-navy);
+        }
+
+        /* ===== REMARKS CALLOUT ===== */
+        .remarks-panel {
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid var(--civic-gold);
+            background: #f8fafc;
+            padding: 5px 10px;
+            border-radius: 0 4px 4px 0;
+            font-size: 8.2pt;
+            color: #1e293b;
+            min-height: 22px;
+            line-height: 1.35;
+        }
+
+        /* ===== FINANCIAL LEDGER ===== */
+        .ledger-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--border-color);
+            font-size: 8.2pt;
+        }
+        .ledger-table th {
+            background: #f1f5f9;
+            color: var(--lgu-navy);
+            border: 1px solid var(--border-color);
+            padding: 5px 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 7.5pt;
+            letter-spacing: 0.04em;
+        }
+        .ledger-table td {
+            padding: 3.5px 8px;
+            border: 1px solid var(--border-color);
+        }
+        .ledger-table tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .badge-ok {
+            background: #dcfce7;
+            color: #15803d;
+            border: 1px solid #86efac;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 7.2pt;
+            font-weight: 800;
+        }
+        .ledger-total-row td {
+            background: #f1f5f9 !important;
+            border-top: 2px solid var(--lgu-navy);
+            border-bottom: 2px solid var(--lgu-navy);
+            padding: 5px 8px;
+        }
+
+        /* ===== SIGNATURES & AUDIT ===== */
+        .dossier-footer {
+            margin-top: 14px;
+            padding-top: 8px;
+            border-top: 1px solid #cbd5e1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7.2pt;
+        }
+        .audit-stamp {
+            color: #64748b;
+            line-height: 1.4;
+        }
+    </style>
+
+    <div class="profile-dossier">
+        <!-- HEADER -->
+        <header class="gov-header">
+            <h1 class="main-doc-title">IBM Grantee Information Sheet</h1>
+        </header>
+
+        <!-- SECTION I: IDENTIFICATION -->
+        <div class="section-bar">
+            <span>I. Grantee Identification &amp; Demographic Profile</span>
+            <span class="section-bar-gold">Control No: ${s.controlNo || '—'}</span>
+        </div>
+        <table class="dossier-table">
+            <tr>
+                <td class="lbl-cell">IBM ID No.</td>
+                <td class="val-cell bold" style="font-family: monospace; font-size: 9.5pt; color: #1e40af;">${s.ibmId}</td>
+                <td class="lbl-cell">Official Status</td>
+                <td class="val-cell">
+                    <span style="background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; font-weight: 800; font-size: 7.5pt; padding: 2px 7px; border-radius: 3px;">
+                        ${s.status || 'ACTIVE'}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Full Name</td>
+                <td class="val-cell highlight" colspan="3">${s.fullName}</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Sex &bull; Tribe</td>
+                <td class="val-cell bold">${sexFormatted} &bull; ${tribeFormatted}</td>
+                <td class="lbl-cell">Contact No.</td>
+                <td class="val-cell" style="font-family: monospace;">${s.contact || '—'}</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Barangay Address</td>
+                <td class="val-cell">${addressFormatted}</td>
+                <td class="lbl-cell">Land Bank Account</td>
+                <td class="val-cell" style="font-family: monospace; font-weight: 600;">${s.lbpAccount || '—'}</td>
+            </tr>
+        </table>
+
+        <!-- SECTION II: ACADEMIC PROFILE -->
+        <div class="section-bar">
+            <span>II. Academic &amp; Institutional Enrollment Record</span>
+            <span style="font-size: 7.2pt; opacity: 0.9;">Curricular Standing</span>
+        </div>
+        <table class="dossier-table">
+            <tr>
+                <td class="lbl-cell">School / University</td>
+                <td class="val-cell bold" colspan="3" style="font-size: 8.8pt;">${s.school || '—'}</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Degree Program / Course</td>
+                <td class="val-cell bold" colspan="3">${s.course || '—'}</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">Starting Academic Year</td>
+                <td class="val-cell">${s.startingYear || 'Not Recorded'}</td>
+                <td class="lbl-cell">Current Year Level</td>
+                <td class="val-cell bold" style="color: #0c2340;">${s.yearLevel || '—'}</td>
+            </tr>
+            <tr>
+                <td class="lbl-cell">School ID No.</td>
+                <td class="val-cell" style="font-family: monospace;">${s.schoolId || '—'}</td>
+                <td class="lbl-cell">Grant Type</td>
+                <td class="val-cell">Iskolar Bayan ng Malungon (Municipal Grant)</td>
+            </tr>
+        </table>
+
+        <!-- SECTION III: CASE HISTORY & REMARKS -->
+        <div class="section-bar">
+            <span>III. Administrative Case History &amp; Remarks</span>
+            <span style="font-size: 7.2pt; opacity: 0.9;">Program Standing</span>
+        </div>
+        <div class="remarks-panel">
+            ${remarksContent}
+        </div>
+
+        <!-- SECTION IV: FINANCIAL DISBURSEMENT HISTORY -->
+        <div class="section-bar">
+            <span>IV. Financial Disbursement History &amp; Grant Ledger</span>
+            <span class="section-bar-gold">Cumulative Disbursed: ₱${totalStipendReceived.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+        </div>
+        <p style="font-size: 7.2pt; color: #64748b; margin: 3px 0 5px 0;">
+            Stipend rate coverage: ₱5,000.00/term prior to 2nd Semester AY 2023-2024; ₱7,000.00/term onwards upon verified 'OK' status and Land Bank LGU disbursement.
+        </p>
+        <table class="ledger-table">
+            <thead>
+                <tr>
+                    <th style="width: 6%; text-align: center;">No.</th>
+                    <th style="width: 38%; text-align: left;">Academic Period / Semester</th>
+                    <th style="width: 16%; text-align: center;">Record Status</th>
+                    <th style="width: 20%; text-align: center;">Date of Release</th>
+                    <th style="width: 20%; text-align: right;">Amount Disbursed</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${semRows}
+                <tr class="ledger-total-row">
+                    <td colspan="4" style="text-align: right; font-weight: 800; font-size: 8.5pt; text-transform: uppercase; color: var(--lgu-navy);">
+                        Cumulative Grant Stipend Received:
+                    </td>
+                    <td style="text-align: right; font-weight: 900; font-size: 10pt; font-family: monospace; color: #047857;">
+                        ₱ ${totalStipendReceived.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- FOOTER -->
+        <footer class="dossier-footer">
+            <div class="audit-stamp">
+                <div><strong>Iskolar Bayan ng Malungon Management System (e-IBM)</strong></div>
+                <div>Official System-Generated Document &bull; Generated from Central Database</div>
+            </div>
+            <div style="color: #64748b; font-size: 7.2pt; text-align: right; line-height: 1.4;">
+                <div>Printed: ${new Date().toLocaleString()}</div>
+                <div>System Operator: Administrator</div>
+            </div>
+        </footer>
+    </div>
+`;
+
+        document.getElementById('printProfileArea').innerHTML = html;
+        executePrint('printing-profile');
+    }
+    window.printScholarProfile = printScholarProfile;
+    window.adminPrintScholarProfile = printScholarProfile;
+
+    // --- CERTIFICATE GENERATION LOGIC ---
+    function getScholarRemovalDate(s) {
+        if (!s) return new Date().toISOString().split('T')[0];
+        if (s.removalDate && /^\d{4}-\d{2}-\d{2}$/.test(s.removalDate)) return s.removalDate;
+        if (s.incidentDate && /^\d{4}-\d{2}-\d{2}$/.test(s.incidentDate)) return s.incidentDate;
+        if (s.remarks) {
+            const matchIso = s.remarks.match(/\[(\d{4}-\d{2}-\d{2})\]/);
+            if (matchIso) return matchIso[1];
+            const matchSlash = s.remarks.match(/\[(\d{1,2})\/(\d{1,2})\/(\d{4})\]/);
+            if (matchSlash) {
+                const m = matchSlash[1].padStart(2, '0');
+                const d = matchSlash[2].padStart(2, '0');
+                const y = matchSlash[3];
+                return `${y}-${m}-${d}`;
+            }
+        }
+        return new Date().toISOString().split('T')[0];
+    }
+    window.getScholarRemovalDate = getScholarRemovalDate;
+
+    function initiateCertificate(targetScholar) {
+        const scholar = targetScholar || (typeof currentViewScholar !== 'undefined' ? currentViewScholar : null);
+        if(!scholar) return;
+        
+        const defaultDate = getScholarRemovalDate(scholar);
+        const hasDisciplinaryRecord = !!(
+            (scholar.removalDate && /^\d{4}-\d{2}-\d{2}$/.test(scholar.removalDate)) ||
+            (scholar.incidentDate && /^\d{4}-\d{2}-\d{2}$/.test(scholar.incidentDate)) ||
+            (scholar.remarks && scholar.remarks.match(/\[(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4})\]/))
+        );
+
+        const scholarName = scholar.fullName || [scholar.firstName, scholar.middleName, scholar.lastName].filter(Boolean).join(' ') || scholar.ibmId;
+
+        Swal.fire({
+            title: '📜 Generate Certificate',
+            html: `
+                <div style="text-align: left; font-size: 0.92rem; line-height: 1.5; margin-bottom: 12px;">
+                    <div style="margin-bottom: 4px;"><strong>Scholar:</strong> ${scholarName}</div>
+                    <div style="margin-bottom: 6px;"><strong>IBM ID:</strong> <code>${scholar.ibmId}</code></div>
+                    ${hasDisciplinaryRecord 
+                        ? `<div style="padding: 8px 12px; background: #ecfdf5; border-left: 4px solid #10b981; border-radius: 4px; color: #065f46; font-size: 0.84rem; margin-top: 8px;">
+                             ✨ <strong>Auto-populated:</strong> Date of Removal / Effectivity detected from Disciplinary & Status Action records. You may keep or adjust it below.
+                           </div>`
+                        : `<div style="padding: 8px 12px; background: #f0f9ff; border-left: 4px solid #0284c7; border-radius: 4px; color: #0369a1; font-size: 0.84rem; margin-top: 8px;">
+                             ℹ️ Please enter or confirm the Date of Removal below:
+                           </div>`
+                    }
+                </div>
+            `,
+            input: 'date',
+            inputLabel: 'Date of Removal / Effectivity',
+            inputValue: defaultDate,
+            showCancelButton: true,
+            confirmButtonText: '📄 Generate PDF Certificate',
+            cancelButtonText: 'Cancel',
+            confirmButtonColor: 'var(--primary, #1e3a8a)',
+            inputValidator: (value) => {
+                if (!value) {
+                    return 'Please select a valid date!';
+                }
+            }
+        }).then((result) => {
+            if (result.isConfirmed && result.value) {
+                // Show Loader
+                toggleLoader(true);
+                // Call Backend
+                google.script.run
+                    .withSuccessHandler(res => {
+                          toggleLoader(false);
+                          if(res && res.success && res.url) {
+                             // Use a follow-up SweetAlert so the browser doesn't block the pop-up
+                             Swal.fire({
+                                 title: 'Certificate Ready!',
+                                 text: 'Your PDF has been successfully generated.',
+                                 icon: 'success',
+                                 showCancelButton: true,
+                                 confirmButtonText: '📄 Open PDF to Print/View',
+                                 cancelButtonText: 'Close',
+                                 confirmButtonColor: 'var(--primary, #1e3a8a)'
+                             }).then((popupResult) => {
+                                 if (popupResult.isConfirmed) {
+                                     window.open(res.url, '_blank');
+                                 }
+                             });
+                          } else {
+                              Swal.fire('Error', 'Certificate generated, but no URL was returned.', 'error');
+                          }
+                    })
+                    .withFailureHandler(err => {
+                        toggleLoader(false);
+                        Swal.fire('Error', err.message, 'error');
+                    })
+                    .generateCertificate(scholar.ibmId, result.value);
+            }
+        });
+    }
+window.initiateCertificate = initiateCertificate;
+window.adminInitiateCertificate = initiateCertificate;
+
+
+    // ==========================================
+// FINANCIAL EXPENDITURE REPORT LOGIC (START)
+// ==========================================
+
+// 1. Initialize: Load the Search List
+function initFinanceModal() {
+    // 1. Populate Payee Search List
+    const dl = document.getElementById('payrollScholarsList');
+    if(dl) {
+        dl.innerHTML = '';
+        if(typeof pData !== 'undefined' && pData.length > 0) {
+            pData.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p.ibmId;
+                opt.label = p.fullName;
+                dl.appendChild(opt);
+            });
+        }
+    }
+
+    // 2. Populate Period Dropdown (from your global 'sems' variable)
+    const pl = document.getElementById('periodList');
+    if(pl && typeof sems !== 'undefined') {
+        pl.innerHTML = '';
+        sems.forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s;
+            pl.appendChild(opt);
+        });
+    }
+
+    // 3. Add first row if empty
+    const wrapper = document.getElementById('financeEntriesWrapper');
+    if(wrapper && wrapper.innerHTML.trim() === '') {
+        addFinanceRow(); 
+    }
+}
+
+// 2. Auto-Populate from Registry (The "Cash-Based" Logic)
+function autoPopulateFinance() {
+    const targetYear = parseInt(document.getElementById('finYear').value) || new Date().getFullYear();
+    const wrapper = document.getElementById('financeEntriesWrapper');
+    wrapper.innerHTML = '';
+    
+    const groups = {};
+
+    pData.forEach(row => {
+        const dateMatch = row.remarks ? row.remarks.match(/(\d{1,2}[\/.-]\d{1,2}[\/.-]\d{2,4})|(\d{4}[\/.-]\d{1,2}[\/.-]\d{1,2})/) : null;
+        
+        if (dateMatch) {
+            const d = new Date(dateMatch[0]);
+            if (!isNaN(d.getTime()) && d.getFullYear() === targetYear) {
+                const dateKey = d.toISOString().split('T')[0]; 
+                
+                if (!groups[dateKey]) {
+                    groups[dateKey] = {
+                        dateObj: d,
+                        count: 0,
+                        amount: 0,
+                        firstPerson: row.fullName,
+                        periods: new Set() 
+                    };
+                }
+                
+                groups[dateKey].count++;
+                groups[dateKey].amount += 7000;
+                if(row.grantPeriod) groups[dateKey].periods.add(row.grantPeriod);
+            }
+        }
+    });
+
+    const sortedDates = Object.keys(groups).sort();
+
+    if (sortedDates.length === 0) {
+        Swal.fire('No Data Found', `No releases found for Fiscal Year ${targetYear}.`, 'info');
+        addFinanceRow();
+        return;
+    }
+
+    sortedDates.forEach(dateKey => {
+        const g = groups[dateKey];
+        let payeeText = g.firstPerson;
+        if (g.count > 1) payeeText += " et. al.";
+        
+        // Even for bulk, we can fill it, or leave it blank if you prefer. 
+        // I will fill it here because this is "Auto-Load", but Manual Add will be blank.
+        const periodText = Array.from(g.periods).join(', ');
+        
+        addFinanceRow(dateKey, payeeText, periodText, "", "", g.amount);
+    });
+    
+    Swal.fire('Auto-Loaded', `Loaded ${sortedDates.length} release dates.`, 'success');
+}
+
+// 3. Add a Manual Entry Row
+function addFinanceRow(date = '', payee = '', period = '', series = '', qty = '', amt = '') {
+    const wrapper = document.getElementById('financeEntriesWrapper');
+    const rowId = 'fin-row-' + Date.now() + Math.floor(Math.random() * 1000);
+    
+    const displayAmt = amt ? amt.toLocaleString('en-US', {minimumFractionDigits: 2}) : '0.00';
+    const rawAmt = amt || 0;
+
+    const html = `
+        <div class="fin-entry-row" id="${rowId}" style="display: grid; grid-template-columns: 1.2fr 2fr 1.5fr 0.8fr 0.6fr 1fr 0.3fr; gap: 6px; align-items: start; padding: 12px 8px; border-bottom: 1px solid var(--border); background: var(--bg-surface);">
+            
+            <input type="date" class="form-control f-date" value="${date}" title="Date Released" style="font-size: 0.8rem; padding: 6px; border-radius: 6px;">
+
+            <div style="display:flex; flex-direction:column; gap:4px;">
+                <input type="text" class="form-control f-search" list="payrollScholarsList" placeholder="Search ID..." 
+                       onchange="updateFinPayee(this)" style="font-size: 0.75rem; padding: 6px; border-radius: 6px;">
+                <input type="text" class="form-control f-payee" value="${payee}" placeholder="Payee Name" 
+                       style="font-size: 0.75rem; background: var(--bg-body); color: var(--text-secondary); font-weight: 700; padding: 6px; border-radius: 6px; border-color: transparent;">
+            </div>
+
+            <input type="text" class="form-control f-period" list="periodList" value="${period}" placeholder="Select Period" 
+                   style="font-size: 0.8rem; padding: 6px; border-radius: 6px;">
+
+            <input type="text" class="form-control f-series" value="${series}" placeholder="Series #" style="font-size: 0.8rem; padding: 6px; border-radius: 6px;">
+
+            <input type="number" class="form-control f-qty" value="${qty}" placeholder="Qty" min="1" 
+                   oninput="calcFinRow('${rowId}')" style="font-size: 0.8rem; padding: 6px; border-radius: 6px;">
+
+            <div style="text-align: right; padding-top: 8px; font-weight: 700; font-family: monospace; font-size: 0.9rem; color: var(--text-main);">
+                <span class="f-total" data-value="${rawAmt}">${displayAmt}</span>
+            </div>
+
+            <button type="button" class="btn btn-ghost" style="color:var(--danger); padding: 6px; border-radius: 6px; border-color: transparent;" onclick="document.getElementById('${rowId}').remove()">×</button>
+        </div>
+    `;
+    wrapper.insertAdjacentHTML('beforeend', html);
+}
+
+// 4. Helper: Auto-fill Name + et. al.
+function updateFinPayee(input) {
+    const row = input.closest('.fin-entry-row');
+    const payeeInput = row.querySelector('.f-payee');
+    // We do NOT select periodInput anymore
+    const val = input.value;
+    
+    const scholar = pData.find(p => p.ibmId === val);
+    
+    if (scholar) {
+        payeeInput.value = scholar.fullName.toUpperCase() + " ET. AL.";
+        // Period is purposefully ignored here so you can add it manually
+    }
+}
+
+// 5. Helper: Calculate Row Total
+function calcFinRow(rowId) {
+    const row = document.getElementById(rowId);
+    const qty = parseInt(row.querySelector('.f-qty').value) || 0;
+    const totalSpan = row.querySelector('.f-total');
+    const total = qty * 7000;
+    totalSpan.innerText = total.toLocaleString('en-US', {minimumFractionDigits: 2});
+    totalSpan.dataset.value = total;
+}
+
+// 6. GENERATE REPORT (Print)
+function generateFinancialReport() {
+    const targetYear = document.getElementById('finYear').value;
+    const totalBudget = parseFloat(document.getElementById('finBudget').value) || 14000000;
+    
+    const rows = document.querySelectorAll('.fin-entry-row');
+    const entries = [];
+    
+    rows.forEach(r => {
+        const dateVal = r.querySelector('.f-date').value;
+        const payee = r.querySelector('.f-payee').value;
+        const period = r.querySelector('.f-period').value;
+        const series = r.querySelector('.f-series').value;
+        const qty = r.querySelector('.f-qty').value;
+        
+        let amount = parseFloat(r.querySelector('.f-total').dataset.value);
+        if(!amount && qty) amount = parseInt(qty) * 7000;
+
+        if (dateVal && amount > 0) {
+            entries.push({ date: dateVal, payee, period, series, amount });
+        }
+    });
+
+    if (entries.length === 0) return Swal.fire('Error', 'Please add at least one valid entry.', 'error');
+
+    // Sort by Date
+    entries.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    // Print Layout
+    const area = document.getElementById('printFinanceArea');
+    
+    let runningBalance = totalBudget;
+    let tableRows = '';
+    let totalUtilized = 0;
+
+    entries.forEach(e => {
+        runningBalance -= e.amount;
+        totalUtilized += e.amount;
+        
+        const dateStr = new Date(e.date).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+        const balClass = runningBalance < 0 ? 'color: red;' : '';
+
+        // Format: Payee on top, Period & Series below
+        tableRows += `
+            <tr>
+                <td style="text-align:center;">${dateStr}</td>
+                <td>
+                    <div style="font-weight:bold; font-size: 10pt;">${e.payee.toUpperCase()}</div>
+                    <div style="font-size: 9pt; color: #444; margin-top: 2px;">
+                        <span style="font-weight:600;">For:</span> ${e.period || 'N/A'} &nbsp;|&nbsp; 
+                        <span style="font-weight:600;">Series:</span> ${e.series || '-'}
+                    </div>
+                </td>
+                <td style="text-align:right; font-family: monospace; font-weight: bold;">
+                    ${e.amount.toLocaleString('en-US', {minimumFractionDigits:2})}
+                </td>
+                <td style="text-align:right; font-weight: bold; ${balClass}">
+                    ${runningBalance.toLocaleString('en-US', {minimumFractionDigits:2})}
+                </td>
+            </tr>
+        `;
+    });
+
+    const html = `
+        <div class="fin-header">
+            <h1>IBM Financial Expenditure Report</h1>
+            <p>Fiscal Year ${targetYear}</p>
+        </div>
+
+        <div class="fin-meta">
+            <div>TOTAL ANNUAL ALLOCATION:</div>
+            <div>${totalBudget.toLocaleString('en-US', {minimumFractionDigits: 2})}</div>
+        </div>
+
+        <table class="fin-table">
+            <thead>
+                <tr>
+                    <th width="15%">Date of Release</th>
+                    <th width="50%">Particulars / Payroll Info</th>
+                    <th width="15%">Amount Utilized</th>
+                    <th width="20%">Running Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${tableRows}
+                <tr style="background: #f3f4f6; font-weight:bold;">
+                    <td colspan="2" style="text-align:right; padding: 8px;">TOTAL UTILIZED:</td>
+                    <td style="text-align:right; border-top: 2px solid #000; padding: 8px;">
+                        ${totalUtilized.toLocaleString('en-US', {minimumFractionDigits:2})}
+                    </td>
+                    <td style="background: #fff;"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 60px; display: flex; justify-content: space-between;">
+            <div style="text-align: center; width: 40%;">
+                <p style="margin-bottom: 40px;">Prepared by:</p>
+                <div style="font-weight: bold; text-decoration: underline;">JUNNIELL C. MAHINAY</div>
+                <div style="font-size: 0.85rem;">IBM Data In-Charge</div>
+            </div>
+            <div style="text-align: center; width: 40%;">
+                <p style="margin-bottom: 40px;">Noted by:</p>
+                <div style="font-weight: bold; text-decoration: underline;">PRINCESS C. DOGUILES</div>
+                <div style="font-size: 0.85rem;">Administrative Officer II</div>
+            </div>
+        </div>
+    `;
+
+    area.innerHTML = html;
+    executePrint('printing-finance');
+}
+// ==========================================
+// FINANCIAL EXPENDITURE REPORT LOGIC (END)
+// ==========================================
+
+
+// ==========================================
+// NEW JAVASCRIPT FOR REQUIREMENTS TAB
+// ==========================================
+let reqDataRaw = [];
+let isReqsOpen = false;
+
+function loadRequirementsData() {
+    // 1. Fetch Settings (No full-screen loader!)
+    google.script.run.withSuccessHandler(settings => {
+        isReqsOpen = settings.isOpen;
+        updateSettingsUI(settings.isOpen, settings.activeSemester);
+        
+        // Populate Semesters Dropdown
+        const sel = document.getElementById('reqActiveSemester');
+        if(sel.options.length <= 1) {
+            sel.innerHTML = sems.map(s => `<option value="${s}" ${s === settings.activeSemester ? 'selected' : ''}>${s}</option>`).join('');
+        } else {
+            sel.value = settings.activeSemester;
+        }
+
+        // 2. Fetch Requirements Data
+        google.script.run.withSuccessHandler(data => {
+            reqDataRaw = data;
+            filterReqTable('PENDING'); // Default view
+        }).getRequirementsData();
+
+    }).getReqSettings();
+}
+
+function updateSettingsUI(isOpen, semester) {
+    const dot = document.getElementById('reqStatusDot');
+    const text = document.getElementById('reqStatusText');
+    const btn = document.getElementById('btnToggleReqs');
+    
+    if(isOpen) {
+        dot.className = 'status-dot dot-open';
+        text.innerText = 'OPEN (Accepting Uploads)';
+        text.style.color = 'var(--success)';
+        btn.innerText = 'Close Portal';
+        btn.className = 'btn btn-danger';
+    } else {
+        dot.className = 'status-dot dot-closed';
+        text.innerText = 'CLOSED';
+        text.style.color = 'var(--danger)';
+        btn.innerText = 'Open Portal';
+        btn.className = 'btn btn-success';
+    }
+}
+
+function toggleRequirementPortal() {
+    const sem = document.getElementById('reqActiveSemester').value;
+    if(!sem) return Swal.fire('Error', 'Please select an active semester first.', 'warning');
+    
+    const newState = !isReqsOpen;
+    const msg = newState ? `Open submissions for ${sem}?` : `Close submissions?`;
+    
+    Swal.fire({
+        title: 'Confirm Settings', text: msg, icon: 'warning', showCancelButton: true
+    }).then(res => {
+        if(res.isConfirmed) {
+            toggleLoader(true);
+            google.script.run.withSuccessHandler(() => {
+                toggleLoader(false);
+                Swal.fire('Updated', 'Settings saved.', 'success');
+                loadRequirementsData();
+            }).updateReqSettings(newState, sem);
+        }
+    });
+}
+
+function filterReqTable(filterStatus) {
+    const tbody = document.getElementById('reqBody');
+    let filtered = reqDataRaw;
+    if(filterStatus !== 'ALL') {
+        filtered = reqDataRaw.filter(r => r.status.includes(filterStatus));
+    }
+
+    if(filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 20px;">No ${filterStatus.toLowerCase()} requirements found.</td></tr>`;
+        return;
+    }
+
+    tbody.innerHTML = filtered.map(r => {
+        let badgeClass = 'badge-warning';
+        if(r.status === 'APPROVED') badgeClass = 'badge-ok';
+        if(r.status === 'REJECTED') badgeClass = 'badge-delisted';
+
+        let actionButtons = `<a href="${r.fileUrl}" target="_blank" class="btn btn-ghost btn-sm" style="margin-right:5px;">📄 View PDF</a>`;
+        
+        // Only show Approve/Reject if it's currently Pending
+        if(r.status.includes('PENDING')) {
+            actionButtons += `
+                <button class="btn btn-success btn-sm" onclick="validateReq(${r.rowIndex}, '${r.ibmId}', 'APPROVED', '${r.semester}')">Approve</button>
+                <button class="btn btn-danger btn-sm" onclick="rejectReq(${r.rowIndex}, '${r.ibmId}', '${r.semester}')">Reject</button>
+            `;
+        }
+
+        return `
+        <tr>
+            <td style="font-size: 0.8rem;">${r.date}</td>
+            <td style="font-family: monospace; font-weight: 800;">${r.ibmId}</td>
+            <td style="font-weight: 600;">${r.fullName}</td>
+            <td>${r.semester}</td>
+            <td><span class="badge ${badgeClass}">${r.status}</span><br><span style="font-size:0.7rem; color:var(--text-muted);">${r.remarks || ''}</span></td>
+            <td>${actionButtons}</td>
+        </tr>
+        `;
+    }).join('');
+}
+
+function validateReq(rowIdx, ibmId, status, semester, remarks = 'Looks good.') {
+    let confirmText = "This will approve the requirement and AUTOMATICALLY add the scholar to the Payroll Registry. Proceed?";
+    
+    Swal.fire({
+        title: 'Approve Requirement?',
+        text: confirmText,
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonColor: 'var(--success)'
+    }).then(res => {
+        if(res.isConfirmed) {
+            // NEW: Smooth inline loader instead of full-screen loader
+            Swal.fire({ title: 'Processing...', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } });
+            
+            google.script.run.withSuccessHandler(() => {
+                Swal.fire('Approved!', 'Scholar added to Payroll successfully.', 'success');
+                loadRequirementsData(); // Refresh UI
+                loadData(); // Refresh underlying DB/Payroll state
+            }).processRequirementValidation({rowIndex: rowIdx, ibmId: ibmId, status: status, remarks: remarks, semester: semester});
+        }
+    });
+}
+
+function rejectReq(rowIdx, ibmId, semester) {
+    Swal.fire({
+        title: 'Reject Requirement',
+        input: 'text',
+        inputLabel: 'Reason for Rejection',
+        inputPlaceholder: 'e.g., Blurred document, Wrong file...',
+        showCancelButton: true,
+        confirmButtonColor: 'var(--danger)',
+        preConfirm: (reason) => {
+            if (!reason) { Swal.showValidationMessage('Please provide a reason'); }
+            return reason;
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // NEW: Smooth inline loader instead of full-screen loader
+            Swal.fire({ title: 'Rejecting...', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } });
+            
+            google.script.run.withSuccessHandler(() => {
+                Swal.fire('Rejected', 'The requirement has been marked as rejected.', 'success');
+                loadRequirementsData();
+            }).processRequirementValidation({rowIndex: rowIdx, ibmId: ibmId, status: 'REJECTED', remarks: result.value, semester: semester});
+        }
+    });
+}
+
+// --- ADVANCED MASTER LIST PRINTING ---
+    async function promptPrintMasterList() {
+        const validScholars = getFilteredScholars();
+        if (validScholars.length === 0) {
+            return Swal.fire('No Data', 'No scholars match the current global filters.', 'warning');
+        }
+
+        const { value: printFormat } = await Swal.fire({
+            title: 'Print Master List',
+            html: `You are about to print a list of <b>${validScholars.length}</b> filtered scholars.<br><br>How would you like to format this report?`,
+            input: 'radio',
+            inputOptions: {
+                'all': '📋 Continuous List (Show All)',
+                'barangay': '🏠 Grouped by Barangay',
+                'year': '🎓 Grouped by Year Level'
+            },
+            inputValidator: (value) => {
+                if (!value) return 'Please choose a print format!'
+            },
+            confirmButtonText: 'Generate Print',
+            confirmButtonColor: 'var(--primary)',
+            showCancelButton: true
+        });
+
+        if (printFormat) {
+            executePrintMasterList(validScholars, printFormat);
+        }
+    }
+
+    function executePrintMasterList(scholars, format) {
+        const area = document.getElementById('printReportArea');
+        
+        // Grab current filters to display on the header
+        const statusEl = document.getElementById('reportFilterStatus');
+        const statusFilter = statusEl && statusEl.value ? statusEl.value : 'ALL STATUSES';
+        const brgyFilter = document.getElementById('reportFilterBrgy').value || 'ALL BARANGAYS';
+        const yearFilter = document.getElementById('reportFilterYear').value || 'ALL YEAR LEVELS';
+        
+        let formatLabel = format === 'all' ? "Continuous List" : (format === 'barangay' ? "Grouped by Barangay" : "Grouped by Year Level");
+
+        let contentHtml = `
+            <div class="rep-header">
+                <h2>IBM SCHOLARSHIP MASTER LIST</h2>
+                <p><strong>Total Count:</strong> ${scholars.length} Scholars</p>
+                <p><strong>Filters Applied:</strong> Status: ${statusFilter} | Brgy: ${brgyFilter} | Year: ${yearFilter}</p>
+                <p style="font-size: 9pt; font-style: italic; margin-top: 8px;">Format: ${formatLabel}</p>
+            </div>
+        `;
+
+        if (format === 'all') {
+            contentHtml += generatePrintTableHtml(scholars);
+        } else {
+            // Group the scholars dynamically
+            const grouped = {};
+            scholars.forEach(s => {
+                let key = format === 'barangay' ? (s.barangay || 'Unassigned') : (s.yearLevel || 'Unassigned');
+                if (!grouped[key]) grouped[key] = [];
+                grouped[key].push(s);
+            });
+
+            // Sort alphabetical keys (e.g., Alkikan, Ampon...)
+            const sortedKeys = Object.keys(grouped).sort();
+            
+            sortedKeys.forEach(key => {
+                contentHtml += `
+                    <div class="print-group-section">
+                        <div class="print-group-title">${format === 'barangay' ? 'Barangay' : 'Year Level'}: ${key} <span style="float: right;">Count: ${grouped[key].length}</span></div>
+                        ${generatePrintTableHtml(grouped[key])}
+                    </div>
+                `;
+            });
+        }
+
+        area.innerHTML = contentHtml;
+        executePrint('printing-report');
+    }
+
+    // --- GENERATE TABLE ROWS FOR PRINTING ---
+function generatePrintTableHtml(scholarsList) {
+    let rows = '';
+    
+    // Sort alphabetically for clean printing
+    const sorted = [...scholarsList].sort((a, b) => a.fullName.localeCompare(b.fullName));
+
+    sorted.forEach((s, index) => {
+        // --- SMART REMARKS FORMATTING ---
+        let remarksHtml = s.remarks ? s.remarks : '-';
+        const currentStatus = (s.status || '').toUpperCase();
+        
+        // Highlight the reason if they are Stopped or Delisted
+        if (currentStatus === 'STOPPED' || currentStatus === 'DELISTED') {
+            remarksHtml = `<span style="color: #e11d48; font-weight: 800;">${s.remarks || 'No reason specified in DB'}</span>`;
+        } else if (currentStatus === 'WARNING' || currentStatus === 'PROBATION') {
+            remarksHtml = `<span style="color: #d97706; font-weight: 600;">${s.remarks || '-'}</span>`;
+        }
+
+        rows += `
+            <tr>
+                <td style="text-align: center;">${index + 1}</td>
+                <td style="font-family: monospace;">${s.ibmId}</td>
+                <td style="font-weight: bold;">${s.fullName}</td>
+                <td style="font-size: 0.8rem;">${s.school || '-'}</td>
+                <td style="text-align: center; font-size: 0.85rem;">${s.yearLevel || '-'}</td>
+                <td style="text-align: center; font-size: 0.85rem;">${s.barangay || '-'}</td>
+                <td style="text-align: center; font-weight: bold;">${s.status || '-'}</td>
+                <td style="font-size: 0.75rem; color: #475569;">${remarksHtml}</td>
+            </tr>
+        `;
+    });
+
+    return `
+        <table class="rep-table" style="font-size: 9pt; width: 100%; margin-bottom: 20px;">
+            <thead>
+                <tr>
+                    <th style="width: 4%;">No.</th>
+                    <th style="width: 10%;">IBM ID</th>
+                    <th style="width: 20%;">Name of Scholar</th>
+                    <th style="width: 18%;">School</th>
+                    <th style="width: 8%;">Year</th>
+                    <th style="width: 10%;">Barangay</th>
+                    <th style="width: 9%;">Status</th>
+                    <th style="width: 21%;">Remarks / Reason</th> 
+                </tr>
+            </thead>
+            <tbody>
+                ${rows}
+            </tbody>
+        </table>
+    `;
+}
+
+    window.promptAddOtherGrant = function(ibmId, name) {
+    Swal.fire({
+        title: '🏅 Add to Other Grants',
+        html: `
+            <div class="text-start mb-3">
+                <label class="form-label text-sm text-gray-700" style="font-weight:bold;">Student Name</label>
+                <input type="text" class="form-control" value="${name}" disabled style="background:#f3f4f6;">
+            </div>
+            <div class="text-start mb-3">
+                <label class="form-label text-sm text-gray-700" style="font-weight:bold;">Year <span style="color:red;">*</span></label>
+                <input type="number" id="ogYear" class="form-control" value="${new Date().getFullYear()}" required>
+            </div>
+            <div class="text-start mb-3">
+                <label class="form-label text-sm text-gray-700" style="font-weight:bold;">Grant Name / Details <span style="color:red;">*</span></label>
+                <input type="text" id="ogName" class="form-control" placeholder="e.g. DOST, CHED TDP" required>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--danger); text-align: left; margin-top: 8px;">
+                ⚠️ Warning: Adding a scholar here will automatically update their status to <strong>DELISTED</strong>.
+            </p>
+        `,
+        showCancelButton: true,
+        confirmButtonText: 'Confirm & Add',
+        confirmButtonColor: '#e11d48',
+        preConfirm: () => {
+            const year = document.getElementById('ogYear').value;
+            const grantName = document.getElementById('ogName').value;
+            if (!year) Swal.showValidationMessage('Year is required');
+            if (!grantName) Swal.showValidationMessage('Grant Name is required');
+            return { year, grantName };
+        }
+    }).then(result => {
+        if (result.isConfirmed) {
+            Swal.fire({ title: 'Adding to Database...', didOpen: () => Swal.showLoading() });
+            google.script.run
+                .withSuccessHandler(res => {
+                    if (res.success) {
+                        Swal.fire('Success!', res.message, 'success');
+                        loadData(); 
+                    } else Swal.fire('Error', res.message, 'error');
+                })
+                .addToOtherGrantsDb(ibmId, result.value.grantName, result.value.year);
+        }
+    });
+}
+
+
+// ==========================================
+// OTHER GRANTS REPORT GENERATOR
+// ==========================================
+
+window.printOtherGrantsReport = function() {
+    if (!otherGrantsData || otherGrantsData.length === 0) {
+        Swal.fire('No Data', 'There are no scholars in the Other Grants database yet.', 'info');
+        return;
+    }
+
+    // Extract unique options for filters directly from the data
+    const uniqueYears = [...new Set(otherGrantsData.map(s => s.year))].filter(Boolean).sort().reverse();
+    const uniqueBrgys = [...new Set(otherGrantsData.map(s => s.barangay))].filter(Boolean).sort();
+    const uniqueGrants = [...new Set(otherGrantsData.map(s => s.grantName))].filter(Boolean).sort();
+
+    const yearOpts = uniqueYears.map(y => `<option value="${y}">${y}</option>`).join('');
+    const brgyOpts = uniqueBrgys.map(b => `<option value="${b}">${b}</option>`).join('');
+    const grantOpts = uniqueGrants.map(g => `<option value="${g}">${g}</option>`).join('');
+
+    Swal.fire({
+        title: '🖨️ Print Other Grants',
+        html: `
+            <p style="margin-bottom: 12px; color: var(--text-secondary); font-size: 0.9rem; text-align: left;">
+                Select filters to customize your report. Leave blank to print all.
+            </p>
+            <div class="text-start mb-3" style="text-align: left;">
+                <label class="form-label" style="font-weight:bold; font-size: 0.8rem;">Filter by Year</label>
+                <select id="printOgYear" class="form-control">
+                    <option value="">All Years</option>
+                    ${yearOpts}
+                </select>
+            </div>
+            <div class="text-start mb-3" style="text-align: left;">
+                <label class="form-label" style="font-weight:bold; font-size: 0.8rem;">Filter by Barangay</label>
+                <select id="printOgBrgy" class="form-control">
+                    <option value="">All Barangays</option>
+                    ${brgyOpts}
+                </select>
+            </div>
+            <div class="text-start mb-3" style="text-align: left;">
+                <label class="form-label" style="font-weight:bold; font-size: 0.8rem;">Filter by Scholarship / Grant</label>
+                <select id="printOgGrant" class="form-control">
+                    <option value="">All Scholarships</option>
+                    ${grantOpts}
+                </select>
+            </div>
+        `,
+        showCancelButton: true,
+        confirmButtonText: 'Generate Print',
+        confirmButtonColor: '#e11d48',
+        preConfirm: () => {
+            return {
+                year: document.getElementById('printOgYear').value,
+                barangay: document.getElementById('printOgBrgy').value,
+                grantName: document.getElementById('printOgGrant').value
+            };
+        }
+    }).then(result => {
+        if (result.isConfirmed) {
+            const filters = result.value;
+            
+            // Apply filters to the data
+            let filteredData = otherGrantsData;
+            if (filters.year) filteredData = filteredData.filter(s => String(s.year) === String(filters.year));
+            if (filters.barangay) filteredData = filteredData.filter(s => s.barangay === filters.barangay);
+            if (filters.grantName) filteredData = filteredData.filter(s => s.grantName === filters.grantName);
+
+            if (filteredData.length === 0) {
+                Swal.fire('No Matches', 'No scholars matched the selected filters.', 'warning');
+                return;
+            }
+
+            // Sort data alphabetically by name
+            const sortedData = [...filteredData].sort((a, b) => a.fullName.localeCompare(b.fullName));
+
+            // Generate table rows
+            let rows = sortedData.map((s, i) => `
+                <tr>
+                    <td style="text-align: center; width: 40px;">${i + 1}</td>
+                    <td style="text-align: center; font-family: monospace;">${s.ibmId}</td>
+                    <td style="font-weight: bold;">${s.fullName}</td>
+                    <td style="font-size: 9pt;">${s.school}</td>
+                    <td style="text-align: center;">${s.year}</td>
+                    <td style="text-align: center;">${s.barangay}</td>
+                    <td style="text-align: center; font-weight: bold; color: #e11d48;">${s.grantName}</td>
+                </tr>
+            `).join('');
+
+            // Create subtitle for applied filters
+            let filterText = [];
+            if (filters.year) filterText.push(`Year: ${filters.year}`);
+            if (filters.barangay) filterText.push(`Barangay: ${filters.barangay}`);
+            if (filters.grantName) filterText.push(`Grant: ${filters.grantName}`);
+            let filterDisplay = filterText.length > 0 ? `Filtered by -> ${filterText.join(' | ')}` : 'Showing All Records';
+
+            // Construct the full HTML for the print layout
+            let html = `
+                <div style="text-align: center; margin-bottom: 30px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                    <h2 style="margin: 0; font-size: 1.5rem; color: #0f172a;">Other Grants Summary Report</h2>
+                    <p style="margin: 5px 0 0 0; color: #64748b; font-size: 0.9rem;">${filterDisplay}</p>
+                    <p style="margin: 5px 0 0 0; color: #64748b;">Total Scholars: <strong>${sortedData.length}</strong></p>
+                    <p style="margin: 0; font-size: 0.8rem; color: #94a3b8;">Generated on: ${new Date().toLocaleDateString()}</p>
+                </div>
+                <table class="rep-table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th style="width:12%;">IBM ID</th>
+                            <th style="width:25%;">Name of Scholar</th>
+                            <th style="width:25%;">School</th>
+                            <th>Year</th>
+                            <th>Barangay</th>
+                            <th style="width:15%;">Grant Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rows}
+                    </tbody>
+                </table>
+            `;
+
+            // Inject into the print area and trigger print
+            const printArea = document.getElementById('printReportArea');
+            if (printArea) {
+                printArea.innerHTML = html;
+                executePrint('printing-report');
+            } else {
+                Swal.fire('Error', 'Print area not found on this page.', 'error');
+            }
+        }
+    });
+}
+
+// ==========================================
+// FINANCIAL LIST (TOTAL CLAIMED) REPORT LOGIC
+// ==========================================
+
+function getSemesterRate(semString) {
+    if (!semString) return 0;
+    
+    // Extract the start year and the semester name (e.g., "2023-2024/1st Sem")
+    const match = semString.match(/^(\d{4})-\d{4}.*(1st|2nd|3rd|Summer)/i);
+    if (!match) return 7000; // Default fallback for unknown formats
+    
+    const year = parseInt(match[1]);
+    const sem = match[2].toLowerCase();
+
+    // The Rule:
+    // Before 2023 = 5000
+    if (year < 2023) return 5000;
+    
+    // 2024 onwards = 7000
+    if (year > 2023) return 7000;
+    
+    // If exact year is 2023 (e.g., 2023-2024)
+    if (year === 2023) {
+        if (sem.includes('1st')) return 5000; // 2023-2024 1st Sem = 5000
+        return 7000; // 2023-2024 2nd Sem onwards = 7000
+    }
+    
+    return 7000;
+}
+
+function generateFinancialListReport() {
+    // 1. Get Filters
+    const semFromVal = document.getElementById('flSemFrom').value;
+    const semToVal = document.getElementById('flSemTo').value;
+    const brgyFilter = document.getElementById('flBrgy').value;
+    const schoolFilter = document.getElementById('flSchool').value;
+    const yearFilter = document.getElementById('flYear').value;
+
+    // 2. Filter Master Data (Basic Demographics)
+    const filteredScholars = dbData.filter(s => {
+        if (brgyFilter && s.barangay !== brgyFilter) return false;
+        if (schoolFilter && s.school !== schoolFilter) return false;
+        if (yearFilter && !(s.yearLevel || '').includes(yearFilter.split(' ')[0])) return false;
+        return true;
+    });
+
+    if (filteredScholars.length === 0) {
+        return Swal.fire('No Data', 'No scholars matched the selected basic filters.', 'warning');
+    }
+
+    // 3. Determine the Range of Semesters to Check
+    let semsToCheck = [...sems]; // Default: check all
+
+    if (semFromVal || semToVal) {
+        // Find their positions in the array
+        let idx1 = semFromVal ? sems.indexOf(semFromVal) : 0;
+        let idx2 = semToVal ? sems.indexOf(semToVal) : sems.length - 1;
+
+        // Fallbacks just in case
+        if (idx1 === -1) idx1 = 0;
+        if (idx2 === -1) idx2 = sems.length - 1;
+
+        // Ensure we slice correctly regardless of how the array is sorted
+        const startIdx = Math.min(idx1, idx2);
+        const endIdx = Math.max(idx1, idx2);
+
+        semsToCheck = sems.slice(startIdx, endIdx + 1);
+    }
+
+    let grandTotalClaimed = 0;
+    let grandTotalSems = 0;
+    let printedCount = 0;
+    let tableRows = '';
+
+    // Sort alphabetically
+    const sortedScholars = [...filteredScholars].sort((a, b) => a.fullName.localeCompare(b.fullName));
+
+    // 4. Process Each Scholar
+    sortedScholars.forEach((s) => {
+        let scholarTotalClaimed = 0;
+        let scholarSemsCount = 0;
+
+        // Count ONLY specified semesters within the range where status is 'OK'
+        semsToCheck.forEach(sem => {
+            const record = (s.semesterRecords[sem] || '').trim().toUpperCase();
+            if (record === 'OK') {
+                scholarSemsCount++;
+                scholarTotalClaimed += getSemesterRate(sem); // Calculates 5k vs 7k dynamically
+            }
+        });
+
+        // SKIP SCHOLAR IF NO CLAIMS MATCH THE FILTER RANGE
+        if (scholarSemsCount === 0) return;
+
+        printedCount++;
+        grandTotalSems += scholarSemsCount;
+        grandTotalClaimed += scholarTotalClaimed;
+
+        tableRows += `
+            <tr>
+                <td style="text-align: center;">${printedCount}</td>
+                <td style="font-family: monospace;">${s.ibmId}</td>
+                <td style="font-weight: bold;">${s.fullName}</td>
+                <td style="font-size: 0.8rem;">${s.school || '-'}</td>
+                <td style="text-align: center; font-size: 0.85rem;">${s.yearLevel || '-'}</td>
+                <td style="text-align: center; font-size: 0.85rem;">${s.barangay || '-'}</td>
+                <td style="text-align: center; font-weight: bold; color: var(--primary);">${scholarSemsCount}</td>
+                <td style="text-align: right; font-family: monospace; font-weight: bold;">₱ ${scholarTotalClaimed.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+            </tr>
+        `;
+    });
+
+    if (printedCount === 0) {
+        return Swal.fire('No Claims Found', 'No successful claims ("OK") were found for the selected timeframe and filters.', 'info');
+    }
+
+    // 5. Construct Print HTML
+    const area = document.getElementById('printFinancialListArea');
+    
+    // Filter Subtitle for Header
+    let filtersStr = [];
+    if (semFromVal || semToVal) {
+        filtersStr.push(`Period: ${semFromVal || 'Beginning'} to ${semToVal || 'Present'}`);
+    }
+    if (brgyFilter) filtersStr.push(`Brgy: ${brgyFilter}`);
+    if (schoolFilter) filtersStr.push(`School: ${schoolFilter}`);
+    if (yearFilter) filtersStr.push(`Year: ${yearFilter}`);
+    const subtitle = filtersStr.length > 0 ? `Filters Applied -> ${filtersStr.join(' | ')}` : 'Showing All Claimants (All-time)';
+
+    area.innerHTML = `
+        <div class="rep-header">
+            <h2>IBM SCHOLAR FINANCIAL CLAIMS SUMMARY</h2>
+            <p>${subtitle}</p>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Rule Applied: ₱5,000 before 2023-2024 2nd Sem, ₱7,000 onwards (Based on 'OK' record status)</p>
+            <p><strong>Total Scholars on List:</strong> ${printedCount}</p>
+        </div>
+        
+        <table class="rep-table" style="font-size: 9pt;">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">No.</th>
+                    <th style="width: 12%;">IBM ID</th>
+                    <th style="width: 22%;">Name of Scholar</th>
+                    <th style="width: 22%;">School</th>
+                    <th style="width: 8%;">Year</th>
+                    <th style="width: 10%;">Barangay</th>
+                    <th style="width: 8%;">Sems Claimed</th>
+                    <th style="width: 13%; text-align: right;">Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${tableRows}
+                <tr style="background-color: #f1f5f9; border-top: 2px solid #000;">
+                    <td colspan="6" style="text-align: right; font-weight: 800; text-transform: uppercase;">GRAND TOTAL</td>
+                    <td style="text-align: center; font-weight: 800; color: #0f172a; font-size: 11pt;">${grandTotalSems}</td>
+                    <td style="text-align: right; font-weight: 800; font-family: monospace; color: #0f172a; font-size: 11pt;">₱ ${grandTotalClaimed.toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+                </tr>
+            </tbody>
+        </table>
+    `;
+
+    executePrint('printing-financial-list', 'printFinancialListArea');
+}

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eIBM Portal</title>
+    <!-- Modern SaaS Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <?!= HtmlService.createHtmlOutputFromFile('Stylesheet').getContent(); ?>
+    
+</head>
+<body>
+
+<!-- UPDATED LOADER STRUCTURE -->
+<div id="loader">
+    <img src="https://drive.google.com/thumbnail?id=1Y53YBqJih6EpriK2sj62t-PfRhG3FHc-&sz=s5000" alt="IBM Program" class="loader-logo">
+    <div class="progress-wrapper">
+        <div class="progress-bar" id="loaderBar"></div>
+    </div>
+    <div class="progress-text" id="loaderText">Processing... 0%</div>
+</div>
+
+<!-- NEW SPLIT-SCREEN LOGIN PAGE (NO IMAGE LOGOS) -->
+<div id="loginPage" style="display: flex;">
+    <div class="login-split">
+        <!-- Brand Panel (Left) -->
+        <div class="login-brand">
+            <div class="brand-bg-shapes"></div>
+            <div class="brand-content">
+                
+                <!-- NEW: Clean Vector Icon instead of Image Logos -->
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+                    <div style="width: 56px; height: 56px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 16px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.3); box-shadow: var(--shadow-md);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <span style="font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em;">LGU Malungon</span>
+                </div>
+                
+                <h2>e-Iskolar Bayan Management Portal</h2>
+                <p>Streamline scholarship administration, automate payroll registries, and generate actionable insights for the Municipality of Malungon.</p>
+            </div>
+            <div class="brand-footer">
+                &copy; 2026 LGU Malungon. Develop and Design By: MO-Administrative Section.
+            </div>
+        </div>
+        
+        <!-- Form Panel (Right) -->
+        <div class="login-form-container">
+            <div class="login-form-wrapper">
+                
+                <!-- NEW: Clean User Icon instead of the small logo -->
+                <div style="width: 50px; height: 50px; background: var(--primary-light); color: var(--primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                
+                <h1 class="login-title">Welcome Back</h1>
+                <p class="login-subtitle">Please enter your admin credentials to securely access the portal.</p>
+                
+                <form id="loginForm">
+                    <div class="form-group text-left">
+                        <label for="loginUser">Username</label>
+                        <input type="text" id="loginUser" class="form-control" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group text-left" style="margin-bottom: 24px;">
+                        <label for="loginPass">Password</label>
+                        <input type="password" id="loginPass" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" id="loginSubmitBtn" class="btn btn-primary btn-login">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                        Secure Sign In
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN APP -->
+<div class="app-layout" id="appLayout" style="display: none;">
+    <header class="app-header">
+        <!-- LEFT SIDE: eIBM Logo + Title -->
+        <div class="header-left">
+            <img src="https://drive.google.com/thumbnail?id=1x0r6-Hdi6rN9MuTZ18eiP_3Yz0ayEkbc&sz=s1000" alt="eIBM Logo" class="header-logo-main">
+            <div class="header-text">
+                <h1>eIBM Portal</h1>
+                <p>e-Iskolar Bayan Management Portal</p>
+            </div>
+        </div>
+        
+        <!-- RIGHT SIDE: LGU & IBM Logos + Meta -->
+        <div class="header-right">
+            <img src="https://drive.google.com/thumbnail?id=1Y53YBqJih6EpriK2sj62t-PfRhG3FHc-&sz=s2000" alt="LGU" class="header-logo-sec" title="LGU Malungon">
+            <img src="https://drive.google.com/thumbnail?id=1rDC9hwsSRcvIusEiv4x9VFSDgkHh_816&sz=s2000" alt="IBM" class="header-logo-sec" title="IBM Program">
+            
+            <div class="header-divider"></div>
+            
+            <div class="header-meta">
+                <div id="currentTime"></div>
+                <!-- Updated Logout Button using new CSS class -->
+                <button onclick="logout()" class="btn-logout">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+        <nav class="nav-tabs" style="margin-bottom: 0;">
+            <div class="nav-tab active" onclick="switchTab('verification')">Iskolar Registry</div>
+            <div class="nav-tab" onclick="switchTab('payroll')">Payroll Registry</div>
+            <div class="nav-tab" onclick="switchTab('reports')">Reports & Summaries</div>
+            <div class="nav-tab" onclick="switchTab('requirements')">Requirement Validations</div>
+        </nav>
+
+        <div style="display: flex; gap: 8px;">
+            <button class="btn btn-primary" style="box-shadow: var(--shadow-sm);" onclick="window.open('https://script.google.com/macros/s/AKfycbwtDqJiOVZs4lcAlrs7Ts9DX2b18ZXsdm35IApMNC4nzSudPRNp5v_6imOaB6ayxWjx/exec', '_blank')">
+                📊 Payroll Status
+            </button>
+            <button class="btn btn-warning" style="box-shadow: var(--shadow-sm);" onclick="openPrintModal()">
+                🖨️ Print Manager
+            </button>
+            <button class="btn btn-ghost" onclick="printOtherGrantsReport()" style="border: 1px solid #e11d48; color: #e11d48; display: flex; align-items: center; gap: 8px;">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            Print Other Grants Report
+        </button>
+        </div>
+    </div>
+
+    <!-- VERIFICATION TAB (RENAMED TO ISKOLAR REGISTRY) -->
+    <div id="verificationTab">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label" id="stat-active-label">Total Active (Baseline)</div>
+                <div class="value" id="stat-total-active" style="color: var(--primary);">0</div>
+                <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px; font-weight: 500;">
+                    Scholars with Active Status
+                </div>
+            </div>
+            
+            <div class="stat-card" style="border-left: 4px solid var(--success);">
+                <div class="label" id="stat-progress-label">Payroll Progress</div>
+                <div class="value">
+                    <span id="stat-payroll-current" style="color: var(--success)">0</span>
+                    <span style="font-size: 1.2rem; color: var(--text-muted); font-weight: 600;">/</span>
+                    <span id="stat-payroll-total" style="font-size: 1.2rem; color: var(--text-secondary);">0</span>
+                </div>
+                
+                <div style="width: 100%; background: var(--border); height: 6px; border-radius: 3px; margin-top: 8px; overflow:hidden;">
+                    <div id="stat-progress-bar" style="width: 0%; background: var(--success); height: 100%; transition: width 0.5s ease;"></div>
+                </div>
+                <div id="stat-pct-text" style="font-size: 0.75rem; color: var(--success); font-weight: 800; text-align: right; margin-top: 2px;">0% Complete</div>
+            </div>
+
+            <!-- OTHER GRANTS STAT CARD -->
+          <div class="stat-card" style="border-left: 4px solid #e11d48; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+              <div style="font-size: 0.85rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Other Grants</div>
+              <div id="statOtherGrants" style="font-size: 2rem; font-weight: 800; color: #0f172a; margin-top: 8px;">0</div>
+              <div style="font-size: 0.75rem; color: #e11d48; margin-top: auto; font-weight: 500;">Moved to DOST/CHED/etc.</div>
+          </div>
+        </div>
+        <div class="toolbar" style="flex-wrap: wrap; gap: 10px;">
+    <div class="search-container" style="display: flex; gap: 8px; align-items: center; min-width: 400px;">
+        <div style="position: relative; flex-grow: 1;">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" class="search-input" id="searchV" placeholder="Search by name, ID or school..." oninput="applyAdvancedFilters()">
+        </div>
+        <button class="btn btn-ghost btn-icon" onclick="toggleFilterPanel()" title="Advanced Filters" style="border: 1px solid var(--border);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+        </button>
+    </div>
+
+    <div style="display: flex; gap: 8px;">
+        <button class="btn btn-ghost" onclick="addNewSemesterDialog()"><span>+</span> New Semester</button>
+        <button class="btn btn-ghost" id="btnBatchUpdate" onclick="openBatchUpdateModal()" style="display:none; border: 1px solid var(--primary); color: var(--primary);">Batch Edit (<span id="batchUpdateCount">0</span>)</button>
+        <button class="btn btn-primary" id="btnBatch" onclick="openBatchModal()" style="display:none;">Batch Add (<span id="batchCount">0</span>)</button>
+        
+        <!-- NEW BATCH GRADUATE BUTTON -->
+        <button class="btn btn-ghost" id="btnBatchGrad" onclick="openBatchGraduateModal()" style="display:none; border: 1px solid #059669; color: #059669; font-weight: 600;">🎓 Batch Grad (<span id="batchGradCount">0</span>)</button>
+        <button class="btn btn-ghost" id="btnBatchOtherGrant" onclick="openBatchOtherGrantModal()" style="display:none; border: 1px solid #e11d48; color: #e11d48; font-weight: 600;">🏅 Batch Grants (<span id="batchOtherGrantCount">0</span>)</button>
+        <button class="btn btn-success" onclick="openScholarModal(false)"><span>+</span> New Scholar</button>
+        <button class="btn btn-ghost" onclick="loadData()"><span>&#8635;</span> Sync</button>
+    </div>
+</div>
+
+<div id="advFilterPanel" style="display: none; background: var(--bg-body); padding: 15px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 20px; animation: fadeIn 0.3s;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; align-items: end;">
+        
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); letter-spacing: 0.05em; text-transform: uppercase;">BARANGAY</label>
+            <select id="af-barangay" class="form-control" onchange="applyAdvancedFilters()">
+                <option value="">All Barangays</option>
+            </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); letter-spacing: 0.05em; text-transform: uppercase;">YEAR LEVEL</label>
+            <select id="af-year" class="form-control" onchange="applyAdvancedFilters()">
+                <option value="">All Levels</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+                <option value="5th Year">5th Year</option>
+            </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); letter-spacing: 0.05em; text-transform: uppercase;">PAYROLL STATUS</label>
+            <select id="af-payroll" class="form-control" onchange="applyAdvancedFilters()" style="font-weight: 700; color: var(--primary);">
+                <option value="">Show All</option>
+                <option value="yes">✅ In Payroll Only</option>
+                <option value="no">❌ Not In Payroll</option>
+            </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 0;">
+            <label style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); letter-spacing: 0.05em; text-transform: uppercase;">SEMESTER STATUS</label>
+            <select id="af-sem-status" class="form-control" onchange="applyAdvancedFilters()" style="font-weight: 700; color: var(--success);">
+                <option value="">Show All</option>
+                <option id="opt-active-curr" value="active_current">✅ Active: Current</option>
+                <option id="opt-active-prev" value="active_prev">⏳ Active: Previous</option>
+                <option id="opt-pending" value="pending">⚠️ Pending Renewal</option>
+            </select>
+        </div>
+
+        <button class="btn btn-ghost btn-sm" onclick="resetFilters()" style="height: 44px; color: var(--danger);">Reset Filters</button>
+    </div>
+</div>
+        <div class="table-container">
+            <table>
+                <thead><tr><th class="chk-cell"><input type="checkbox" id="selectAll" onclick="toggleSelectAll()"></th><th>No</th><th>IBM ID</th><th>Scholar</th><th>Status</th><th>Actions</th></tr></thead>
+                <tbody id="vBody"></tbody>
+            </table>
+            <!-- PAGINATION CONTROLS -->
+            <div class="pagination-bar">
+                <div class="page-info" id="vPageInfo">Showing 1 to 20 of 0</div>
+                <div class="pagination-controls">
+                    <button class="page-btn" id="btnPrev" onclick="changePage(-1)">Previous</button>
+                    <button class="page-btn" id="btnNext" onclick="changePage(1)">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAYROLL TAB -->
+    <div id="payrollTab" style="display: none;">
+        <div class="stats-grid"><div class="stat-card"><div class="label">Registry Size</div><div class="value" id="p-total">0</div></div></div>
+        
+        <div class="toolbar">
+            <div class="search-container">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" class="search-input" id="searchP" placeholder="Search registry..." oninput="filterTable('p')">
+            </div>
+            
+            <div style="display: flex; gap: 8px;">
+                <button class="btn btn-ghost" onclick="exportData()">📥 Export CSV</button>
+            </div>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead><tr><th>No</th><th>IBM ID</th><th>Name</th><th>Account</th><th>Year</th><th>Period</th><th>Actions</th></tr></thead>
+                <tbody id="pBody"></tbody>
+            </table>
+            <!-- PAYROLL PAGINATION BAR -->
+            <div class="pagination-bar">
+                <div class="page-info" id="pPageInfo">Showing 0 to 0 of 0</div>
+                <div class="pagination-controls">
+                    <button class="page-btn" id="btnPrevP" onclick="changePageP(-1)">Previous</button>
+                    <button class="page-btn" id="btnNextP" onclick="changePageP(1)">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================== -->
+<!-- NEW TAB: REQUIREMENTS VALIDATION               -->
+<!-- ============================================== -->
+<div id="requirementsTab" style="display: none;">
+    
+    <!-- Settings Control Panel -->
+    <div class="settings-panel">
+        <div>
+            <h3 style="margin-bottom: 5px; font-size: 1.1rem;">Portal Settings</h3>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center;">
+                <span id="reqStatusDot" class="status-dot dot-closed"></span>
+                Status: <strong id="reqStatusText" style="margin-left: 5px;">CLOSED</strong>
+            </div>
+        </div>
+        <div style="width: 1px; height: 40px; background: var(--border); margin: 0 10px;"></div>
+        
+        <div style="display: flex; gap: 10px; align-items: flex-end; flex-grow: 1;">
+            <div style="flex: 1; max-width: 300px;">
+                <label style="display:block; font-size:0.75rem; font-weight:700; color:var(--text-secondary); margin-bottom:4px;">Active Semester for Uploads</label>
+                <select id="reqActiveSemester" class="form-control" style="width: 100%;">
+                    <!-- Populated dynamically via JS -->
+                </select>
+            </div>
+            <button class="btn btn-primary" id="btnToggleReqs" onclick="toggleRequirementPortal()">Open Portal</button>
+        </div>
+        
+        <div style="display: flex; gap: 8px;">
+            <button class="btn btn-ghost" onclick="loadRequirementsData()"><span>&#8635;</span> Refresh</button>
+        </div>
+    </div>
+
+    <!-- Filter Controls -->
+    <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+        <button class="btn btn-ghost" style="border-color: var(--primary); color: var(--primary);" onclick="filterReqTable('PENDING')">Show Pending</button>
+        <button class="btn btn-ghost" onclick="filterReqTable('APPROVED')">Show Approved</button>
+        <button class="btn btn-ghost" onclick="filterReqTable('REJECTED')">Show Rejected</button>
+        <button class="btn btn-ghost" onclick="filterReqTable('ALL')">Show All</button>
+    </div>
+
+    <!-- Requirements Table -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date Submitted</th>
+                    <th>IBM ID</th>
+                    <th>Scholar Name</th>
+                    <th>Semester</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="reqBody">
+                <tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Loading data...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+    <!-- REPORT & SUMMARY TAB -->
+    <div id="reportsTab" style="display: none;">
+        <div class="report-grid">
+            <!-- Sidebar Controls -->
+            <div class="report-sidebar">
+                <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 20px; color: var(--text-main);">Report Configuration</h3>
+                
+                <div class="form-group">
+                    <label>Report Type</label>
+                    <select id="reportMode" class="form-control" onchange="toggleReportInputs()">
+                        <option value="utilized">📊 Certified List (Paid/OK)</option>
+                        <option value="pending">⚠️ Target for Renewal (Pending)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Target Semester</label>
+                    <select id="reportSem" class="form-control" onchange="generateReport()">
+                        <!-- Populated by JS -->
+                    </select>
+                    <div class="form-text" id="targetSemHelp">Counts scholars with "OK" in this semester.</div>
+                </div>
+
+                <div class="form-group" id="prevSemGroup" style="display: none;">
+                    <label>Qualifying Semester (Baseline)</label>
+                    <select id="reportPrevSem" class="form-control" onchange="generateReport()">
+                        <!-- Populated by JS -->
+                    </select>
+                    <div class="form-text" style="color: var(--warning);">Finds scholars with "OK" here but BLANK in Target.</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Group By</label>
+                    <select id="reportGroup" class="form-control" onchange="generateReport()">
+                        <option value="barangay">Barangay</option>
+                        <option value="school">School</option>
+                        <option value="yearLevel">Year Level</option>
+                        <option value="course">Course</option>
+                        <option value="sex">Sex/Gender</option>
+                        <option value="tribe">Tribe</option>
+                    </select>
+                </div>
+
+                <!-- NEW: PRE-FILTERS -->
+                <div style="border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; margin-bottom: 16px;">
+                    <h4 style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.05em;">Global Filters</h4>
+                    
+                    <div class="form-group">
+                        <select id="reportFilterBrgy" class="form-control" style="font-size: 0.8rem;" onchange="generateReport()">
+                            <option value="">All Barangays</option>
+                            <option value="Alkikan">Alkikan</option><option value="Ampon">Ampon</option><option value="Atlae">Atlae</option><option value="Banahaw">Banahaw</option><option value="Banate">Banate</option><option value="Blaan">Blaan</option><option value="Datal Batong">Datal Batong</option><option value="Datal Bila">Datal Bila</option><option value="Datal Tampal">Datal Tampal</option><option value="J.P. Laurel">J.P. Laurel</option><option value="Kawayan">Kawayan</option><option value="Kibala">Kibala</option><option value="Kiblat">Kiblat</option><option value="Kinabalan">Kinabalan</option><option value="Lower Mainit">Lower Mainit</option><option value="Lutay">Lutay</option><option value="Malabod">Malabod</option><option value="Malalag Cogon">Malalag Cogon</option><option value="Malandag">Malandag</option><option value="Malungon Gamay">Malungon Gamay</option><option value="Nagpan">Nagpan</option><option value="Panamin">Panamin</option><option value="Poblacion">Poblacion</option><option value="San Juan">San Juan</option><option value="San Miguel">San Miguel</option><option value="San Roque">San Roque</option><option value="Talus">Talus</option><option value="Tamban">Tamban</option><option value="Upper Biangan">Upper Biangan</option><option value="Upper Lumabat">Upper Lumabat</option><option value="Upper Mainit">Upper Mainit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="reportFilterYear" class="form-control" style="font-size: 0.8rem;" onchange="generateReport()">
+                            <option value="">All Year Levels</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                            <option value="5th Year">5th Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="reportFilterSex" class="form-control" style="font-size: 0.8rem;" onchange="generateReport()">
+                            <option value="">All Genders</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        <select id="reportFilterStatus" class="form-control" style="font-size: 0.8rem;" onchange="generateReport()">
+                            <option value="">All Statuses</option>
+                            <option value="ACTIVE">ACTIVE</option>
+                            <option value="EXTENDED">EXTENDED</option>
+                            <option value="NEW">NEW</option>
+                            <option value="PROBATION">PROBATION</option>
+                            <option value="WARNING">WARNING</option>
+                            <option value="ON-LEAVE (MEDICAL)">ON-LEAVE (MEDICAL)</option>
+                            <option value="ON-LEAVE (FINANCIAL)">ON-LEAVE (FINANCIAL)</option>
+                            <option value="STOPPED">STOPPED</option>
+                            <option value="GRADUATED">GRADUATED</option>
+                            <option value="DELISTED">DELISTED</option>
+                        </select>
+                    </div>
+
+                <div style="margin-top: 24px;">
+                    <button class="btn btn-primary" style="width: 100%; margin-bottom: 12px;" onclick="generateReport()">
+                        &#8635; Generate Summary
+                    </button>
+                    <button class="btn btn-warning" style="width: 100%; margin-bottom: 12px;" onclick="generateMatrixReport()">
+                        📊 Matrix Breakdown
+                    </button>
+                    <button class="btn btn-success" style="width: 100%; margin-bottom: 12px; font-weight: 800; background: #059669; border: none; color: white;" onclick="generateGraduatesMatrix()">
+                            🎓 Alumni Matrix
+                        </button>
+                        <button class="btn btn-primary" style="width: 100%; margin-bottom: 12px; font-weight: 800; background: #3b82f6; border: none; color: white;" onclick="generateTrackingMatrix()">
+                        🔄 Payroll Tracking (Sem vs Sem)
+                    </button>
+                    <button class="btn btn-ghost" style="width: 100%; font-weight: 800;" onclick="promptPrintMasterList()">
+                        &#128438; Print Master List
+                    </button>
+                </div>
+
+                <div style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;">
+                    <div id="reportTotalLabel" style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Total Count</div>
+                    <div id="reportTotalCount" style="font-size: 2.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em;">0</div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="report-main">
+                
+              <!-- Smart Insights Strip (Dynamic) -->
+                <div id="reportInsights" style="display: none; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 24px; animation: slideUp 0.3s ease;">
+                    <!-- Rendered via JS -->
+                </div>
+
+                <!-- STANDARD SUMMARY (Default Visible) -->
+                <div id="standardSummaryContainer">
+                    
+                    <!-- NEW: CHART + SUMMARY SPLIT -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                        <!-- TABLE SUMMARY -->
+                        <div class="summary-box">
+                            <div class="summary-header">
+                                <span>Summary Breakdown</span>
+                                <button class="btn btn-sm btn-ghost" onclick="exportSummaryCSV()" title="Download Summary as CSV">⬇️ Export CSV</button>
+                            </div>
+                            <div style="max-height: 320px; overflow-y: auto;">
+                                <table style="width: 100%;">
+                                    <thead style="position: sticky; top: 0; z-index: 10;"><tr><th>Category</th><th style="text-align: right;">Count</th></tr></thead>
+                                    <tbody id="reportSummaryBody">
+                                        <tr><td colspan="2" style="text-align: center; color: var(--text-muted); font-weight: 500; padding: 30px;">Select options to generate report</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- DATA VISUALIZATION (CHART.JS) -->
+                        <div class="summary-box" style="padding: 16px; display: flex; align-items: center; justify-content: center; background: var(--bg-surface);">
+                            <canvas id="reportChart" style="max-height: 300px; width: 100%; display: none;"></canvas>
+                            <div id="chartPlaceholder" style="text-align: center; color: var(--text-muted); font-weight: 500;">
+                                <div style="font-size: 2rem; margin-bottom: 8px;">📊</div>
+                                Visual Data will appear here.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DETAILED LIST (PAGINATED) -->
+                    <div class="summary-box">
+                        <div class="summary-header">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span id="detailListTitle">Detailed List</span>
+                                <span class="badge badge-payroll" id="detailListCount">0 Records</span>
+                            </div>
+                            <button class="btn btn-sm btn-ghost" onclick="exportDetailCSV()">⬇️ Export List</button>
+                        </div>
+                        <div style="min-height: 250px;">
+                            <table style="width: 100%;">
+                                <thead><tr><th>No</th><th>IBM ID</th><th>Name</th><th>School</th><th>Status</th></tr></thead>
+                                <tbody id="reportDetailBody">
+                                    <tr><td colspan="5" style="text-align: center; color: var(--text-muted); font-weight: 500; padding: 30px;">Select a category above to see details</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Detail Pagination -->
+                        <div class="pagination-bar" id="reportPaginationBar" style="display: none;">
+                            <div class="page-info" id="reportPageInfo">Showing 0 to 0</div>
+                            <div class="pagination-controls">
+                                <button class="page-btn" id="btnPrevReport" onclick="changeReportPage(-1)">Previous</button>
+                                <button class="page-btn" id="btnNextReport" onclick="changeReportPage(1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MATRIX SUMMARY (Hidden by Default) -->
+                <div id="matrixSummaryContainer" style="display: none;">
+                    <div class="summary-box" style="margin-bottom: 24px;">
+                        <div class="summary-header">
+                            <span>Matrix Breakdown: Barangay vs. Year Level</span>
+                            <button class="btn btn-sm btn-ghost" onclick="printMatrixReport()">🖨️ Print Matrix</button>
+                        </div>
+                        <div class="matrix-table-container">
+                            <table class="matrix-table" id="matrixTable">
+                                <!-- Dynamic Content -->
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <div class="summary-header">
+                            <span>Status Summary Breakdown</span>
+                        </div>
+                        <div class="matrix-table-container">
+                            <table class="matrix-table" id="statusMatrixTable">
+                                <!-- Dynamic Content -->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- NEW: TRACKING SUMMARY (Hidden by Default)      -->
+                <!-- ============================================== -->
+                <div id="trackingSummaryContainer" style="display: none;">
+                    <div class="summary-box" style="margin-bottom: 24px;">
+                        <div class="summary-header">
+                      <span id="trackingTitleSpan">Payroll Tracking: Previous vs Current</span>
+                      <div style="display: flex; gap: 8px; align-items: center;">
+                          
+                          <!-- NEW DB STATUS FILTER DROPDOWN -->
+                          <select id="trackingDbStatusFilter" class="form-control" style="font-size: 0.75rem; padding: 4px 8px; width: auto; height: auto;" onchange="renderTrackingTable()">
+                              <option value="">All DB Statuses</option>
+                              <option value="ACTIVE">ACTIVE</option>
+                              <option value="EXTENDED">EXTENDED</option>
+                              <option value="NEW">NEW</option>
+                              <option value="PROBATION">PROBATION</option>
+                              <option value="WARNING">WARNING</option>
+                              <option value="ON-LEAVE (MEDICAL)">ON-LEAVE (MEDICAL)</option>
+                              <option value="ON-LEAVE (FINANCIAL)">ON-LEAVE (FINANCIAL)</option>
+                              <option value="ON-HOLD">ON-HOLD</option>
+                              <option value="STOPPED">STOPPED</option>
+                              <option value="GRADUATED">GRADUATED</option>
+                              <option value="DELISTED">DELISTED</option>
+                          </select>
+
+                          <select id="trackingBrgyFilter" class="form-control" style="font-size: 0.75rem; padding: 6px; width: auto;" onchange="renderTrackingTable()">
+                            <option value="">All Barangays</option>
+                            </select>
+
+                        <select id="trackingSchoolFilter" class="form-control" style="font-size: 0.75rem; padding: 6px; width: auto; max-width: 250px;" onchange="renderTrackingTable()">
+                            <option value="">All Schools</option>
+                            </select>
+
+                          <!-- NEW SHOW ALL BUTTON -->
+                          <button class="btn btn-sm btn-ghost" onclick="renderTrackingTable('ALL')">👁️ Show All</button>
+                          <button class="btn btn-sm btn-ghost" onclick="printTrackingMatrix()">🖨️ Print List</button>
+                      </div>
+                  </div>
+                        
+                        <!-- Mini Stats for the Tracking (NOW CLICKABLE FILTERS) -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; padding: 16px; background: var(--bg-surface); border-bottom: 1px solid var(--border);">
+                            <div class="stat-card trk-stat-card" id="card-BASELINE" style="padding: 12px; box-shadow: none; border: 1px solid var(--border); border-left: 4px solid var(--text-muted); cursor: pointer; transition: all 0.2s ease;" onclick="renderTrackingTable('BASELINE')" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <div class="label" style="color: var(--text-main);">Baseline (Prev Sem)</div>
+                                <div class="value" id="trackingTotalBaseline" style="font-size: 1.5rem;">0</div>
+                            </div>
+                            <div class="stat-card trk-stat-card" id="card-PROCESSED" style="padding: 12px; box-shadow: none; border: 1px solid var(--border); border-left: 4px solid var(--primary); cursor: pointer; transition: all 0.2s ease;" onclick="renderTrackingTable('PROCESSED')" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <div class="label" style="color: var(--primary);">Processed (Target)</div>
+                                <div class="value" id="trackingTotalTarget" style="font-size: 1.5rem; color: var(--primary);">0</div>
+                            </div>
+                            <div class="stat-card trk-stat-card" id="card-PENDING-MISSING" style="padding: 12px; box-shadow: none; border: 1px solid var(--border); border-left: 4px solid var(--warning); cursor: pointer; transition: all 0.2s ease;" onclick="renderTrackingTable('PENDING/MISSING')" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <div class="label" style="color: var(--warning);">Pending / Missing</div>
+                                <div class="value" id="trackingTotalPending" style="font-size: 1.5rem; color: var(--warning);">0</div>
+                            </div>
+                            <div class="stat-card trk-stat-card" id="card-NEW-RETURNING" style="padding: 12px; box-shadow: none; border: 1px solid var(--border); border-left: 4px solid var(--success); cursor: pointer; transition: all 0.2s ease;" onclick="renderTrackingTable('NEW/RETURNING')" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                                <div class="label" style="color: var(--success);">New / Returning</div>
+                                <div class="value" id="trackingTotalReturning" style="font-size: 1.5rem; color: var(--success);">0</div>
+                            </div>
+                        </div>
+
+                        <!-- === START: TRACKING SUMMARY SECTION === -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 24px 16px 8px;">
+                            <h4 style="font-size: 1rem; font-weight: 800; color: var(--text-main); text-transform: uppercase;">Tracking Summary Breakdown</h4>
+                            <select id="trackingSummaryGroup" class="form-control" style="width: auto; font-size: 0.8rem; font-weight: bold; color: var(--primary);" onchange="renderTrackingSummary()">
+                                <option value="barangay">Group by Barangay</option>
+                                <option value="school">Group by School</option>
+                                <option value="yearLevel">Group by Year Level</option>
+                            </select>
+                        </div>
+                        <div class="matrix-table-container" style="max-height: 400px; overflow-y: auto; margin-bottom: 24px; border-bottom: 1px solid var(--border);">
+                            <table class="matrix-table" id="trackingSummaryTable">
+                                <!-- Summary will be rendered here dynamically -->
+                            </table>
+                        </div>
+                    </div>
+
+                        <!-- Tracking Table -->
+                        <div class="matrix-table-container" style="max-height: 600px; overflow-y: auto;">
+                            <table class="matrix-table" id="trackingTable">
+                                <!-- Dynamic Content goes here -->
+                            </table>
+                        </div>
+                    </div>
+                    <button class="btn btn-ghost" onclick="closeTrackingView()" style="margin-top: 12px;">← Back to Standard View</button>
+                </div>
+                    
+                    <button class="btn btn-ghost" onclick="closeMatrixView()" style="margin-top: 12px;">← Back to Standard View</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<!-- BATCH UPDATE MODAL -->
+<div class="modal-overlay" id="batchUpdateModal">
+    <div class="modal-body" style="max-width: 900px;">
+        <h2>Batch Update Scholars</h2>
+        <p style="margin-bottom: 12px; color: var(--text-secondary); font-weight: 500;">
+            Updating <strong id="buDisplayCount" style="color: var(--primary);">0</strong> selected scholars. 
+            Adjust common attributes above, or modify year levels individually below.
+        </p>
+        
+        <form id="batchUpdateForm">
+            <!-- COMMON BULK ATTRIBUTES -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                    <label>School Year (All Selected)</label>
+                    <input type="text" id="bu-sy" class="form-control" placeholder="e.g. 2026-2027 (Leave blank to skip)">
+                </div>
+                <div class="form-group">
+                    <label>Status (All Selected)</label>
+                    <select id="bu-status" class="form-control">
+                        <option value="">-- No Change --</option>
+                        <option value="ACTIVE">ACTIVE</option>
+                        <option value="EXTENDED">EXTENDED</option>
+                        <option value="NEW">NEW</option>
+                        <option value="PROBATION">PROBATION</option>
+                        <option value="WARNING">WARNING</option>
+                        <option value="STOPPED">STOPPED</option>
+                        <option value="GRADUATED">GRADUATED</option>
+                        <option value="DELISTED">DELISTED</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                    <label>Course (All Selected)</label>
+                    <input type="text" id="bu-course" class="form-control" list="dl-courses" placeholder="Leave blank to skip">
+                </div>
+                <div class="form-group">
+                    <label>School (All Selected)</label>
+                    <input type="text" id="bu-school" class="form-control" list="dl-schools" placeholder="Leave blank to skip">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Remarks (All Selected)</label>
+                <input type="text" id="bu-remarks" class="form-control" placeholder="Leave blank to skip">
+            </div>
+
+            <!-- INDIVIDUAL YEAR LEVEL TABLE -->
+            <div style="margin-top: 16px; border-top: 1px solid var(--border); padding-top: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <label style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--text-secondary);">
+                        Individual Year Levels
+                    </label>
+                    <div style="display: flex; gap: 6px; align-items: center;">
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Quick fill all:</span>
+                        <button type="button" class="btn btn-ghost btn-sm" onclick="setAllBatchYears('1st Year')">1st</button>
+                        <button type="button" class="btn btn-ghost btn-sm" onclick="setAllBatchYears('2nd Year')">2nd</button>
+                        <button type="button" class="btn btn-ghost btn-sm" onclick="setAllBatchYears('3rd Year')">3rd</button>
+                        <button type="button" class="btn btn-ghost btn-sm" onclick="setAllBatchYears('4th Year')">4th</button>
+                    </div>
+                </div>
+
+                <div class="batch-review-box" style="max-height: 280px; overflow-y: auto;">
+                    <table class="batch-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">IBM ID</th>
+                                <th style="width: 45%;">Name</th>
+                                <th style="width: 35%;">Year Level</th>
+                            </tr>
+                        </thead>
+                        <tbody id="buReviewBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-top: 24px;">
+                <button type="submit" class="btn btn-primary" style="flex: 1;">Apply Updates</button>
+                <button type="button" class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- BATCH MODAL -->
+<div class="modal-overlay" id="batchModal">
+    <div class="modal-body">
+        <h2>Batch Payroll Entry</h2>
+        <p style="margin-bottom: 12px; color: var(--text-secondary); font-weight: 500;">You are about to add <strong id="batchDisplayCount" style="color: var(--text-main);">0</strong> scholars. Please review the list below.</p>
+        
+        <div class="batch-review-box">
+            <table class="batch-table">
+                <thead><tr><th>IBM ID</th><th>Name</th><th>LBP Account</th></tr></thead>
+                <tbody id="batchReviewBody"></tbody>
+            </table>
+        </div>
+
+        <form id="batchForm">
+            <div class="form-group"><label>Grant Period *</label><select id="b-period" class="form-control" required></select></div>
+            <div class="form-group"><label>Remarks (Optional)</label><input type="text" id="b-remarks" class="form-control" placeholder="e.g. 1st Batch"></div>
+            <div style="display: flex; gap: 12px; margin-top: 24px;">
+                <button type="submit" class="btn btn-primary" style="flex: 1;">Confirm & Save</button>
+                <button type="button" class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- DISMISSAL / DISCIPLINARY MODAL -->
+<div class="modal-overlay" id="dismissalModal">
+    <div class="modal-body">
+        <h2 style="color: var(--danger)">⚖️ Disciplinary Action</h2>
+        <p style="margin-bottom: 24px; color: var(--text-secondary); font-weight: 500;">Process violation and determine status based on policy.</p>
+        
+        <form id="dismissalForm">
+            <input type="hidden" id="d-row-index">
+            <input type="hidden" id="d-ibm-id">
+            
+            <div class="form-group">
+                <label>Scholar</label>
+                <input type="text" id="d-scholar-name" class="form-control" readonly>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                    <label>Reason / Remarks</label>
+                    <select id="d-type" class="form-control" onchange="updateDismissalPreview()" required>
+                          <option value="">Select Violation / Status Change</option>
+                          <option value="Graduated">Graduated</option>
+                          <option value="ACADEMIC">Grade Deficiency (Failed Subjects)</option>
+                          <option value="COMPLIANCE">Non-Compliance</option>
+                          <option value="MEDICAL">On-Leave (Medical) - ❄️ Frozen</option>
+                          <option value="FINANCIAL">On-Leave (Financial/Other) - ⏳ Counts</option>
+                          <option value="MAJOR">Major Offense / Misconduct</option>
+                          <option value="VOLUNTARY">Voluntary Withdrawal</option>
+                          <option value="OTHER_SCHOLARSHIP">External Scholarship (Double Grant)</option>
+                          <option value="DEATH">Deceased</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label>Date of Incident *</label>
+                    <input type="date" id="d-date" class="form-control" required>
+                </div>
+            </div>
+
+            <!-- Conditional Section for Grades -->
+            <div class="form-group" id="d-grade-section" style="display:none;">
+                <label>Number of Failed Subjects *</label>
+                <input type="number" id="d-fail-count" class="form-control" min="0" value="0" oninput="updateDismissalPreview()">
+                <div class="form-text">Policy: 1 Fail = Probation, >1 Fail = Termination</div>
+            </div>
+
+            <div class="form-group">
+                <label>Remarks / Specific Details</label>
+                <textarea id="d-remarks" class="form-control" rows="2" placeholder="Describe the violation..."></textarea>
+            </div>
+
+            <!-- Dynamic Decision Preview -->
+            <div id="d-preview" class="dismissal-preview">
+                <label style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.05em;">Resulting Action</label>
+                <div id="d-preview-text" style="font-weight: 700; font-size: 1.1rem; color: var(--text-secondary);">Waiting for input...</div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-top: 24px;">
+                <button type="submit" class="btn btn-danger" style="flex: 1;">Confirm Action</button>
+                <button type="button" class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- VIEW SCHOLAR MODAL -->
+<div class="modal-overlay" id="viewModal">
+    <div class="modal-body">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <h2>Scholar Record</h2>
+            <div style="display: flex; gap: 8px;">
+                <button class="btn btn-ghost btn-sm" style="color:var(--danger); border-color:var(--danger)" onclick="promptAddOtherGrant(currentViewScholar.ibmId, currentViewScholar.fullName)">🏅 Other Grant</button>
+                <button class="btn btn-warning btn-sm" onclick="initiateCertificate()">📜 Certificate</button>
+                <button class="btn btn-ghost btn-sm" onclick="printScholarProfile()">&#128438; Print Record</button>
+            </div>
+        </div>
+        <div id="viewContent"></div>
+        <div style="text-align: right; margin-top: 24px;">
+            <button class="btn btn-ghost" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- ADD/EDIT SCHOLAR MODAL -->
+<div class="modal-overlay" id="scholarModal">
+    <div class="modal-body">
+        <h2 id="scholarModalTitle">Add New Scholar</h2>
+        <form id="scholarForm">
+            <input type="hidden" id="ns-row-index">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group"><label>School Year *</label><input type="text" id="ns-sy" class="form-control" required placeholder="2025-2026"></div>
+                <div class="form-group"><label>IBM ID (Auto)</label><input type="text" id="ns-ibm" class="form-control" readonly placeholder="Auto-generated"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+                <div class="form-group"><label>First Name *</label><input type="text" id="ns-first" class="form-control" required></div>
+                <div class="form-group"><label>Middle Name</label><input type="text" id="ns-middle" class="form-control"></div>
+                <div class="form-group"><label>Last Name *</label><input type="text" id="ns-last" class="form-control" required></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group"><label>Sex</label><select id="ns-sex" class="form-control"><option value="">Select</option><option value="M">Male</option><option value="F">Female</option></select></div>
+                <div class="form-group"><label>Tribe</label><select id="ns-tribe" class="form-control"><option value="">Select Tribe</option></select></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group"><label>Course</label><input type="text" id="ns-course" class="form-control" list="dl-courses" placeholder="Select or Type"></div>
+                <div class="form-group"><label>School</label><input type="text" id="ns-school" class="form-control" list="dl-schools" placeholder="Select or Type"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group"><label>School ID</label><input type="text" id="ns-school-id" class="form-control"></div>
+                <div class="form-group"><label>Contact</label><input type="text" id="ns-contact" class="form-control"></div>
+            </div>
+            <div class="form-group"><label>Barangay</label><select id="ns-barangay" class="form-control"><option value="">Select Barangay</option></select></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+                <div class="form-group"><label>LBP Account</label><input type="text" id="ns-lbp" class="form-control"></div>
+                
+                <!-- NEW: STARTING YEAR LEVEL -->
+                <div class="form-group">
+                    <label>Starting Year Level</label>
+                    <select id="ns-starting-year" class="form-control">
+                        <option value="">Select</option>
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                        <option value="5th Year">5th Year</option>
+                    </select>
+                </div>
+                
+                <!-- EXISTING: CURRENT YEAR LEVEL -->
+                <div class="form-group">
+                    <label>Current Year</label>
+                    <select id="ns-year" class="form-control">
+                        <option value="">Select</option>
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                        <option value="5th Year">5th Year</option>
+                    </select>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group"><label>Status</label><select id="ns-status" class="form-control"><option value="ACTIVE">ACTIVE</option><option value="EXTENDED">EXTENDED</option><option value="NEW">NEW</option><option value="PROBATION">PROBATION</option><option value="WARNING">WARNING</option><option value="STOPPED">STOPPED</option><option value="GRADUATED">GRADUATED</option><option value="DELISTED">DELISTED</option></select></div>
+                <div class="form-group"><label>Remarks</label><input type="text" id="ns-remarks" class="form-control"></div>
+            </div>
+            <div style="display: flex; gap: 12px; margin-top: 24px;">
+                <button type="submit" class="btn btn-success" style="flex: 1;">Save Scholar</button>
+                <button type="button" class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<datalist id="dl-schools"></datalist>
+<datalist id="dl-courses"></datalist>
+
+<!-- PAYROLL ENTRY MODAL -->
+<div class="modal-overlay" id="payrollModal">
+    <div class="modal-body">
+        <h2 id="modalTitle">Payroll Registry</h2>
+        <form id="payrollForm">
+            <input type="hidden" id="f-row">
+            <div class="form-group"><label>Scholar</label><input type="text" id="f-display" class="form-control" readonly></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group"><label>Account No</label><input type="text" id="f-account" class="form-control"></div>
+                <div class="form-group"><label>Year Level</label><select id="f-year" class="form-control"><option value="">Select</option><option value="1st Year">1st Year</option><option value="2nd Year">2nd Year</option><option value="3rd Year">3rd Year</option><option value="4th Year">4th Year</option></select></div>
+            </div>
+            <div class="form-group"><label>Period</label><select id="f-period" class="form-control" required></select></div>
+            <div class="form-group"><label>Remarks</label><input type="text" id="f-remarks" class="form-control"></div>
+            <div style="display: flex; gap: 12px; margin-top: 24px;">
+                <button type="submit" class="btn btn-primary" style="flex: 1;">Save Entry</button>
+                <button type="button" class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- PRINT MANAGER -->
+<div class="modal-overlay" id="printModal">
+    <div class="modal-body">
+        <h2>Print Manager</h2>
+        
+        <div class="form-group">
+            <label>Print Type</label>
+            <select id="printType" class="form-control" onchange="togglePrintInputs()">
+                <option value="list">Admin & Accounting List (Portrait)</option>
+                <option value="form">Official IBM Payroll Form (Landscape)</option>
+                <option value="furs">Fund Utilization Request (FURS)</option>
+                <option value="ada">Authority to Debit Account (ADA)</option>
+                <option value="finance">💰 Financial Expenditure Report</option>
+                <option value="financialList">🧾 Total Claimed Financial List</option>
+            </select>
+        </div>
+        
+        <div id="rangeInputContainer" class="form-group">
+            <label>Print Range</label>
+            <input type="text" id="printRange" class="form-control" placeholder="Empty for all (e.g., 1-20)">
+            <div class="form-text">For official forms, use 1-20, 21-40 etc. for best results.</div>
+        </div>
+
+        <div id="adaInputContainer" style="display: none;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+                 <div class="form-group">
+                    <label>ADA No.</label>
+                    <input type="text" id="adaNo" class="form-control" placeholder="e.g. 2026-02-009">
+                </div>
+                 <div class="form-group">
+                    <label>ADA Date</label>
+                    <input type="date" id="adaDate" class="form-control">
+                </div>
+            </div>
+            <div style="margin-bottom: 12px; font-weight: 800; font-size: 0.9rem; color: var(--text-secondary); display:flex; justify-content:space-between; align-items:center; text-transform: uppercase; letter-spacing: 0.05em;">
+                <span>ADA Entries</span>
+                <button type="button" class="btn btn-sm btn-ghost" onclick="addAdaEntryRow()" style="color: var(--primary);">+ Add Entry</button>
+            </div>
+            <div id="adaEntriesWrapper" style="max-height: 300px; overflow-y: auto; padding-right: 5px;"></div>
+        </div>
+
+        <div id="financeInputContainer" style="display: none;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+                <div class="form-group">
+                    <label>For Year</label>
+                    <input type="number" id="finYear" class="form-control" value="2026" placeholder="e.g. 2026">
+                </div>
+                <div class="form-group">
+                    <label>Total Annual Fund</label>
+                    <input type="number" id="finBudget" class="form-control" value="14000000">
+                </div>
+            </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span style="font-size: 0.85rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Expenditure Entries</span>
+        <button type="button" class="btn btn-sm btn-ghost" onclick="addFinanceRow()" style="color: var(--primary);">+ Add Entry</button>
+    </div>
+
+    <div style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--bg-body);">
+        
+        <div style="display: grid; grid-template-columns: 1.2fr 2fr 1.5fr 0.8fr 0.6fr 1fr 0.3fr; gap: 6px; padding: 12px; background: var(--border-light); font-size: 0.7rem; font-weight: 800; color: var(--text-secondary); position: sticky; top: 0; z-index: 5; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border);">
+            <div>DATE</div>
+            <div>PAYEE (Search)</div>
+            <div>GRANT PERIOD</div>
+            <div>SERIES NO.</div>
+            <div>QTY</div>
+            <div style="text-align: right;">AMOUNT</div>
+            <div></div>
+        </div>
+        
+        <div id="financeEntriesWrapper" style="padding: 6px;">
+            </div>
+    </div>
+        </div>
+    <!-- ADD/REPLACE THIS BLOCK FOR FINANCIAL LIST FILTERS -->
+<div id="financialListInputContainer" style="display: none;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 20px;">
+        <div class="form-group">
+            <label>From Semester</label>
+            <select id="flSemFrom" class="form-control" style="font-size: 0.8rem; font-weight: bold; color: var(--primary);">
+                <option value="">Start (Earliest)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>To Semester</label>
+            <select id="flSemTo" class="form-control" style="font-size: 0.8rem; font-weight: bold; color: var(--primary);">
+                <option value="">End (Latest)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Barangay</label>
+            <select id="flBrgy" class="form-control" style="font-size: 0.8rem;">
+                <option value="">All Barangays</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>School</label>
+            <select id="flSchool" class="form-control" style="font-size: 0.8rem;">
+                <option value="">All Schools</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Year Level</label>
+            <select id="flYear" class="form-control" style="font-size: 0.8rem;">
+                <option value="">All Levels</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+                <option value="5th Year">5th Year</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+        <div style="display: flex; gap: 12px; margin-top: 24px;">
+            <button class="btn btn-warning" onclick="generatePrint()" style="flex: 1;">Generate</button>
+            <button class="btn btn-ghost" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+
+<datalist id="payrollScholarsList"></datalist>
+<datalist id="periodList"></datalist>
+
+<div id="printArea"></div>
+<div id="printProfileArea"></div>
+<div id="printPayrollFormArea"></div>
+<div id="printFursArea"></div>
+<div id="printAdaArea"></div>
+<div id="printReportArea"></div>
+<div id="printMatrixArea"></div>
+<div id="printFinanceArea"></div>
+<div id="printTrackingArea"></div>
+<div id="printFinancialListArea"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<?!= HtmlService.createHtmlOutputFromFile('adminJS').getContent(); ?>
+
+</body>
+</html>
